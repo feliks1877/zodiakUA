@@ -1,3 +1,4 @@
+
 <div class="form">
     <h4>Добавление объявления</h4>
     <form action="/add" method="post" enctype="multipart/form-data">
@@ -9,12 +10,13 @@
                 <option value="appartament">Квартиры посуточно</option>
             </select>
             <select name="city">
-                {{#each city}}
-                    <optgroup label="{{name}}">{{name}}</optgroup>
-                    {{#each cities}}
-                        <option value="{{nameEn}}">{{name}}</option>
-                    {{/each}}
-                {{/each}}
+                <option value="">Выбрать город</option>
+<!--                    {{#each city}}-->
+<!--                            <optgroup label="{{name}}">{{name}}</optgroup>-->
+                        {{#each cities}}
+                            <option value="{{nameEn}}">{{name}}</option>
+                        {{/each}}
+<!--                    {{/each}}-->
             </select>
             <div class="input-field col s4">
                 <input id="address" type="text" class="validate" name="address">
