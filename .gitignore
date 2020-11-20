@@ -1,4 +1,5 @@
 node_modules
 jquery
+package-lock.json
 keys/keys.dev.js
 images
