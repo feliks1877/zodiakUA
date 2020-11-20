@@ -75,22 +75,39 @@ app.use(sortRoutes)
 app.use(cronRoutes)
 
 const PORT = process.env.PORT || 2000
-async function start(){
-    try {
 
+async function start(){
+    try{
         await mongoose.connect(keys.MONGODB_URI,{
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
         })
-
         app.listen(PORT, () => {
-            console.log(`Server is running on port ${PORT}`)
+            console.log('Server is running on port',PORT)
         })
-    }catch (e) {
+    }catch (e){
         console.log(e)
     }
-
 }
 start()
+// const PORT = process.env.PORT || 2000
+// async function start(){
+//     try {
+//
+//         await mongoose.connect(keys.MONGODB_URI,{
+//             useNewUrlParser: true,
+//             useUnifiedTopology: true,
+//             useFindAndModify: false
+//         })
+//
+//         app.listen(PORT, () => {
+//             console.log(`Server is running on port ${PORT}`)
+//         })
+//     }catch (e) {
+//         console.log(e)
+//     }
+//
+// }
+
 
