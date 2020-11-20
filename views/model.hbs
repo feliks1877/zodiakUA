@@ -1,0 +1,214 @@
+<div class="parallax-container">
+    <div class="parallax"><img src="/images/{{object.photo.[0]}}"></div>
+    </br>
+    <h1>{{object.name}}
+        {{#if object.veryfication}}
+            <i class="fas fa-check-circle"></i></span><br>
+        {{/if}}
+    </h1>
+    <div class="appr" data-appraisal="{{object.appraisal}}"></div>
+</div>
+<div class="container">
+    <!--    <span>{{object.date}}</span>-->
+
+    <div class="carousel">
+        {{#if object.photo.length}}
+            {{#each object.photo}}
+                {{#if this}}
+                    <a data-fancybox="gallery" class="carousel-item" href="/images/{{this}}"><img class="crsl"
+                                                                                          src="/images/{{this}}"></a>
+                {{/if}}
+            {{/each}}
+        {{/if}}
+    </div>
+    <div class="block1">
+        <hr>
+        <p>{{object.description}}</p>
+        <hr>
+
+        {{#if object.paramModel.length}}
+
+            <table class="centered striped">
+
+                <thead>
+                <tr>
+                    <th>Возраст</th>
+                    <th>Рост</th>
+                    <th>Вес</th>
+                    <th>Грудь</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>{{object.paramModel.[0]}}</td>
+                    <td>{{object.paramModel.[1]}}</td>
+                    <td>{{object.paramModel.[2]}}</td>
+                    <td>{{object.paramModel.[3]}}</td>
+                </tr>
+                </tbody>
+            </table>
+        {{/if}}
+
+        {{#if object.price.length}}
+            <table class="centered striped" style="font-size: small;">
+                <tbody>
+                <thead>
+                <tr>
+                    <th>Цена за час</th>
+                    <th>Цена за выезд</th>
+                    <th>Цена за ночь</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td data-balance="{{object.price.[0]}}"></td>
+                    <td data-balance="{{object.price.[1]}}"></td>
+                    <td data-balance="{{object.price.[2]}}"></td>
+                    <!--                    <td>{{object.price.[0]}}</td>-->
+                    <!--                    <td>{{object.price.[1]}}</td>-->
+                    <!--                    <td>{{object.price.[2]}}</td>-->
+                </tr>
+                </tbody>
+            </table>
+        {{/if}}
+
+        {{#if object.city}}
+            <table class="centered striped" style="font-size: small;">
+                <tbody>
+                <thead>
+                <tr>
+                    <th>Город</th>
+                    <th>Адрес</th>
+                </tr>
+                </thead>
+                <tr>
+                    <td>{{object.city}}</td>
+                    <td>{{object.address}}</td>
+                </tr>
+                </tbody>
+            </table>
+        {{/if}}
+
+        <div class="block2">
+            {{#if object.classik.length}}
+
+                <div class="col s6 service">
+                    <strong>Классические услуги:</strong>
+                    {{#each object.classik}}
+                        <em><i class="material-icons">check</i>{{this}}</em>
+                    {{/each}}
+                </div>
+            {{/if}}
+            {{#if object.bdsm.length}}
+
+                <div class="col s6 service">
+                    <strong>BDSM:</strong>
+                    {{#each object.bdsm}}
+                        <em><i class="material-icons">check</i>{{this}}</em>
+                    {{/each}}
+                </div>
+            {{/if}}
+        </div>
+        <div class="block2">
+            {{#if object.massage.length}}
+                <div class="col s6 service">
+                    <strong>Massage:</strong>
+                    {{#each object.massage}}
+                        <em><i class="material-icons">check</i>{{this}}</em>
+                    {{/each}}
+                </div>
+            {{/if}}
+            {{#if object.other.length}}
+                <div class="col s6 service">
+                    <strong>Разное:</strong>
+                    {{#each object.other}}
+                        <em><i class="material-icons">check</i>{{this}}</em>
+                    {{/each}}
+                </div>
+            {{/if}}
+        </div>
+    </div>
+    <div class="fixed-action-btn">
+        <a class="btn-floating btn-large cyan darken-3">
+            <i class="large material-icons">phone</i>
+        </a>
+        <ul>
+            {{#if object.phone.[0]}}
+                <li><a href="tel:{{object.phone.[0]}}" class="btn-floating blue-grey lighten-2"><i
+                        class="large material-icons">phone</i></a></li>
+            {{/if}}
+            {{#if object.phone.[1]}}
+                <li><a href=https://wa.me/{{object.phone.[1]}}" class="btn-floating green"><i
+                        class="fab fa-whatsapp"></i></a></li>
+            {{/if}}
+            {{#if object.phone.[2]}}
+                <li><a href="viber://add?number={{object.phone.[2]}}" class="btn-floating deep-purple"><i
+                        class="fab fa-viber"></i></a>
+                </li>
+            {{/if}}
+            {{#if object.phone.[3]}}
+                <li><a href="https://telegram.im/{{object.phone.[3]}}" class="btn-floating  light-blue"><i
+                        class="fab fa-telegram"></i></a>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+    {{#if review.length}}
+        <div class="carousel">
+            <h5 style="text-align: center">Отзывы</h5>
+            {{#each review}}
+                <div class="carousel-item cart">
+                    <div>
+                        <span class="card-title">{{login}}</span>
+                        <b class="sr" data-reiting="{{very}}"></b>
+                    </div>
+                    {{#if disc.length}}
+                        {{#each disc}}
+                            <span class="card-title2">{{this}}</span><br>
+                        {{/each}}
+                    {{/if}}
+                    <span class="card-title2">Соответствие фотографиям {{photoRev}}%</span><br>
+                    <span class="card-title2">{{review}}</span>
+                </div>
+            {{/each}}
+
+        </div>
+    {{/if}}
+
+
+    <!--   ///////////////////////// Рекомендуемые////////////////////-->
+
+    {{#if rcm.length}}
+        <h5 class="rcm">Рекомендуемые эскортницы</h5>
+        <div class="contObj">
+            {{#each rcm}}
+                <div class="card es objectInd hoverable">
+
+                    <a href="/id/{{id}}">
+                        <div class="card-image es">
+                            <img src="/images/{{photo.[0]}}" alt="Escort Ukraine">
+                            <div class="card-title">
+                                <span>{{city}}</span><br>
+                            <span>{{name}}
+                                {{#if veryfication}}
+                                    <i class="fas fa-check-circle"></i></span>
+                                {{/if}}<br>
+                                <span data-balance="{{price.[0]}}"></span><br>
+                                <div data-appraisal="{{appraisal}}"></div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+
+            {{/each}}
+        </div>
+    {{else}}
+        <p>Пусто</p>
+    {{/if}}
+
+
+    <div id="btnReview">
+        <a href="/review/{{object.id}}" class="btn waves-effect waves-purple">Оставить отзыв</a>
+    </div>
+</div>
+

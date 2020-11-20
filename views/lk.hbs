@@ -1,0 +1,196 @@
+<div id="lk">
+    <h5>Личный кабинет</h5>
+    <ul class="collection">
+        <li class="collection-item avatar">
+            <a href="/add" class="btn-floating waves-effect waves-light light-blue darken-3"><i class="material-icons">add</i></a>
+            <span class="title">Добавить объявление</span>
+        </li>
+        <li class="collection-item avatar">
+            <a href="#!" class="btn-floating waves-effect waves-light blue-grey"><i class="material-icons">add</i></a>
+            <span class="title">В раздел вакнсии</span>
+        </li>
+        <li class="collection-item avatar">
+            <a href="#!" class="btn-floating waves-effect waves-light blue-grey lighten-3"><i
+                    class="fas fa-hryvnia"></i></a>
+            <span class="title" id="balance" data-balance="{{user.balance}}"></span>
+        </li>
+        <li class="collection-item avatar">
+            <a href="/pay/{{user.id}}" class="btn-floating waves-effect waves-light blue-grey lighten-8">
+                <i class="large material-icons">insert_chart</i>
+            </a>
+            <span class="title" id="balance">История платежей</span>
+        </li>
+        <li class="collection-item avatar">
+            <a href="/logout" class="btn-floating waves-effect waves-light red"><i class="material-icons">power_settings_new
+            </i></a>
+            <span class="title">Выйти</span>
+        </li>
+    </ul>
+    <div id="table">
+        <table class="striped">
+            <thead>
+            <tr>
+                <th>Всего объявлений</th>
+                <th>Активных</th>
+                <th>Отключено</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td id="amount"></td>
+                <td id="activeCount">0</td>
+                <td id="passiveCount">0</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{{#if objects.length}}
+
+    <div class="block--lk">
+
+        {{#each objects}}
+
+
+            <div class="card">
+                <div class="card-image">
+
+                    <img class="img--lk es" src="/images/{{photo.[0]}}">
+                    <span class="card-title title-lk">{{name}}</span>
+                    <span class="card-title status title-lk" data-status="/active/{{id}}?active=" data-act="{{active}}"></span>
+                </div>
+
+
+                <!-- Modal Structure -->
+                <div id="{{this.id}}" class="modal">
+
+                    <div class="modal-content">
+                        <form method="post" action="/lk/:autoTop" name="autoOn">
+                            <input name="id" type="hidden" value="{{this.id}}">
+                            <input type="time" name="time" value="{{this.autoTop}}">
+                            {{#if autoTop}}
+                                <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} по Мск
+                                    времени</p>
+                            {{else}}
+                                <p>Автоподнятие отключено</p>
+                            {{/if}}
+                            <button type="button" name="btnOn" class=" modal-close waves-effect waves-green btn-flat">
+                                Включить
+                            </button>
+                        </form>
+
+
+                        <form method="post" action="/lk/:autoTop">
+                            <input name="id" type="hidden" value="{{this.id}}">
+                            <input type="hidden" name="time" value="">
+                            <button type="button" name="btnOn" class="modal-close waves-effect waves-green btn-flat">
+                                Отключить
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="block-btn">
+                    <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>
+                    <a data-rcm="{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
+
+                    <a data-top="/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
+                    <a href="/{{id}}/edit?allow=true" class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
+                </div>
+            </div>
+
+        {{/each}}
+    </div>
+{{/if}}
+<style>
+    .modal-content > form > button {
+        -webkit-appearance: button;
+        background: cadetblue;
+        width: 119px;
+        filter: drop-shadow(1px 2px 2px black);
+        margin: 4px;
+        color: gainsboro;
+    }
+
+    .modal-content > form > button:active {
+        transform: scale(0.9);
+    }
+
+    #lk > h5 {
+        text-align: center;
+    }
+
+    td, th {
+        text-align: center;
+    }
+
+    .collection .collection-item.avatar {
+        padding-left: 15px;
+    }
+
+    .collection > li {
+        display: flex;
+        align-items: center;
+        font-size: large;
+        justify-content: space-between;
+    }
+
+    .block--lk {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .status {
+        position: absolute;
+        top: 0;
+    }
+
+    .card {
+        display: flex;
+        flex-wrap: wrap;
+        width: 180px;
+    }
+
+    .btn--lk {
+        width: 100%;
+        font-size: xx-small
+    }
+
+    .block-btn {
+        display: flex;
+        flex-wrap: wrap;
+        width: 100%;
+    }
+
+    .img--lk {
+        height: 170px !important;
+        width: 180px !important;
+        object-fit: cover;
+    }
+    .title-lk{
+        padding: 5px !important;
+        font-size: 20px !important;
+    }
+
+    @media (min-width: 990px) {
+        ul:not(.browser-default) {
+            padding-left: 0 !important;
+            width: 50%;
+        }
+
+        #lk {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #table {
+            width: 50%;
+        }
+    }
+    .status:active{
+        transform: scale(0.97);
+    }
+</style>

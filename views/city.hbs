@@ -1,0 +1,70 @@
+<div class="parallax-container">
+    <div class="parallax"><img
+            src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/6b47f30d-8a0f-4acd-8f75-10616e25b410/d76xl8c-e1b9b33e-d60f-4070-be51-421f39ea80dc.jpg/v1/fill/w_1131,h_707,q_70,strp/natalia_siwiec_wallpaper_7_by_balhirath_d76xl8c-pre.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOiIsImlzcyI6InVybjphcHA6Iiwib2JqIjpbW3siaGVpZ2h0IjoiPD0xMjAwIiwicGF0aCI6IlwvZlwvNmI0N2YzMGQtOGEwZi00YWNkLThmNzUtMTA2MTZlMjViNDEwXC9kNzZ4bDhjLWUxYjliMzNlLWQ2MGYtNDA3MC1iZTUxLTQyMWYzOWVhODBkYy5qcGciLCJ3aWR0aCI6Ijw9MTkyMCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.rbk4b3dLg2jmL_UMn29yAJDl3bbMrfQajV_XT502YRI">
+    </div>
+    </br>
+    <h1>Проститутки<br> {{headCity}}</h1>
+    <div class="fil-btn">
+        <ul id="dropdown2" class="dropdown-content">
+            {{#if cityes}}
+                <li><a href="/city/{{cityes.nameEn}}/sort/asc">Дорогие</a></li>
+                <li><a href="/city/{{cityes.nameEn}}/sort/desc">Дешевые</a></li>
+                <li><a href="/city/{{cityes.nameEn}}/sort/very">Проверенные</a></li>
+                <li><a href="/city/{{cityes.nameEn}}/sort/reiting">Высокий рейтинг</a></li>
+            {{else}}
+                <li><a href="/sort/asc">Дорогие</a></li>
+                <li><a href="/sort/desc">Дешевые</a></li>
+                <li><a href="/sort/very">Проверенные</a></li>
+                <li><a href="/sort/reiting">Высокий рейтинг</a></li>
+            {{/if}}
+        </ul>
+        <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Фильтры<i class="material-icons right">arrow_drop_down</i></a>
+    </div>
+</div></br>
+<h4 class="zag">
+    <hr>
+    Проститутки {{headCity}}
+    <hr>
+</h4>
+{{#if object.length}}
+    <div class="contObj">
+        {{#each object}}
+
+
+            <div class="card es objectInd hoverable">
+
+                <a href="/id/{{id}}">
+                    <div class="card-image es">
+                        <img src="{{photo.[0]}}" alt="Escort Ukraine">
+                        <div class="card-title">
+                            <span>{{city}}</span><br>
+                        <span>{{name}}
+                            {{#if veryfication}}
+                                <i class="fas fa-check-circle"></i></span>
+                            {{/if}}<br>
+                            <span data-balance="{{price.[0]}}"></span><br>
+                            <div data-appraisal="{{appraisal}}"></div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+
+        {{/each}}
+    </div>
+{{else}}
+    <h5 class="pagination">Оъявлений нет
+    <a href="/escort" class="btn-floating waves-effect waves-light blue-grey lighten-3"> <i class="large material-icons">arrow_back</i>
+        <</a></h5>
+{{/if}}
+
+{{#if page}}
+    <ul class="pagination">
+        <li id="prevLi"><a href="" id="prev"><i class="material-icons">chevron_left</i></a></li>
+        {{#each page}}
+            <li><a href="/city/{{@root.cityes.nameEn}}/page/{{this}}"
+                   data-path="/city/{{@root.cityes.nameEn}}/page/{{this}}">{{this}}</a></li>
+        {{/each}}
+        <li class="waves-effect" id="nextLi"><a href="" id="next"><i class="material-icons">chevron_right</i></a></li>
+    </ul>
+{{/if}}

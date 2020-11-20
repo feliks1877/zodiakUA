@@ -1,0 +1,82 @@
+<div>
+    <div class="row" >
+
+        <ul class="tabs log--3">
+            <li class="tab col s3"><a class="active" href="#login">Вход</a></li>
+            <li class="tab col s3"><a href="#register">Регистрация</a></li>
+        </ul>
+        <form action="/login" method="post" class="col s12">
+            <div class="row log--1">
+
+                <div id="login" class="col s6 log--2">
+                    <h4>Авторизация</h4>
+                    {{#if error}}
+                        <p id="err" data-error="{{error}}"></p>
+                    {{/if}}
+                    <div class="input-field col s12">
+                        <input id="email" autocomplete="username" type="email" name="email" class="validate" required>
+                        <label for="email">Email</label>
+                        <span class="helper-text" data-error="Введите почту" data-success=""></span>
+                    </div>
+                    <div class="input-field col s12">
+                        <input id="password" autocomplete="current-password" type="password" name="password"
+                               class="validate" required>
+                        <label for="password">Password</label>
+                        <span class="helper-text" data-error="Введите пароль" data-success=""></span>
+
+                    </div>
+                    <button id="loginBtn" class="btn waves-effect waves-light" type="submit">Войти
+                        <i class="material-icons right"></i>
+                    </button>
+
+                </div>
+            </div>
+        </form>
+        <div id="register" class="row">
+            <h4>Регистрация</h4>
+            <form action="/register" method="post" class="col s12">
+                <div class="row" style="display: flex;
+    flex-direction: column;
+    align-items: center;">
+                    <div class="input-field col s8">
+                        <input id="rlogin" type="text" autocomplete="username" name="login" class="validate" required>
+                        <label for="rlogin">Login</label>
+                        <span class="helper-text" data-error="Введите Login" data-success=""></span>
+                    </div>
+                    <div class="input-field col s8">
+                        <input id="rpassword" type="password" autocomplete="current-password" name="password"
+                               class="validate" required>
+                        <label for="rpassword">Пароль</label>
+                        <span class="helper-text" data-error="Введите пароль" data-success=""></span>
+                    </div>
+<!--                    <div class="input-field col s6">-->
+<!--                        <input id="rpassword2" type="password2" autocomplete="current-password" name="password"-->
+<!--                               class="validate" required>-->
+<!--                        <label for="rpassword2">Подтвердите пароль</label>-->
+<!--                        <span class="helper-text" data-error="Повторите пароль" data-success=""></span>-->
+<!--                    </div>-->
+                    <div class="input-field col s8">
+                        <input id="remail" type="email" name="email" class="validate" required>
+                        <label for="remail">Email</label>
+                        <span class="helper-text" data-error="Введите почту" data-success=""></span>
+                    </div>
+                    <button class="btn waves-effect waves-light" type="submit" name="action">Зарегитрироваться
+                        <i class="material-icons right"></i>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<style>
+    @media screen and (min-width: 990px) {
+        .log--3:not(.browser-default) {
+            padding-left: 31% !important;
+            list-style-type: none;
+        }
+    }
+    .row .col.s8 {
+        margin-left: inherit;
+    }
+</style>

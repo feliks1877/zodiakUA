@@ -1,0 +1,89 @@
+<ul id="dropdown1" class="dropdown-content drop">
+    {{#if city.length}}
+        {{#each city}}
+            <li><a href="#!"><h5>{{name}}</h5></a></li>
+            <li class="divider"></li>
+            {{#each cities}}
+                <li><a href="/escort/{{nameEn}}">{{name}}</a></li>
+                <li class="divider"></li>
+            {{/each}}
+        {{/each}}
+    {{else}}
+        <p>Пусто</p>
+    {{/if}}
+</ul>
+<nav>
+    <div class="nav-wrapper purple">
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+        <a href="/escort" class="brand-logo logo">ZODIAK</a>
+        <ul class="right hide-on-med-and-down">
+            <li><a href="/">Главная</a></li>
+            <li><a href="/escort">Escort</a></li>
+            <li><a href="/lux">LUX</a></li>
+            <li><a href="/work">Вакансии</a></li>
+            {{#if isAuth}}
+                <li><a href="/lk">Личный кабинет</a></li>
+                <li><a href="/add">Добавить</a></li>
+                <li><a href="/logout">Выйти</a></li>
+            {{else}}
+                <li><a href="/login">Авторизация</a></li>
+            {{/if}}
+            <!-- Dropdown Trigger -->
+            {{#if city.length}}
+                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Города<i class="material-icons right">arrow_drop_down</i></a>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+</nav>
+
+<ul class="sidenav" id="mobile-demo">
+    <li>
+        <div class="user-view">
+            <div class="background">
+                <img class="imgNav" src="https://cdn.pixabay.com/photo/2016/03/15/17/17/girl-1258739_1280.jpg">
+
+
+                <!--       -->
+            </div>
+            <!--            <a href="#user"><img class="circle"-->
+            <!--                                 src="https://static10.tgstat.ru/channels/_100/2c/2c122d5fbe4031588c6e661b98ca99b3.jpg"></a>-->
+            {{#if user.login}}
+                <a href="#name"><span class="white-text name">{{user.login}}</span></a>
+                <a href="#email"><span class="white-text email">{{user.email}}</span></a>
+            {{else}}
+                <h6 class="nav--barText">ZODIAK</h6>
+            {{/if}}
+        </div>
+    </li>
+    <li><a href="/">Главная</a></li>
+    <li><a href="/escort">Escort</a></li>
+    <li><a href="/lux">LUX</a></li>
+    <li><a href="/work">Вакансии</a></li>
+    {{#if isAuth}}
+        <li><a href="/lk">Личный кабинет</a></li>
+        <li><a href="/add">Добавить объявление</a></li>
+        <li><a href="/logout">Выйти</a></li>
+    {{else}}
+        <li><a href="/login">Авторизация</a></li>
+    {{/if}}
+    {{#if city.length}}
+    <li><a class="dropdown-trigger" href="#!" data-target="dropdown12">Города<i class="material-icons right">arrow_drop_down</i></a>
+    {{/if}}
+</li>
+</ul>
+<ul id="dropdown12" class="dropdown-content drop">
+    {{#if city.length}}
+        <li><a href="/escort/Kiev">Киев</a></li>
+        {{#each city}}
+            <li><a href="#!"><h5>{{name}}</h5></a></li>
+            <li class="divider"></li>
+            {{#each cities}}
+                <li><a href="/escort/{{nameEn}}">{{name}}</a></li>
+                <li class="divider"></li>
+            {{/each}}
+        {{/each}}
+    {{else}}
+        <p>Пусто</p>
+    {{/if}}
+</ul>

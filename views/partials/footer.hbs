@@ -1,0 +1,39 @@
+<footer class="page-footer purple darken-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text">ZODIAK</h5>
+                <p class="grey-text text-lighten-4">Escort the Best luxury edition</p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Меню</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="/">Главная</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/escort">Escort</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/work">Вакансии</a></li>
+                    <li><a class="grey-text text-lighten-3" href="/lux">LUX</a></li>
+                    {{#if isAuth}}
+                        <li><a class="grey-text text-lighten-3" href="/add">Добавить</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/lk">Личный кабинет</a></li>
+                        <li><a class="grey-text text-lighten-3" href="/logout">Exit</a></li>
+                    {{else}}
+                        <li><a class="grey-text text-lighten-3" href="/login">Авторизация</a></li>
+                    {{/if}}
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            ESCORT LUX
+            <a class="grey-text text-lighten-4 right" href="#!">UA 2020</a>
+        </div>
+    </div>
+</footer>
+<script src="https://kit.fontawesome.com/402587631e.js" crossorigin="anonymous"></script>
+<script src="/jquery/jquery.js"></script>
+<script src="/script.js"></script>
+<script src="/ajax.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>

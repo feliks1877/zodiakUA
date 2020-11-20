@@ -1,0 +1,38 @@
+<h5 style="text-align: center">Оставить отзыв</h5>
+<main class="content">
+
+    <div class="review">
+        <form action="/review" method="post">
+            <span>{{user.login}}</span>
+            <input type="hidden" name="login" value="{{user.login}}">
+            <p>
+                <label>
+                    <input name="disc[]" type="checkbox" value="Салон" />
+                    <span>Салон</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input name="disc[]" type="checkbox" value="Индивидуалка" />
+                    <span>Индивидуалка</span>
+                </label>
+            </p>
+            <p class="range-field">
+                <label for="photoRev">Соответсвие фото </label>
+                <input type="range" id="photoRev" class="rng" name="photoRev" min="0" max="100" step="1"/>
+            </p>
+            <p class="range-field">
+                <label for="very">Общая оценка </label>
+                <input type="range" id="very" class="rng" name="very" min="0" max="5" step="1"/>
+            </p>
+            <div class="input-field col s12">
+                <textarea id="review" class="materialize-textarea" name="review"></textarea>
+                <label for="review"><i class="far fa-comment-dots"></i>Отзыв</label>
+            </div>
+            <input name="objId" type="hidden" value="{{id}}">
+            <button class="btn waves-effect waves-light" type="submit">Submit
+                <i class="material-icons right">send</i>
+            </button>
+        </form>
+    </div>
+</main>
