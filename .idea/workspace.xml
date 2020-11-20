@@ -28,6 +28,7 @@
     <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -89,7 +90,7 @@
       <workItem from="1605860015178" duration="389000" />
       <workItem from="1605870365395" duration="5632000" />
       <workItem from="1605876537698" duration="8476000" />
-      <workItem from="1605885161995" duration="432000" />
+      <workItem from="1605885161995" duration="4769000" />
     </task>
     <servers />
   </component>
@@ -112,14 +113,14 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1605881725562" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1605872908732">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1605888450800">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605872908732" />
-    <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1605309074492">
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1605888450800" />
+    <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1605890572714">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1605309074492" />
+    <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1605890572714" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1605881713076">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
