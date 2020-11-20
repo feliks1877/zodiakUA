@@ -11,16 +11,12 @@
             </select>
             <select name="city">
                 <option value="">Выбрать город</option>
-                {{#if city.length}}
                     {{#each city}}
                         <optgroup label="{{name}}">{{name}}</optgroup>
                         {{#each cities}}
                             <option value="{{nameEn}}">{{name}}</option>
                         {{/each}}
                     {{/each}}
-                {{else}}
-                    <p>Пусто</p>
-                {{/if}}
             </select>
             <div class="input-field col s4">
                 <input id="address" type="text" class="validate" name="address">
