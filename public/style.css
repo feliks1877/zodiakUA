@@ -328,9 +328,3 @@ form > .range-field {
         margin-top: 158%;
     }
 }
-@media(max-width: 800px) {
-    .parallax > img{
-        width: 322px;
-        object-fit: cover;
-    }
-}
