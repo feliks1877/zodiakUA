@@ -49,7 +49,8 @@ app.set('views','views')
 app.use(express.static('public'))
 app.use(express.static('data'));
 app.use('/jquery', express.static('jquery'))
-app.use('/images',express.static(path.join(__dirname,'images')))
+app.use(express.static(path.join(__dirname,'images')))
+// app.use('/images',express.static(path.join(__dirname,'images')))
 app.use(express.urlencoded({extended: true}))
 
 app.use(session({
