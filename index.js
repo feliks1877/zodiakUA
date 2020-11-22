@@ -92,23 +92,5 @@ async function start(){
     }
 }
 start()
-// const PORT = process.env.PORT || 2000
-// async function start(){
-//     try {
-//
-//         await mongoose.connect(keys.MONGODB_URI,{
-//             useNewUrlParser: true,
-//             useUnifiedTopology: true,
-//             useFindAndModify: false
-//         })
-//
-//         app.listen(PORT, () => {
-//             console.log(`Server is running on port ${PORT}`)
-//         })
-//     }catch (e) {
-//         console.log(e)
-//     }
-//
-// }
 
 
