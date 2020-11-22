@@ -2,18 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/keys/keys.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/keys/keys.prod.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/middleware/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/file.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/add.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/city.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/city.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/escort.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/escort.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/model.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/model.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/lk.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -106,7 +96,7 @@
       <workItem from="1605893925346" duration="116000" />
       <workItem from="1605894062028" duration="1693000" />
       <workItem from="1605895816989" duration="8692000" />
-      <workItem from="1606039916652" duration="2557000" />
+      <workItem from="1606039916652" duration="3025000" />
     </task>
     <servers />
   </component>
