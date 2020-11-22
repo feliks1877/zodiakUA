@@ -85,7 +85,7 @@
                     {{#each object.photo}}
                         {{#if this}}
 
-                            <img class="img--lk" src="/images/{{this}}" alt="">
+                            <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/{{this}}" alt="">
                             <label for="{{this}}" data-remove="removeImg">Удалить</label>
                             <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}">
                         {{/if}}
