@@ -148,7 +148,15 @@ router.post('/edit', async (req, res) => {
 
             req.files.forEach((el) => {
                 req.body.photo.unshift(el.filename)
-                savePhoto(el)
+                new Promise((resolve,reject) => {
+                   const data = savePhoto(el)
+
+                    resolve(data)
+                    reject(false)
+
+                }).then(data => {
+                    console.log('Save photo',data)
+                })
             })
             await req.body.photo.forEach((e) => {
                 if (!e.length) {

@@ -67,5 +67,5 @@ module.exports = function savePhoto(el) {
             })
         }
     });
-
+return true
 }
