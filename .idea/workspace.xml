@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/model.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/model.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +115,7 @@
       <workItem from="1606131982194" duration="9180000" />
       <workItem from="1606204869388" duration="29959000" />
       <workItem from="1606240920361" duration="2728000" />
-      <workItem from="1606247111590" duration="16036000" />
+      <workItem from="1606247111590" duration="17087000" />
     </task>
     <servers />
   </component>
@@ -127,6 +126,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="267" y="19" key="#Inspections" timestamp="1606305453785">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="267" y="19" key="#Inspections/0.0.1280.680@0.0.1280.680" timestamp="1606305453785" />
     <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606072645409">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

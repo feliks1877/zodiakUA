@@ -9,8 +9,8 @@
     <form action="/edit" method="post" enctype="multipart/form-data">
         <div id="block1" class="col s12">
             <div class="input-field col m4 s8">
-                <input type="text" name="city" value="{{object.city}}">
-                <label for="name"><i class="fas fa-user-cog"></i>Город</label>
+                <input type="text" id="c1" name="city" value="{{object.city}}">
+                <label for="c1"><i class="fas fa-user-cog"></i>Город</label>
             </div>
 
             <div class="input-field col m4 s8">
@@ -96,7 +96,7 @@
             <div class="file-field input-field">
                 <div class="btn">
 
-                    <span>File</span>
+                    <label for="photo">File</label>
                     <input type="file" name="photo[]" multiple id="photo">
                 </div>
                 <div class="file-path-wrapper">
