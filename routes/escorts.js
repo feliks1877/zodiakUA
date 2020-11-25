@@ -1,22 +1,23 @@
-const {Router} = require('express')
 const fs = require('fs');
+const {Router} = require('express')
 const City = require('../models/city')
 const Objects = require('../models/objects')
 const Review = require('../models/review')
-const User = require('../models/user')
 const meta = require('../headers/meta')
-const aws = require('aws-sdk')
-const keys = require('../keys')
+// const aws = require('aws-sdk')
+// const Jimp = require('jimp')
+const savePhoto = require('../function/savePhoto')
+// const keys = require('../keys')
 const router = Router()
-aws.config.update({
-    "accessKeyId": keys.AWS_ACCESS_KEY_ID,
-    "secretAccessKey": keys.AWS_SECRET_ACCESS_KEY,
-    "region": 'us-east-2'
-});
-let s3 = new aws.S3({
-    apiVersion: "2006-03-01",
-    params: {Bucket: keys.S3_BUCKET}
-})
+// aws.config.update({
+//     "accessKeyId": keys.AWS_ACCESS_KEY_ID,
+//     "secretAccessKey": keys.AWS_SECRET_ACCESS_KEY,
+//     "region": 'us-east-2'
+// });
+// let s3 = new aws.S3({
+//     apiVersion: "2006-03-01",
+//     params: {Bucket: keys.S3_BUCKET}
+// })
 
 function filBalance(arr, ob) {
     for (let i = 0; i < arr.length; i++) {
@@ -35,14 +36,13 @@ function pagination(arr) {
     return page
 }
 
-
 router.get('/escort', async (req, res) => {
     const user = req.session.user
     const city = await City.getAll()
     const objects = []
     const arr = await Objects.find().where({active: 1}).sort({date: 'desc'}).populate('userId')
     await filBalance(arr, objects)
-    const page = pagination(arr)
+    const page = await pagination(arr)
     await res.render('escort', {
         title: meta.titleEscort,
         meta: meta.contentEscort,
@@ -51,19 +51,25 @@ router.get('/escort', async (req, res) => {
 })
 
 router.get('/page/:page', async (req, res) => {
-    const city = await City.getAll()
-    const user = req.session.user
-    const objects = []
-    const pageNumber = req.params.page
-    const arr = await Objects.find().where({active: 1}).sort({date: 'desc'})
-        .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
-    const amount = await Objects.find().where({active: 1})
-    await filBalance(arr, objects)
-    const page = pagination(amount)
-    await res.render('escort', {
-        title: 'Escort',
-        objects, city, user, page
-    })
+    try {
+
+        const city = await City.getAll()
+        const user = req.session.user
+        const objects = []
+        const pageNumber = req.params.page
+        const arr = await Objects.find().where({active: 1}).sort({date: 'desc'})
+            .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
+        const amount = await Objects.find().where({active: 1})
+        await filBalance(arr, objects)
+        const page = await pagination(amount)
+        await res.render('escort', {
+            title: 'Escort',
+            objects, city, user, page
+        })
+    } catch (e) {
+        console.log('ERROR ESCORT PAGE', e)
+    }
+
 })
 
 router.get('/escort/:name', async (req, res) => {
@@ -72,7 +78,11 @@ router.get('/escort/:name', async (req, res) => {
     const cityes = await City.getByCity(req.params.name)
     const city = await City.getAll()
     new Promise((resolve) => {
-        const c = Objects.find({active: 1}).where('city').equals(req.params.name).sort({date: 'desc'}).populate('userId')
+        const c = Objects.find({active: 1})
+            .where('city')
+            .equals(req.params.name)
+            .sort({date: 'desc'})
+            .populate('userId')
         resolve(c)
     }).then((c) => {
         filBalance(c, object)
@@ -129,43 +139,29 @@ router.get('/:id/edit', async (req, res) => {
         })
     }
 })
+
+
+
 router.post('/edit', async (req, res) => {
     try {
         if (req.files.length) {
-            await req.files.forEach((el) => {
+
+            req.files.forEach((el) => {
                 req.body.photo.unshift(el.filename)
-                fs.readFile(el.path, async function (err, data) {
-                    if (err) {
-                        throw err;
-                    }
-                    const params = {
-                        Bucket: keys.S3_BUCKET,
-                        Key: el.filename,
-                        Body: data,
-                        ContentType: el.mimetype,
-                        ACL: 'public-read'
-                    };
-                    await s3.putObject(params, function (err, data) {
-                        if (err) {
-                            console.log(err)
-                        } else {
-                            console.log("Successfully uploaded data to myBucket/myKey", data);
-                        }
-                    })
-                });
+                savePhoto(el)
             })
-            await req.body.photo.forEach((e, i) => {
+            await req.body.photo.forEach((e) => {
                 if (!e.length) {
                     req.body.photo.pop()
                 }
             })
         }
+
         await Objects.findByIdAndUpdate(req.body.id, req.body)
-        res.redirect('/escort')
+        await res.redirect('/lk')
     } catch (e) {
         console.log('Редактирование', e)
+        res.redirect('/lk')
     }
 })
-
-
 module.exports = router

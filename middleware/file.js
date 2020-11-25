@@ -1,11 +1,13 @@
 const multer = require('multer')
 const uuid = require('uuid').v4
+const fs = require('fs')
+
 const storage = multer.diskStorage({
     destination(req, file, cb){
         cb(null, 'images')
     },
     filename(req, file, cb){
-        cb(null, uuid())
+        cb(null, uuid() + ".jpg")
     }
 })
 
@@ -18,6 +20,8 @@ const fileFilter = (req, file, cb) => {
         cb(null, false)
     }
 }
+
+
 
 module.exports = multer({
     storage,

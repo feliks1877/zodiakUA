@@ -2,11 +2,132 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/function/savePhoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/headers/meta.js" beforeDir="false" afterPath="$PROJECT_DIR$/headers/meta.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/escort.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/escort.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/emails/registration.js" beforeDir="false" afterPath="$PROJECT_DIR$/emails/registration.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0044356d-e659-488f-bec4-975c0fae2feaae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0302f662-2467-4516-aed1-10b98877b62ad0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/06798150-b324-44e3-8337-596524f02aadd0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/07e3a2d1-d6c8-4115-89e2-5a911539a1f9b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/07f0f8e4-2a67-4d13-8dc2-8c844834f4916dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0932f441-2a65-4430-ac16-194952f8392eb9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0b190497-8ba6-45e3-8c7e-9df376c9f6d5ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0b311ce4-026f-4925-8ab5-370136f0db55b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/136589b8-f82e-49f5-bac3-52dc7522600418d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/15a85277-50e9-410b-84ab-e40299bb64c06dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/19e98874-db35-4dc6-b68c-e7a576ba5816b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/19ee4665-603a-4ff7-93d5-eae58a1cd1abae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1bf8d330-f7a5-4291-bae5-9d4696e73fa1a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1c300037-41fa-451f-a610-ac6f7ab322f9d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1c6774f2-5b25-441e-a1ba-f10c77b390edd0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1e81f92d-15b8-40f6-8cc6-9ed8a70d127ea9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1ede5586-1f6d-417b-aeb0-bc7bee3bb58fb9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2007bdc9-bce6-48c0-9c04-124b541a8ccc18d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/23113c07-848f-4e9e-9837-f27d227b5fcdb9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2640cb39-e5b6-4353-bd3a-ca27a8057722a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2d98b91f-31f3-4649-b07e-a5477f278688ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2f18c621-1b03-4c07-ab39-f62b0af2dabdgirl-254708_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/30795fff-74cc-4efe-a949-c109e77f1b076dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/32a6a0d9-4cef-453e-b089-d73b7623e737a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/34b6c9b5-a932-40ce-9f4b-557c111eecaab9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3524a97b-e49b-42ac-bcda-bca6f79b1b32girl-254708_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/36869b6c-9727-49b3-9c92-b9a699bcd3bcb9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/36b4c535-4fc1-4154-a21e-29ac0cb2c16fd0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/380bdc9b-2e82-417d-9105-ca9fb608b5ded0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3d5eae7c-4ff7-4ada-9901-939fe896da68b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3dc41eed-c264-4f4a-ada3-f3655eac0fd218d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3fe02507-e290-46bc-bbda-96baa7d1a398d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/4494db6c-1cc7-4d8d-a0f7-4f2a63f28ac8b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/45424583-33ac-44dd-b502-e1d392ba724aimg-20170118103115-872.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/47560a71-1d4a-4257-ad03-9120fcac9c89pexels-lars-romero-2882080.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/489c021d-72ec-48a3-9b50-63ffac92a2c6b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/4d9fd799-8de8-4c79-86dd-6533f2e3f808b22f01632df5bcc623aacb5b250ddf55.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/4e653d6b-b454-42fc-9ad9-8edbceb7dcd2img-20170118103552-751.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/526ef403-10da-4353-97a9-104c462c59e8b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/57b82473-b775-4340-892e-34692617fc82pexels-lars-romero-2882080.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/594f8b0d-d8f7-4f30-925d-af034a519b15img-20170118103556-498.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/59ecfb07-a290-47c2-a518-33e76139127cae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/5a0608a2-0e62-4632-83fb-ff71b3d984a96dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/5feff993-186a-4899-8418-95f0f5c50125ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/612f4c5e-c990-4bbd-a8b0-92c9f3e77d6918d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/665c8509-9e27-445c-9053-9e4b632bb035d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/66b22509-1a02-4262-a6bd-04da518d7f14img-20171229163845-677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/691b0e9d-e28a-48e0-8ed8-275e4df5220418d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/699f0bd0-49bc-406d-b041-3e7159630c656dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/75232ec4-9092-4136-b450-5f09be4d0f2bimg-20171229163845-677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/75f5c4fe-63ba-421b-aebd-b3cdade30a07a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/777eef35-8ba0-4820-bcef-c7ffe29749c5d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7bb297b1-8a42-462d-b27e-fea912f0c48awoman-358765_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7c9201a5-6d29-4bfd-b2c2-d40e9e8be4d9a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7d26ac3c-b5c4-45f5-b39b-fbbc1cd81dd318d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7fa67188-ca05-4dd4-ba0d-1a62051fcd9818d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/83fb0743-1eb8-4ec7-9c69-2a5d0f72cbf1d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/840f5c6c-e09c-4bb1-8e50-bfe904eee021a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/87c013e2-8036-4c26-971a-c342c9cd9cdbimg-20171229163845-677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/87c6ed1a-12c8-474c-a32a-0d84cd968e69ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/87e4503e-b8a1-44d3-858a-b2f5c4ac480318d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/881aa503-2a80-421d-a0ba-49c2c3ac2670a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/887d9d5a-12ab-4a43-84fb-bed47c07d9306dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/88a6d220-4b52-4c12-b563-d8435a167cc7b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/88c559b3-a9ce-4a5c-b41a-13fd64d0d629img-20170118103552-751.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/88e92b9b-3822-48e3-9618-6382496c9e37img-20170118103552-751.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/8f928bba-2132-48d7-be56-93070d49868818d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/925137a6-6427-4763-ba9c-b326939e8192ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9272b39f-88da-49f7-82b0-486bb6137e49a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/953be5b0-00dd-4c26-8edf-352e81fbdeb2img-20171229163845-677.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/954383cb-a9fd-4197-8540-61d2cd2949bfimg-20170118103556-498.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/96adfa27-4b38-4238-9b49-2d97e64595f9d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/97472a4f-c12b-445b-bd1a-184b1d88707ba9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/97fbcd34-a968-489d-b4a2-52251a18ba90woman-759688_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/98a5ec44-33a8-4bad-9eac-28987e6ea8faae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/98d2a430-b26c-43c5-81eb-f80d4d600414b22f01632df5bcc623aacb5b250ddf55.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9900492f-af9d-4c6c-8dab-40918f4984d0a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/99680a6b-cc69-4972-8964-2cba3091e2ee18d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9b4aeb6e-7671-4e09-a344-98f5c43713ebimg-20170118103556-498.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9d0e6c16-307d-4372-8073-7d8048c331a718d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9edf15ff-0567-4ba9-a0b2-7c30f224869aae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9f2c1453-4d7d-4453-9717-1d0b074f950d6dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9fc4d49b-c349-4aae-b48d-f38d1a1d10f2ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a10f8c8e-12ba-4393-81a1-89b9dbee36f7ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a2362798-0200-4722-bf93-5e8ac4ee3e90ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a2c2d858-ee5e-4b32-b253-5a050691dce46dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a4583938-077f-4555-a656-6aa7a1e1813818d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/abdcee30-8f4a-4f3b-ace4-e819d3112c9518d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ad71b7ac-3ba6-4533-b57d-57e5c5abe847ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b16ba289-7ca7-47c3-8841-6f0f0cb603e06dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b3f1132c-8e1f-4320-8b6c-c12a12ce2d52a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b661fdfb-a858-43d1-b5e7-1dc980f15dd1ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b7aab0b6-624b-4a68-8b86-4e944b24fd0618d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b87802ae-8a23-4d13-9f73-e80ddee17bd0d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c19056e3-1628-4fc8-814d-2fd7e9b3f9ffae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c1a2b9f1-e995-4ba5-94e8-80cc49203e7cd0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c63f2e86-a282-4959-a94a-06793148fc2218d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c70eb04f-0ae5-47e5-a9cd-ba4149b2f2ccpexels-murat-esibatir-4355692.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c7346787-3ce5-4a04-b7c9-f84cfb67fc82b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c80ac993-3fc1-4745-b15e-83ff2b9467ddb22f01632df5bcc623aacb5b250ddf55.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/d77337f2-66fd-4e5c-8e0b-103d021c3420b9feb721dcc9ce5d3403716153b4fe45.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/dd202cd8-6912-43d3-b3b1-14997731c1a6a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e22021d6-7f94-4229-bde0-be0ed97f6411img-20170118103115-872.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e2c7461c-6893-4079-b973-9b9f0f67da73d0d179d2f5bdd3b714f0fda8a8d9208d.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e499b74e-1e82-4d35-b191-ae6aecc39234ae63641a6ee9fcdc5380c776d82aee07.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e52299ae-28f1-426f-b42e-c4fc798d408218d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e56d3269-e27a-4358-9555-ffcbfc6822ef18d91d947478ab7b916b66bd1262d69f.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e7415042-caf6-4f93-82c8-8df9f2b59ce2a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/eccd206f-fbd6-4f20-866c-7268bb89c11agirl-254708_1920.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/f38e3166-5e61-4a8c-9ac5-cd3752c80fc6a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/f3a722a6-3fc0-4af8-be3b-43f1b34554e5b22f01632df5bcc623aacb5b250ddf55.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/fbe53c8b-25c7-45fb-8e21-5cb6ba6b5518a9b1791f6587149839ca31b4c9fb0b61.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/fc363d7e-2c72-467d-b1e6-9d1f2dbb2463b22f01632df5bcc623aacb5b250ddf55.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ff00b9f1-e46d-423a-81af-a57cde8afd9a6dcafaaff014a880240f7dd3e6a85d54.webp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/middleware/file.js" beforeDir="false" afterPath="$PROJECT_DIR$/middleware/file.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/escorts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/escorts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/model.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/model.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +145,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="ProjectId" id="1jMczAM5kFx8rVgFoqunSPcXbIT" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -37,7 +159,9 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../basic2" />
+    <property name="javascript.nodejs.core.library.configured.version" value="14.14.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -51,6 +175,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\images" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\sistemphoto" />
     </key>
@@ -99,7 +224,23 @@
       <workItem from="1605893925346" duration="116000" />
       <workItem from="1605894062028" duration="1693000" />
       <workItem from="1605895816989" duration="8692000" />
-      <workItem from="1606039916652" duration="9370000" />
+      <workItem from="1606039916652" duration="28062000" />
+      <workItem from="1606116054589" duration="2582000" />
+      <workItem from="1606119583244" duration="596000" />
+      <workItem from="1606120392222" duration="98000" />
+      <workItem from="1606120664615" duration="526000" />
+      <workItem from="1606121400548" duration="141000" />
+      <workItem from="1606121728003" duration="594000" />
+      <workItem from="1606124441103" duration="85000" />
+      <workItem from="1606124679238" duration="28000" />
+      <workItem from="1606125074559" duration="337000" />
+      <workItem from="1606125496657" duration="595000" />
+      <workItem from="1606129267772" duration="594000" />
+      <workItem from="1606130884169" duration="781000" />
+      <workItem from="1606131982194" duration="9180000" />
+      <workItem from="1606204869388" duration="29959000" />
+      <workItem from="1606240920361" duration="2728000" />
+      <workItem from="1606247111590" duration="14365000" />
     </task>
     <servers />
   </component>
@@ -110,10 +251,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1604163739698">
+    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606072645409">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1604163739698" />
+    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606072645409" />
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1605811500385">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -130,6 +271,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606047248294" />
+    <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606254276580">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1606254276580" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605904305480">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

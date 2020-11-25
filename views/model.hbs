@@ -63,9 +63,6 @@
                     <td data-balance="{{object.price.[0]}}"></td>
                     <td data-balance="{{object.price.[1]}}"></td>
                     <td data-balance="{{object.price.[2]}}"></td>
-                    <!--                    <td>{{object.price.[0]}}</td>-->
-                    <!--                    <td>{{object.price.[1]}}</td>-->
-                    <!--                    <td>{{object.price.[2]}}</td>-->
                 </tr>
                 </tbody>
             </table>
@@ -137,7 +134,7 @@
                         class="large material-icons">phone</i></a></li>
             {{/if}}
             {{#if object.phone.[1]}}
-                <li><a href=https://wa.me/{{object.phone.[1]}}" class="btn-floating green"><i
+                <li><a href="https://wa.me/{{object.phone.[1]}}?text=Привет! Я пишу с сайта ZODIAK" class="btn-floating green"><i
                         class="fab fa-whatsapp"></i></a></li>
             {{/if}}
             {{#if object.phone.[2]}}
@@ -146,7 +143,7 @@
                 </li>
             {{/if}}
             {{#if object.phone.[3]}}
-                <li><a href="https://telegram.im/{{object.phone.[3]}}" class="btn-floating  light-blue"><i
+                <li><a href="https://t.me/{{object.phone.[3]}}" class="btn-floating  light-blue"><i
                         class="fab fa-telegram"></i></a>
                 </li>
             {{/if}}
