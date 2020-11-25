@@ -106,6 +106,7 @@ router.get('/city/:name/page/:page', async (req, res) => {
 
 router.get('/id/:id', async (req, res) => {
     const object = await Objects.findById(req.params.id).where({active: 1})
+    const city = await City.getAll()
     const review = await Review.find({objectId: req.params.id})
     const user = req.session.user
     const s = new Date()
@@ -113,7 +114,7 @@ router.get('/id/:id', async (req, res) => {
     console.log(object.name)
     await res.render('model', {
         title: `Model ${object.name}`,
-        object, review, rcm, user
+        object, review, rcm, user , city
     })
 })
 
