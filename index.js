@@ -21,7 +21,6 @@ const sortRoutes = require('./routes/sort')
 const cronRoutes = require('./routes/cron')
 const keys = require('./keys')
 const fileMiddleware = require('./middleware/file')
-const meta = require('./headers/meta')
 const varMiddleware = require('./middleware/variables')
 
 
@@ -40,17 +39,13 @@ const store = new MongoStore({
     uri: keys.MONGODB_URI
 })
 
-
-
-
 app.engine('hbs',hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views','views')
 app.use(express.static('public'))
 app.use(express.static('data'));
-app.use('/jquery', express.static('jquery'))
+app.use(express.static(path.join(__dirname,'jquery')))
 app.use(express.static(path.join(__dirname,'images')))
-// app.use('/images',express.static(path.join(__dirname,'images')))
 app.use(express.urlencoded({extended: true}))
 
 app.use(session({
@@ -62,7 +57,6 @@ app.use(session({
 app.use(fileMiddleware.array('photo[]'))
 app.use(varMiddleware)
 app.use(flash())
-// app.use(helmet())
 app.use(compression())
 app.use(homeRoutes)
 app.use(escortRoutes)

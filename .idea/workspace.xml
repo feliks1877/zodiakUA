@@ -3,8 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/function/savePhoto.js" beforeDir="false" afterPath="$PROJECT_DIR$/function/savePhoto.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/add.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/escorts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/escorts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/lk.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/lk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/lk.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +122,7 @@
       <workItem from="1606131982194" duration="9180000" />
       <workItem from="1606204869388" duration="29959000" />
       <workItem from="1606240920361" duration="2728000" />
-      <workItem from="1606247111590" duration="19975000" />
+      <workItem from="1606247111590" duration="23784000" />
     </task>
     <servers />
   </component>
@@ -160,10 +165,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605904305480" />
-    <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1606058053161">
+    <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1606311823636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1606058053161" />
+    <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1606311823636" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1605881713076">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

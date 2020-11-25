@@ -58,19 +58,17 @@ router.post('/add', async (req, res) => {
         await req.files.forEach((el)=> {
             new Promise((resolve,reject) => {
                 const data = savePhoto(el)
-
                 resolve(data)
                 reject(false)
-
             }).then(data => {
                 console.log('Save photo',data)
             })
         })
+        req.flash('message', 'Объявление успешно добавлено')
         res.redirect('/escort')
     }catch (e) {
         console.log(e)
     }
-
 })
 
 module.exports = router

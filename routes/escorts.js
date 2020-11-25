@@ -1,23 +1,12 @@
-const fs = require('fs');
 const {Router} = require('express')
 const City = require('../models/city')
 const Objects = require('../models/objects')
 const Review = require('../models/review')
 const meta = require('../headers/meta')
-// const aws = require('aws-sdk')
-// const Jimp = require('jimp')
+const flash = require('connect-flash')
 const savePhoto = require('../function/savePhoto')
-// const keys = require('../keys')
 const router = Router()
-// aws.config.update({
-//     "accessKeyId": keys.AWS_ACCESS_KEY_ID,
-//     "secretAccessKey": keys.AWS_SECRET_ACCESS_KEY,
-//     "region": 'us-east-2'
-// });
-// let s3 = new aws.S3({
-//     apiVersion: "2006-03-01",
-//     params: {Bucket: keys.S3_BUCKET}
-// })
+
 
 function filBalance(arr, ob) {
     for (let i = 0; i < arr.length; i++) {
@@ -150,10 +139,13 @@ router.post('/edit', async (req, res) => {
                 req.body.photo.unshift(el.filename)
                 new Promise((resolve,reject) => {
                    const data = savePhoto(el)
-
-                    resolve(data)
-                    reject(false)
-
+                    if (data === true){
+                        resolve(data)
+                    }else{
+                        req.flash('error', 'Что то пошло не так, попробуйте позже')
+                        res.redirect('/lk')
+                        reject(false)
+                    }
                 }).then(data => {
                     console.log('Save photo',data)
                 })
@@ -166,8 +158,10 @@ router.post('/edit', async (req, res) => {
         }
 
         await Objects.findByIdAndUpdate(req.body.id, req.body)
-        await res.redirect('/lk')
+        req.flash('message', 'Объявление успешно отредактировано')
+        res.redirect('/lk')
     } catch (e) {
+        req.flash('message', 'Ошибка редактирования, повторите попытку позже')
         console.log('Редактирование', e)
         res.redirect('/lk')
     }

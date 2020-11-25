@@ -119,18 +119,21 @@ removeImg.forEach((e) => {
 })
 /////////////////// ПРОВЕРЯЮ РАЗМЕР ЗАГРРУЖАЕМЫХ ФОТО МАКСИМУМ 2МГБ////////////
 let photoSize = document.getElementById('photo')
-photoSize.onchange = () => {
-    const selectFiles = [...photoSize.files]
-    console.log(selectFiles)
-    selectFiles.forEach(e => {
-        console.log(e.size)
-        if (e.size > 2000000){
-            alert('Выбраный фаил превышает допустимый размер в два мегабайта, пожалуйста выберите другой фаил')
-            document.getElementById('btn-lk').setAttribute('disabled', true)
-            document.getElementById('btn-lk').textContent = 'Выбери другой файл'
-        }else{
-            document.getElementById('btn-lk').removeAttribute('disabled')
-            document.getElementById('btn-lk').textContent = 'Отредактировать'
-        }
-    })
+if(photoSize){
+    photoSize.onchange = () => {
+        const selectFiles = [...photoSize.files]
+        console.log(selectFiles)
+        selectFiles.forEach(e => {
+            console.log(e.size)
+            if (e.size > 2000000){
+                alert('Выбраный фаил превышает допустимый размер в два мегабайта, пожалуйста выберите другой фаил')
+                document.getElementById('btn-lk').setAttribute('disabled', true)
+                document.getElementById('btn-lk').textContent = 'Выбери другой файл'
+            }else{
+                document.getElementById('btn-lk').removeAttribute('disabled')
+                document.getElementById('btn-lk').textContent = 'Отредактировать'
+            }
+        })
+    }
 }
+

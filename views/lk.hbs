@@ -1,5 +1,9 @@
+
 <div id="lk">
     <h5>Личный кабинет</h5>
+    {{#if message}}
+        <p id="err" data-error="{{message}}"></p>
+    {{/if}}
     <ul class="collection">
         <li class="collection-item avatar">
             <a href="/add" class="btn-floating waves-effect waves-light light-blue darken-3"><i class="material-icons">add</i></a>

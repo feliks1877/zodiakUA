@@ -31,6 +31,7 @@ router.get('/lk', async (req, res) => {
     const objects = await Object.find().where('userId').equals(req.session.user._id).sort({date: 'desc'})
     res.render('lk', {
         title: req.session.user.login,
+        message: req.flash('message'),
         objects,
         user
     })}else {
