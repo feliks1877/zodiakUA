@@ -56,7 +56,15 @@ router.post('/add', async (req, res) => {
         const balance = user.balance - 25
         await User.updateOne({_id: req.session.user._id}, {balance: balance})
         await req.files.forEach((el)=> {
-            savePhoto(el)
+            new Promise((resolve,reject) => {
+                const data = savePhoto(el)
+
+                resolve(data)
+                reject(false)
+
+            }).then(data => {
+                console.log('Save photo',data)
+            })
         })
         res.redirect('/escort')
     }catch (e) {
