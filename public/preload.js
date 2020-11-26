@@ -1,4 +1,4 @@
-export const preload = window.onload = () => {
+export const preload = window.setTimeout( () => {
     let elem = document.createElement('div')
     elem.classList.add('preload')
     let img = new Image()
@@ -6,7 +6,7 @@ export const preload = window.onload = () => {
     img.src = "/images/LOGO.svg"
     elem.appendChild(img)
     console.log('comen')
-    document.querySelector('nav').insertAdjacentElement('beforebegin', elem)
+    document.querySelector('html').insertAdjacentElement('afterbegin', elem)
     anime({
         targets: elem.children,
         scale: 0.7,
@@ -15,8 +15,9 @@ export const preload = window.onload = () => {
         loop: true,
         easing: 'cubicBezier(.5, .05, .1, .3)'
     });
-    window.setTimeout(function () {
-        elem.remove()
-    }, 2500);
-
-}
+    window.onload = () => {
+        window.setTimeout(function () {
+            elem.remove()
+        }, 1000);
+    }
+},0)
