@@ -397,5 +397,6 @@ form > .range-field {
 @media(min-width: 600px) {
     .log--3{
         display: none;
+        position: absolute;
     }
 }
