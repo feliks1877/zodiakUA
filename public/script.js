@@ -1,7 +1,6 @@
 /////////////////////ВЫПАДЮЩИЙ СПИСОК////////////////////////////////
 let labelDrop = document.getElementById('label--drop-down')
 labelDrop.onclick = () => {
-
     labelDrop.nextElementSibling.classList.toggle('status')
 }
 

@@ -387,3 +387,15 @@ form > .range-field {
 .href--city {
     color: #14a99b !important;
 }
+.log--3{
+    position: absolute;
+    z-index: 5;
+    right: -12px;
+    width: 151px;
+    top: -34px;
+}
+@media(min-width: 600px) {
+    .log--3{
+        display: none;
+    }
+}
