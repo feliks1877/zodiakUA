@@ -389,7 +389,7 @@ form > .range-field {
     color: #14a99b !important;
 }
 .log--3{
-    position: absolute;
+    position: fixed;
     z-index: 5;
     right: -22px;
     width: 151px;
