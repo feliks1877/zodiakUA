@@ -5,6 +5,7 @@ window.onload = () => {
     img.classList.add('logoMy')
     img.src = "/images/LOGO.svg"
     elem.appendChild(img)
+    console.log('comen')
     document.querySelector('nav').insertAdjacentElement('beforebegin', elem)
     anime({
         targets: elem.children,
