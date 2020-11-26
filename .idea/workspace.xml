@@ -2,41 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/anime.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jquery.fancybox.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jquery.fancybox.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/jquery.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/preload.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/015ed16c-9819-4a71-8fe4-a557f0f00823.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/03979744-57a9-438e-8d80-842245c74033.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/37083221-68da-4169-85c5-e4188eddaf0b.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/37905604-dde8-4fa0-8204-fcc9894c6341.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/3e1eb463-c34d-4521-8ef6-35e1b1ba10ee.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/415b8794-bd8c-4e1d-b615-d3d4b4015cbf.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/7f037e8a-b513-445a-b4bb-5be64559d27a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/88e2a620-3019-4d5e-8745-6f3e16b46051.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ae4b1f3d-3acb-4162-87a2-2eea92e28d09.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/b4da8e2b-c697-4ca7-8b2f-350b4b25dab1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/c924ccd4-b41e-45ba-b054-895b9f524318.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/ca1fc168-fc7f-4d27-a4c9-ba5e1a569db2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/dbfa65b8-bfd2-454b-9df5-f231fd89b495.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/e1c19a29-00f8-438f-9753-0ce45351c19a.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/eb269159-85a4-4495-901e-a657d2750dd8.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/f62a769f-2801-4a33-b58a-bac9e0902e15.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/images/f7540cb3-2de1-469c-b16f-2fe4f55ffe2c.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/objects.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/objects.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/escorts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/escorts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/layouts/main.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/layouts/main.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/footer.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/footer.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/head.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/head.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/partials/navbar.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/navbar.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -153,7 +119,7 @@
       <workItem from="1606204869388" duration="29959000" />
       <workItem from="1606240920361" duration="2728000" />
       <workItem from="1606247111590" duration="47618000" />
-      <workItem from="1606371969040" duration="11804000" />
+      <workItem from="1606371969040" duration="13833000" />
     </task>
     <servers />
   </component>
@@ -176,10 +142,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1605811500385" />
-    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1606047244558">
+    <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1606387785353">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606047244558" />
+    <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606387785353" />
     <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1605895281097">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -192,10 +158,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1606254276580" />
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1605904305480">
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606387760538">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1605904305480" />
+    <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606387760538" />
     <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1606311823636">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
