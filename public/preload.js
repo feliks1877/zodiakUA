@@ -1,4 +1,4 @@
-window.onload = () => {
+export const preload = window.onload = () => {
     let elem = document.createElement('div')
     elem.classList.add('preload')
     let img = new Image()
