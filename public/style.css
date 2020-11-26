@@ -395,7 +395,7 @@ form > .range-field {
     width: 151px;
     top: -31px;
 }
-@media(min-width: 600px) {
+@media(min-width: 800px) {
     .log--3{
         display: none;
     }
