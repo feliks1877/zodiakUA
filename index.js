@@ -41,6 +41,9 @@ const store = new MongoStore({
 app.engine('hbs',hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views','views')
+
+app.use(compression())
+
 app.use(express.static('public'))
 app.use(express.static('data'))
 app.use('/images',express.static(path.join(__dirname,'images')))
@@ -55,7 +58,6 @@ app.use(session({
 app.use(fileMiddleware.array('photo[]'))
 app.use(varMiddleware)
 app.use(flash())
-app.use(compression())
 
 app.use(homeRoutes)
 app.use(escortRoutes)
