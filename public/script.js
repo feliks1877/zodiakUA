@@ -1,3 +1,9 @@
+/////////////////////ВЫПАДЮЩИЙ СПИСОК////////////////////////////////
+let labelDrop = document.getElementById('label--drop-down')
+labelDrop.onclick = () => {
+    labelDrop.nextElementSibling.classList.toggle('status')
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.sidenav');
     var elems = document.querySelectorAll('.carousel');
@@ -119,21 +125,23 @@ removeImg.forEach((e) => {
 })
 /////////////////// ПРОВЕРЯЮ РАЗМЕР ЗАГРРУЖАЕМЫХ ФОТО МАКСИМУМ 2МГБ////////////
 let photoSize = document.getElementById('photo')
-if(photoSize){
+if (photoSize) {
     photoSize.onchange = () => {
         const selectFiles = [...photoSize.files]
         console.log(selectFiles)
         selectFiles.forEach(e => {
             console.log(e.size)
-            if (e.size > 2000000){
+            if (e.size > 2000000) {
                 alert('Выбраный фаил превышает допустимый размер в два мегабайта, пожалуйста выберите другой фаил')
                 document.getElementById('btn-lk').setAttribute('disabled', true)
                 document.getElementById('btn-lk').textContent = 'Выбери другой файл'
-            }else{
+            } else {
                 document.getElementById('btn-lk').removeAttribute('disabled')
                 document.getElementById('btn-lk').textContent = 'Отредактировать'
             }
         })
     }
 }
+
+
 

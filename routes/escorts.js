@@ -111,9 +111,9 @@ router.get('/id/:id', async (req, res) => {
     const user = req.session.user
     const s = new Date()
     const rcm = await Objects.find({rcm: {$gte: s.setDate(s.getDate() - 1)}}).limit(4)
-    console.log(object.name)
     await res.render('model', {
         title: `Model ${object.name}`,
+        meta: object.description,
         object, review, rcm, user , city
     })
 })

@@ -13,8 +13,10 @@
   "author": "zodiak",
   "license": "ISC",
   "dependencies": {
+    "@fancyapps/fancybox": "^3.5.7",
     "@fortawesome/fontawesome-free": "^5.15.1",
     "@handlebars/allow-prototype-access": "^1.0.3",
+    "animejs": "^3.2.1",
     "aws-sdk": "^2.797.0",
     "compression": "^1.7.4",
     "connect-flash": "^0.1.1",
