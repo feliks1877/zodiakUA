@@ -1,4 +1,5 @@
-html{
+html,
+body{
     overflow-x: hidden;
 }
 .brand-logo{
@@ -390,9 +391,9 @@ form > .range-field {
 .log--3{
     position: absolute;
     z-index: 5;
-    right: -12px;
+    right: -22px;
     width: 151px;
-    top: -34px;
+    top: -31px;
 }
 @media(min-width: 600px) {
     .log--3{
