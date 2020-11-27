@@ -35,7 +35,8 @@ body{
 }
 .parallax > img{
     max-width: 400px;
-    height: auto;
+    min-height: 600px;
+    object-fit: coverdr;
 }
 .block1{
     padding: 0 20px;
@@ -366,7 +367,7 @@ form > .range-field {
     top: 0;
     background: white;
     width: 100%;
-    height: 387px;
+    height: 470px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
