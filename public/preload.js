@@ -14,9 +14,9 @@ export const preload = window.setTimeout( () => {
         loop: true,
         easing: 'cubicBezier(.5, .05, .1, .3)'
     });
-    window.onload = () => {
+    // window.onload = () => {
         window.setTimeout(function () {
             elem.remove()
-        }, 1000);
-    }
+        }, 3000);
+    // }
 },0)
