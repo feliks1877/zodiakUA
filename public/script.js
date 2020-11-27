@@ -1,8 +1,13 @@
 /////////////////////ВЫПАДЮЩИЙ СПИСОК////////////////////////////////
-let labelDrop = document.getElementById('label--drop-down')
-labelDrop.onclick = () => {
-    labelDrop.nextElementSibling.classList.toggle('status')
+let labelDrop = document.getElementsByName("label--drop-down")
+console.log(labelDrop.length)
+for(let i = 0;i < labelDrop.length;i++){
+    labelDrop[i].addEventListener('click',() => {
+        console.log('label',labelDrop[i].nextElementSibling)
+        labelDrop[i].nextElementSibling.classList.toggle('status')
+    })
 }
+
 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.sidenav');

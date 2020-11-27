@@ -362,35 +362,31 @@ form > .range-field {
     display: none;
 }
 
-#drop--down {
+.drop--down {
     position: absolute;
-    top: 0;
     background: white;
     width: 100%;
-    height: 54%;
+    height: 100%;
+    top: 0;
+    padding-top: 20px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
-
-#drop--down::-webkit-scrollbar {
+.lab{
+    margin-left: 31px;
+    margin-top: 7px;
+}
+.nameCity{
+    padding: 7px;
+    padding-left: 23px;
+}
+.drop--down::-webkit-scrollbar {
     display: none;
 }
 
 .city-region {
     margin-left: 10px;
 }
-
-#label--drop-down {
-    width: 100%;
-    left: 32px;
-    top: 12px;
-    position: relative;
-}
-
-#drop--down:nth-child(0) {
-    margin-top: 20px;
-}
-
 .href--city {
     color: #14a99b !important;
 }

@@ -1,7 +1,7 @@
 <nav>
     <div class="nav-wrapper purple">
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
-<!--        <a href="/escort" class="">ZODIAK</a>-->
+        <!--        <a href="/escort" class="">ZODIAK</a>-->
         <ul class="right hide-on-med-and-down">
             <li><a href="/">Главная</a></li>
             <li><a href="/escort">Escort</a></li>
@@ -14,26 +14,16 @@
             {{else}}
                 <li><a href="/login">Авторизация</a></li>
             {{/if}}
-            <!--            &lt;!&ndash; Dropdown Trigger &ndash;&gt;-->
-                <!--            {{#if city.length}}-->
-            <!--                <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Города<i class="material-icons right">arrow_drop_down</i></a>-->
-            <!--                </li>-->
-                <!--            {{/if}}-->
         </ul>
     </div>
 </nav>
 
-<ul class="sidenav" id="mobile-demo">
-    <li>
+<div class="sidenav" id="mobile-demo">
         <div class="user-view">
             <div class="background">
                 <img class="imgNav" src="https://cdn.pixabay.com/photo/2016/03/15/17/17/girl-1258739_1280.jpg">
 
-
-                <!--       -->
             </div>
-            <!--            <a href="#user"><img class="circle"-->
-            <!--                                 src="https://static10.tgstat.ru/channels/_100/2c/2c122d5fbe4031588c6e661b98ca99b3.jpg"></a>-->
             {{#if user.login}}
                 <a href="#name"><span class="white-text name">{{user.login}}</span></a>
                 <a href="#email"><span class="white-text email">{{user.email}}</span></a>
@@ -42,38 +32,32 @@
 
             {{/if}}
         </div>
-    </li>
-    <li><a href="/">Главная</a></li>
-    <li><a href="/escort">Escort</a></li>
-    <li><a href="/lux">LUX</a></li>
-    <li><a href="/work">Вакансии</a></li>
-    {{#if isAuth}}
-        <li><a href="/lk">Личный кабинет</a></li>
-        <li><a href="/add">Добавить объявление</a></li>
-        <li><a href="/logout">Выйти</a></li>
-    {{else}}
-        <li><a href="/login">Авторизация</a></li>
-    {{/if}}
-    <div id="label--drop-down"><strong>Выбрать город</strong></div>
-    <div id="drop--down" class="status">
-        {{#each city}}
-            <li><a class="href--city" href="/escort/Kiev">Киев</a></li>
-            <h6 class="city-region">{{name}}</h6>
-            {{#each cities}}
-                <li><a class="href--city" href="/escort/{{nameEn}}">{{name}}</a></li>
-            {{/each}}
-        {{/each}}
-    </div>
-        <!--    {{#if city.length}}-->
-    <!--    <li><a class="dropdown-trigger" href="#!" data-target="dropdown12">Города<i class="material-icons right">arrow_drop_down</i></a></li>-->
-        <!--    {{/if}}-->
-</ul>
-<!--<div class="preload--none" id="preload">-->
-<!--    &lt;!&ndash;    <svg>&ndash;&gt;-->
-<!--    &lt;!&ndash;        <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="LOGO.svg#logo"></use>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </svg>&ndash;&gt;-->
-<!--    <object id="logoMy" data="/images/LOGO.svg" type="image/svg+xml"></object>-->
 
-<!--</div>-->
+    <ul>
+        <li><a href="/">Главная</a></li>
+        <li><a href="/escort">Escort</a></li>
+        <li><a href="/lux">LUX</a></li>
+        <li><a href="/work">Вакансии</a></li>
+        {{#if isAuth}}
+            <li><a href="/lk">Личный кабинет</a></li>
+            <li><a href="/add">Добавить объявление</a></li>
+            <li><a href="/logout">Выйти</a></li>
+        {{else}}
+            <li><a href="/login">Авторизация</a></li>
+        {{/if}}
+        <div name="label--drop-down" class="drop-down lab"><strong>Выбрать город</strong></div>
+        <div class="status drop--down">
+            {{#each city}}
+                <div name="label--drop-down" class="drop-down nameCity"><strong>{{name}}</strong></div>
+                <div class="status drop--down">
+                    {{#each cities}}
+                        <li><a class="href--city" href="/escort/{{nameEn}}">{{name}}</a></li>
+                    {{/each}}
+                </div>
+            {{/each}}
+        </div>
+
+    </ul>
+</div>
 
 
