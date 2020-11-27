@@ -5,6 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/escort.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/escort.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/model.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/model.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/partials/head.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/head.hbs" afterDir="false" />
@@ -125,7 +126,7 @@
       <workItem from="1606240920361" duration="2728000" />
       <workItem from="1606247111590" duration="47618000" />
       <workItem from="1606371969040" duration="32245000" />
-      <workItem from="1606428570993" duration="15187000" />
+      <workItem from="1606428570993" duration="16008000" />
     </task>
     <servers />
   </component>
