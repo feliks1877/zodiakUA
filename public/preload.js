@@ -1,4 +1,4 @@
-export const preload = window.setTimeout( () => {
+export const preload = window.setTimeout(() => {
     let elem = document.createElement('div')
     elem.classList.add('preload')
     let img = new Image()
@@ -14,9 +14,9 @@ export const preload = window.setTimeout( () => {
         loop: true,
         easing: 'cubicBezier(.5, .05, .1, .3)'
     });
-    // window.onload = () => {
+    window.onload = () => {
         window.setTimeout(function () {
             elem.remove()
         }, 2000);
-    // }
-},0)
+    }
+}, 0)
