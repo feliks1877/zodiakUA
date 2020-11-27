@@ -369,6 +369,7 @@ form > .range-field {
     height: 100%;
     top: 0;
     padding-top: 20px;
+    padding-bottom: 80px;
     overflow-y: scroll;
     overflow-x: hidden;
 }
@@ -404,4 +405,14 @@ form > .range-field {
 }
 .row .col.s3 {
     z-index: 4;
+}
+.closes{
+    position: absolute;
+    z-index: 1000;
+    top: 8px;
+    width: 39%;
+    height: 21px;
+    left: 214px;
+    font-size: medium;
+    color: #1e1e1e;
 }

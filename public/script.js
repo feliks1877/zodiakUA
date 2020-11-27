@@ -1,10 +1,22 @@
 /////////////////////ВЫПАДЮЩИЙ СПИСОК////////////////////////////////
 let labelDrop = document.getElementsByName("label--drop-down")
-console.log(labelDrop.length)
-for(let i = 0;i < labelDrop.length;i++){
-    labelDrop[i].addEventListener('click',() => {
-        console.log('label',labelDrop[i].nextElementSibling)
+for (let i = 0; i < labelDrop.length; i++) {
+    labelDrop[i].addEventListener('click', () => {
         labelDrop[i].nextElementSibling.classList.toggle('status')
+        if (document.getElementsByClassName('closes').length === 0) {
+            let elem = document.createElement('div')
+            elem.classList.add('closes')
+            elem.innerHTML = '<p>Закрыть</p>'
+            document.getElementById('mobile-demo').insertAdjacentElement('afterbegin', elem)
+            elem.addEventListener('click', () => {
+                labelDrop.forEach(e => {
+                    if (e.nextElementSibling.classList[0] !== "status") {
+                        e.nextElementSibling.classList.add('status')
+                    }
+                })
+                elem.remove()
+            })
+        }
     })
 }
 
