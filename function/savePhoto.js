@@ -51,7 +51,7 @@ module.exports = function savePhoto(el) {
                     return data.getBufferAsync(Jimp.AUTO)
                 }).then(buffer => {
                 const params = {
-                    Bucket: keys.S3_BUCKET,
+                    Bucket: keys.S3_BUCKET+'/imgFancy',
                     Key: el.filename,
                     Body: buffer,
                     ContentType: el.mimetype,
@@ -64,6 +64,26 @@ module.exports = function savePhoto(el) {
                         console.log("Successfully uploaded data to myBucket/myKey", data);
                     }
                 })
+               Jimp.read(Buffer.from(buffer, 'base64')).then(e => {
+                   e.quality(50)
+                   return e.getBufferAsync(Jimp.AUTO)
+               }).then(compressImage => {
+                   const paramsForFancy = {
+                       Bucket: keys.S3_BUCKET+'/img',
+                       Key: el.filename,
+                       Body: compressImage,
+                       ContentType: el.mimetype,
+                       ACL: 'public-read'
+                   };
+                   s3.putObject(paramsForFancy, function (err, data) {
+                       if (err) {
+                           console.log(err)
+                       } else {
+                           console.log("Successfully uploaded data to myBucket/myKey", data);
+                       }
+                   })
+               })
+
             })
         }
     });

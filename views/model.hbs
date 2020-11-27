@@ -1,5 +1,5 @@
 <div class="parallax-container">
-    <div class="parallax"><img src="https://zodaikapp.s3.us-east-2.amazonaws.com/{{object.photo.[0]}}"></div>
+    <div class="parallax"><img src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{object.photo.[0]}}"></div>
     </br>
     <h1>{{object.name}}
         {{#if object.veryfication}}
@@ -15,8 +15,8 @@
         {{#if object.photo.length}}
             {{#each object.photo}}
                 {{#if this}}
-                    <a data-fancybox="gallery" class="carousel-item" href="https://zodaikapp.s3.us-east-2.amazonaws.com/{{this}}"><img class="crsl"
-                                                                                          src="https://zodaikapp.s3.us-east-2.amazonaws.com/{{this}}"></a>
+                    <a data-fancybox="gallery" class="carousel-item" href="https://zodaikapp.s3.us-east-2.amazonaws.com/imgFancy/{{this}}"><img class="crsl"
+                                                                                          src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"></a>
                 {{/if}}
             {{/each}}
         {{/if}}
@@ -182,7 +182,7 @@
 
                     <a href="/id/{{id}}">
                         <div class="card-image es">
-                            <img src="https://zodaikapp.s3.us-east-2.amazonaws.com/{{photo.[0]}}" alt="Escort Ukraine">
+                            <img src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}" alt="Escort Ukraine">
                             <div class="card-title">
                                 <span>{{city}}</span><br>
                             <span>{{name}}

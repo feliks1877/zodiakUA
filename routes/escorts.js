@@ -7,7 +7,6 @@ const flash = require('connect-flash')
 const savePhoto = require('../function/savePhoto')
 const router = Router()
 
-
 function filBalance(arr, ob) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i].userId.balance > 0) {
