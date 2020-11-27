@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/images/favicon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/headers/meta.js" beforeDir="false" afterPath="$PROJECT_DIR$/headers/meta.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/sort.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/head.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/head.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,8 +60,8 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\images" />
-      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
+      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\sistemphoto" />
     </key>
   </component>
@@ -121,7 +127,7 @@
       <workItem from="1606240920361" duration="2728000" />
       <workItem from="1606247111590" duration="47618000" />
       <workItem from="1606371969040" duration="32245000" />
-      <workItem from="1606428570993" duration="29937000" />
+      <workItem from="1606428570993" duration="35128000" />
     </task>
     <servers />
   </component>

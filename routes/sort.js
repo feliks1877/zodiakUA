@@ -10,6 +10,17 @@ const filterAllCity = require('../function/filterAllCity')
 const tit = require('../function/title')
 const router = Router()
 
+function metaDes(f){
+    if(f === 'very'){
+        let metaR = `Индивидуалки предсталенные в этом разделе реальные и соответсвуют фотографиям`
+        return metaR
+    }else if(f === `reiting`){
+        let metaR = `Индивидуалки с рельными оценками и отзывами от настоящих клиентов. Самая актульная информация`
+        return metaR
+    }
+}
+
+
 function pagination(arr) {
     const p = arr.length / 6
     const page = []
@@ -33,9 +44,12 @@ router.get('/sort/:filter', async (req, res) => {
     const objects = await filterAll(filter,pageNumber)
     let title = await tit(filter)
     const page = await pagination(arrLen)
+    console.log(filter)
+
+   let metaTag = metaDes(filter)
     await res.render('sort', {
         title: `${title}`,
-        meta: ``,
+        meta: `${title}, ${metaTag}`,
         objects, city, user, filter, page
     })
 })
@@ -67,7 +81,7 @@ router.get('/city/:city/sort/:filter/page/:page', async (req, res) => {
     const page = await pagination(arrLen)
     await res.render('sort', {
         title: `${title} ${cityes.name}`,
-        meta: ``,
+        meta: `${title} ${cityes.name}`,
         cityes,objects, city, user, filter, page
     })
 })
@@ -83,7 +97,7 @@ router.get('/city/:city/sort/:filter', async (req, res) => {
     const page = await pagination(arrLen)
     await res.render('sort', {
         title: `${title} ${cityes.name}`,
-        meta: ``,
+        meta: `${title} ${cityes.name}`,
         cityes,objects, city, user, filter, page
     })
 })
