@@ -44,9 +44,21 @@ app.set('views','views')
 
 app.use(compression())
 
-app.use(express.static('public'))
-app.use(express.static('data'))
-app.use('/images',express.static(path.join(__dirname,'images')))
+const options = {
+    dotfiles: 'ignore',
+    etag: false,
+    extensions: ['htm', 'html'],
+    index: false,
+    maxAge: '3d',
+    redirect: false,
+    setHeaders: function (res, path, stat) {
+        res.set('x-timestamp', Date.now())
+    }
+}
+
+app.use(express.static('public',options))
+app.use(express.static('data',options))
+app.use('/images',express.static(path.join(__dirname,'images'),options))
 app.use(express.urlencoded({extended: true}))
 
 app.use(session({
