@@ -3,7 +3,6 @@ const City = require('../models/city')
 const Objects = require('../models/objects')
 const Review = require('../models/review')
 const meta = require('../headers/meta')
-const flash = require('connect-flash')
 const savePhoto = require('../function/savePhoto')
 const router = Router()
 

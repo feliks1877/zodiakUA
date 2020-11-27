@@ -45,9 +45,9 @@ router.post('/register', async (req, res) => {
                 if (err) {
                     throw err
                 } else {
-                    req.flash('error', 'Удачная регистрация')
                     isAuth: true,
-                        res.redirect('/lk')
+                    req.flash('error', 'Удачная регистрация')
+                    res.redirect('/lk')
                 }
             })
             await transporter.sendMail(regEmail(user.email))

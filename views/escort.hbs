@@ -1,5 +1,6 @@
 <div class="parallax-container">
-    <div class="parallax"><img id="imgParallax" src="https://zodaikapp.s3.us-east-2.amazonaws.com/039f86b23af7.jpg">
+    <div class="parallax">
+        <img id="imgParallax" src="https://zodaikapp.s3.us-east-2.amazonaws.com/039f86b23af7.jpg">
     </div>
     <h1>ESCORT</h1>
     <div class="fil-btn">
@@ -55,18 +56,18 @@
             <li class="waves-effect"><a href="" id="next"><i class="material-icons">chevron_right</i></a></li>
         </ul>
     {{/if}}
-    {{else}}
-             <h5 class="pagination">Оъявлений нет
-             <a href="/escort" class="btn-floating waves-effect waves-light blue-grey lighten-3"> <i
+{{else}}
+    <h5 class="pagination">Оъявлений нет
+        <a href="/escort" class="btn-floating waves-effect waves-light blue-grey lighten-3"> <i
                 class="large material-icons">arrow_back</i>
             <</a></h5>
-    {{/if}}
+{{/if}}
 <script>
     let imgParallax = document.getElementById('imgParallax')
 
     console.log(window.matchMedia(`(min-width: 600px)`).matches)
-    if(window.matchMedia(`(min-width: 600px)`).matches){
-        imgParallax.setAttribute('src','https://progorodsamara.ru/userfiles/picoriginal/img-20170118103115-872.jpg')
+    if (window.matchMedia(`(min-width: 600px)`).matches) {
+        imgParallax.setAttribute('src', 'https://progorodsamara.ru/userfiles/picoriginal/img-20170118103115-872.jpg')
     }
 
 </script>

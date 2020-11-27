@@ -5,6 +5,9 @@
 </div>
 <hr class="hr-index">
 <div class="container">
+    {{#if error}}
+        <p id="err" data-error="{{error}}"></p>
+    {{/if}}
     <div class="row">
         <div class="col 14 s12 m4">
             <div class="card sticky-action">
