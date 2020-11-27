@@ -18,6 +18,7 @@ const authRoutes = require('./routes/auth')
 const lkRoutes = require('./routes/lk')
 const sortRoutes = require('./routes/sort')
 const cronRoutes = require('./routes/cron')
+let favicon = require('serve-favicon')
 const keys = require('./keys')
 const fileMiddleware = require('./middleware/file')
 const varMiddleware = require('./middleware/variables')
@@ -59,6 +60,7 @@ const options = {
 app.use(express.static('public',options))
 app.use(express.static('data',options))
 app.use('/images',express.static(path.join(__dirname,'images'),options))
+app.use(favicon(path.join(__dirname,'public', 'favicon.ico')))
 app.use(express.urlencoded({extended: true}))
 
 app.use(session({
