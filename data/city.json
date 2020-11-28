@@ -34,73 +34,73 @@
       },
       {
         "name": "Джанкой",
-        "nameEn": "djankoi",
+        "nameEn": "Djankoi",
         "lat": "45.7086111",
         "lng": "34.3933333"
       },
       {
         "name": "Евпатория",
-        "nameEn": "evpatoriya",
+        "nameEn": "Evpatoriya",
         "lat": "45.2036111",
         "lng": "33.3613889"
       },
       {
         "name": "Керчь",
-        "nameEn": "kerch",
+        "nameEn": "Kerch",
         "lat": "45.33786",
         "lng": "36.458401"
       },
       {
         "name": "Красноперекопск",
-        "nameEn": "krasnoprekopsk",
+        "nameEn": "Krasnoprekopsk",
         "lat": "45.962849",
         "lng": "33.787121"
       },
       {
         "name": "Саки",
-        "nameEn": "saki",
+        "nameEn": "Saki",
         "lat": "45.1336111",
         "lng": "33.5772222"
       },
       {
         "name": "Севастополь",
-        "nameEn": "sevastopol",
+        "nameEn": "Sevastopol",
         "lat": "44.60000001",
         "lng": "33.533333343333"
       },
       {
         "name": "Симферополь",
-        "nameEn": "simferopol",
+        "nameEn": "Simferopol",
         "lat": "44.9480556",
         "lng": "34.1041667"
       },
       {
         "name": "Старый Крым",
-        "nameEn": "old krym",
+        "nameEn": "Old Crimea",
         "lat": "45.0291667",
         "lng": "35.0886111"
       },
       {
         "name": "Судак",
-        "nameEn": "sudak",
+        "nameEn": "Sudak",
         "lat": "44.858799",
         "lng": "34.974979"
       },
       {
         "name": "Феодосия",
-        "nameEn": "feodosiya",
+        "nameEn": "Feodosiya",
         "lat": "45.0488889",
         "lng": "35.3791667"
       },
       {
         "name": "Щёлкино",
-        "nameEn": "shelkino",
+        "nameEn": "Shelkino",
         "lat": "45.4281023",
         "lng": "35.8165187"
       },
       {
         "name": "Ялта",
-        "nameEn": "yalta",
+        "nameEn": "Yalta",
         "lat": "44.4994444",
         "lng": "34.1552778"
       }
@@ -111,76 +111,91 @@
     "cities": [
       {
         "name": "Бар",
+        "nameEn": "Bar",
         "lat": "49.630283",
         "lng": "27.001648"
       },
       {
         "name": "Бершадь",
+        "nameEn": "Bershad",
         "lat": "48.368954",
         "lng": "29.5331654"
       },
       {
         "name": "Винница",
+        "nameEn": "Vinnytsia",
         "lat": "49.2333333",
         "lng": "28.4833333"
       },
       {
         "name": "Гайсин",
+        "nameEn": "Gaysin",
         "lat": "48.8094444",
         "lng": "29.3905556"
       },
       {
         "name": "Жмеринка",
+        "nameEn": "Zhmerynka",
         "lat": "49.038349",
         "lng": "28.10556"
       },
       {
         "name": "Казатин",
+        "nameEn": "Kazatin",
         "lat": "49.711769",
         "lng": "28.842859"
       },
       {
         "name": "Калиновка",
+        "nameEn": "Kalinovka",
         "lat": "49.4472222",
         "lng": "28.5230556"
       },
       {
         "name": "Ладыжин",
+        "nameEn": "Ladyzhin",
         "lat": "48.676151",
         "lng": "29.262541"
       },
       {
         "name": "Могилёв-Подольский",
+        "nameEn": "Mogilev-Podolsky",
         "lat": "48.45",
         "lng": "27.8"
       },
       {
         "name": "Немиров",
+        "nameEn": "Nemirov",
         "lat": "48.9726621",
         "lng": "28.835666"
       },
       {
         "name": "Погребище",
+        "nameEn": "Pogrebishe",
         "lat": "49.4833333",
         "lng": "29.2666667"
       },
       {
         "name": "Тульчин",
+        "nameEn": "Tulchanin",
         "lat": "48.68",
         "lng": "28.87"
       },
       {
         "name": "Хмельник",
+        "nameEn": "Hmelnik",
         "lat": "49.563469",
         "lng": "27.959379"
       },
       {
         "name": "Шаргород",
+        "nameEn": "Shargorod",
         "lat": "48.73761",
         "lng": "28.08688"
       },
       {
         "name": "Ямполь",
+        "nameEn": "Yampol",
         "lat": "49.9572775",
         "lng": "26.2290711"
       }

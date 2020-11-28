@@ -75,7 +75,7 @@
             <div class="input-field col s7">
 
                 <input id="telegram" type="text" class="validate" name="phone[]" value="{{object.phone.[3]}}">
-                <label for="telegram"> <i class="fab fa-telegram"></i> Telegram</label>
+                <label for="telegram"><i class="fab fa-telegram"></i>Telegram</label>
             </div>
 
 
@@ -102,13 +102,13 @@
 
             <div class="file-field input-field">
                 <div class="btn">
-
+                    <input type="file" class="validate"  name="photo[]" multiple id="photo" required>
                     <label for="photo">Доабавить фото</label>
-                    <input type="file" name="photo[]" multiple id="photo" required>
-                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success=""></span>
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="Добавьте не менее двух фото"></span>
                 </div>
                 <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text" placeholder="Добавьте не менее двух фото">
+                    <input class="file-path validate" required type="text" placeholder="Добавьте не менее двух фото">
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="Добавьте не менее двух фото">
                 </div>
             </div>
 
@@ -316,9 +316,10 @@
                 </label>
 
             </p>
-            <button class="btn waves-effect waves-light" id="btn-lk" type="submit">Добавить
-                <i class="material-icons right">send</i>
-            </button>
+
         </div>
+        <button class="btn waves-effect waves-light" id="btn-lk" type="submit">Добавить
+            <i class="material-icons right">send</i>
+        </button>
     </form>
 </div>
