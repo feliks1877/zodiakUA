@@ -33,7 +33,7 @@ body{
     filter: drop-shadow(1px 2px 3px black);
     font-size: xx-large;
 }
-.parallax > img{
+.model > img{
     max-width: 400px;
     min-height: 600px;
     object-fit: cover;
@@ -236,10 +236,12 @@ form > .range-field {
     text-align: center;
     background: #2b7d9da6;
     font-size: larger;
-    height: 23px;
+    height: 30px;
+    display: flex;
     color: white;
+    align-items: center;
+    justify-content: center;
 }
-
 .pay--block{
     display: flex;
     justify-content: center;
@@ -368,7 +370,7 @@ form > .range-field {
     width: 100%;
     height: 100%;
     top: 0;
-    padding-top: 20px;
+    padding-top: 76px;
     padding-bottom: 80px;
     overflow-y: scroll;
     overflow-x: hidden;
@@ -378,8 +380,12 @@ form > .range-field {
     margin-top: 7px;
 }
 .nameCity{
-    padding: 7px;
+    padding: 10px;
     padding-left: 23px;
+    color: cadetblue;
+}
+.nameCity:active{
+    background: #84ffbe;
 }
 .drop--down::-webkit-scrollbar {
     display: none;
