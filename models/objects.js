@@ -4,17 +4,17 @@ const object = new Schema({
         type: String,
         required: true
     },
-    type: {
-        type: String,
-        required: true
-    },
+    type: String,
     address: String,
     name: String,
     paramModel: Array,
     bdsm: Array,
     phone: Array,
     price: [Number],
-    photo: Array,
+    photo: {
+        type:Array,
+        required: true
+    },
     description: String,
     classik: Array,
     massage: Array,

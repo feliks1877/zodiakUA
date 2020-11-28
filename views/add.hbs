@@ -1,312 +1,637 @@
-
-<div class="form">
-    <h4>Добавление объявления</h4>
-    <form action="/add" method="post" enctype="multipart/form-data">
-        <div class="input-field col s4">
-            <select name="type" id="type">
-                <option value="">Выбрать раздел</option>
-                <option value="escort">Эскорт</option>
-                <option value="work">Вакансии</option>
-                <option value="appartament">Квартиры посуточно</option>
-            </select>
-            <select name="city">
-                <option value="">Выбрать город</option>
-<!--                    {{#each city}}-->
-<!--                            <optgroup label="{{name}}">{{name}}</optgroup>-->
+<div class="row">
+    <div class="col s12">
+        <ul class="tabs tabs-lk">
+            <li class="tab col s3"><a class="active" href="#block1">Основное</a></li>
+            <li class="tab col s3"><a href="#block2">Фото</a></li>
+            <li class="tab col s3"><a href="#block3">Услуги</a></li>
+        </ul>
+    </div>
+    <form id="formMain" action="/add" method="post" enctype="multipart/form-data">
+        <div id="block1" class="col s12">
+            <div class="input-field col s10">
+                <select name="type" id="type">
+                    <option value="">Выбрать раздел</option>
+                    <option value="escort">Эскорт</option>
+                    <option value="work">Вакансии</option>
+                    <option value="appartament">Квартиры посуточно</option>
+                </select>
+                <select name="city">
+                    <option value="">Выбрать город</option>
+                    {{#each city}}
+                        <optgroup label="{{name}}">{{name}}</optgroup>
                         {{#each cities}}
                             <option value="{{nameEn}}">{{name}}</option>
                         {{/each}}
-<!--                    {{/each}}-->
-            </select>
-            <div class="input-field col s4">
+                    {{/each}}
+                </select>
+            </div>
+            <div class="input-field col s10">
                 <input id="address" type="text" class="validate" name="address">
 
                 <label for="address"><i class="fas fa-user-cog"></i>Адрес</label>
             </div>
 
-        </div>
-
-
-        <div class="input-field col s4">
-
-            <input id="name" type="text" class="validate" name="name">
-            <label for="name"><i class="fas fa-user-cog"></i> Имя</label>
-        </div>
-        <div class="input-field col s4">
-            <input id="age" type="number" class="validate" name="paramModel[]">
-            <label for="age"><i class="fas fa-user-cog"></i> Возраст</label>
-        </div>
-        <div class="input-field col s4">
-            <input id="growth" type="number" class="validate" name="paramModel[]">
-            <label for="growth"><i class="fas fa-user-cog"></i> Рост</label>
-        </div>
-        <div class="input-field col s4">
-            <input id="weight" type="number" class="validate" name="paramModel[]">
-            <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>
-        </div>
-        <div class="input-field col s4">
-            <input id="chest" type="number" class="validate" name="paramModel[]">
-            <label for="chest"><i class="fas fa-user-cog"></i> Грудь</label>
-        </div>
-        <input type="hidden" class="validate" name="paramModel[]">
-
-
-        <div class="input-field col s4">
-            <input id="telephone" type="tel" class="validate" name="phone[]">
-            <label for="telephone"><i class="fas fa-phone"></i> Телефон</label>
-        </div>
-        <div class="input-field col s4">
-
-            <input id="whatsapp" type="text" class="validate" name="phone[]">
-            <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
-        </div>
-        <div class="input-field col s4">
-
-            <input id="telegram" type="text" class="validate" name="phone[]">
-            <label for="telegram"> <i class="fab fa-telegram"></i> Telegram</label>
-        </div>
-        <div class="input-field col s4">
-
-            <input id="Viber" type="text" class="validate" name="phone[]">
-            <label for="Viber"><i class="fab fa-viber"></i> Viber</label>
-        </div>
-
-
-        <div class="input-field col s4">
-
-            <input id="price" type="text" class="validate" name="price[]">
-            <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>
-        </div>
-        <div class="input-field col s4">
-
-            <input id="price1" type="text" class="validate" name="price[]">
-            <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>
-        </div>
-        <div class="input-field col s4">
-
-            <input id="price2" type="text" class="validate" name="price[]">
-            <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>
-        </div>
-
-
-        <div class="file-field input-field">
-            <div class="btn">
-                <span>File</span>
-                <input type="file" name="photo[]" multiple>
+            <div class="input-field col m4 s8">
+                <input id="name" type="text" class="validate" name="name" value="{{object.name}}">
+                <label for="name"><i class="fas fa-user-cog"></i>Имя</label>
             </div>
-            <div class="file-path-wrapper">
-                <input class="file-path validate" type="text">
+
+            <div class="input-field col s4">
+                <input id="age" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[0]}}">
+                <label for="age"><i class="fas fa-user-cog"></i>Возраст</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="growth" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[1]}}">
+                <label for="growth"><i class="fas fa-user-cog"></i>Рост</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="weight" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[2]}}">
+                <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="chest" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[3]}}">
+                <label for="chest"><i class="fas fa-user-cog"></i>Грудь</label>
+            </div>
+
+
+            <div class="input-field col s7">
+                <input id="telephone" type="tel" class="validate" name="phone[]" value="{{object.phone.[0]}}">
+                <label for="telephone"><i class="fas fa-phone"></i> Телефон</label>
+            </div>
+            <div class="input-field col s7">
+
+                <input id="whatsapp" type="text" class="validate" name="phone[]" value="{{object.phone.[1]}}">
+                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
+            </div>
+            <div class="input-field col s7">
+
+                <input id="Viber" type="text" class="validate" name="phone[]" value="{{object.phone.[2]}}">
+                <label for="Viber"><i class="fab fa-viber"></i> Viber</label>
+            </div>
+            <div class="input-field col s7">
+
+                <input id="telegram" type="text" class="validate" name="phone[]" value="{{object.phone.[3]}}">
+                <label for="telegram"> <i class="fab fa-telegram"></i> Telegram</label>
+            </div>
+
+
+            <div class="block--price--lk lk2">
+                <div class="input-field">
+
+                    <input id="price" type="text" class="validate" name="price[]" value="{{object.price.[0]}}">
+                    <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>
+                </div>
+                <div class="input-field">
+
+                    <input id="price1" type="text" class="validate" name="price[]" value="{{object.price.[1]}}">
+
+                    <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>
+                </div>
+                <div class="input-field">
+
+                    <input id="price2" type="text" class="validate" name="price[]" value="{{object.price.[2]}}">
+                    <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>
+                </div>
             </div>
         </div>
+        <div id="block2" class="col s12">
 
+            <div class="file-field input-field">
+                <div class="btn">
 
-        <div class="input-field col s12">
-            <textarea id="description" class="materialize-textarea" name="description"></textarea>
-            <label for="description"><i class="far fa-comment-dots"></i> Описание</label>
+                    <label for="photo">Доабавить фото</label>
+                    <input type="file" name="photo[]" multiple id="photo" required>
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success=""></span>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" type="text" placeholder="Добавьте не менее двух фото">
+                </div>
+            </div>
+
         </div>
+        <div id="block3" class="col s12">
+            <div class="input-field col s12">
+                <textarea id="description" class="materialize-textarea"
+                          name="description">{{object.description}}</textarea>
+                <label for="description"><i class="far fa-comment-dots"></i> Описание</label>
+            </div>
+            <h5>Классические услуги</h5>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Kлассический секс" data-classik="Kлассический секс"/>
+                    <span>Kлассический секс</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Минет в презервативе"
+                           data-classik="Минет в презервативе"/>
+                    <span>Минет в презервативе</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Минет без презерватива"
+                           data-classik="Минет без презерватива"/>
+                    <span>Минет без презерватива</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Глубокий минет" data-classik="Глубокий минет"/>
+                    <span>Глубокий минет</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Окончание на грудь"
+                           data-classik="Окончание на грудь"/>
+                    <span>Окончание на грудь</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Окончание в рот" data-classik="Окончание в рот"/>
+                    <span>Окончание в рот</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Окончание на лицо" data-classik="Окончание на лицо"/>
+                    <span>Окончание  на лицо</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Анал" data-classik="Анал"/>
+                    <span>Анал</span>
+                </label>
+            </p>
+            <h5>BDSM</h5>
 
-        <h5>BDSM</h5>
 
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Доминация" data-classik="Доминация"/>
+                    <span>Доминация</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Бандаж" data-classik="Бандаж"/>
+                    <span>Бандаж</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Порка" data-classik="Порка"/>
+                    <span>Порка</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Госпожа" data-classik="Госпожа"/>
+                    <span>Госпожа</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Рабыня" data-classik="Рабыня"/>
+                    <span>Рабыня</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Страпон" data-classik="Страпон"/>
+                    <span>Страпон</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Игрушки" data-classik="Игрушки"/>
+                    <span>Игрушки</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Анилингус девушке" data-classik="Анилингус девушке"/>
+                    <span>Анилингус девушке</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="bdsm[]" value="Анилингус клиенту" data-classik="Анилингус клиенту"/>
+                    <span>Анилингус клиенту</span>
+                </label>
+            </p>
 
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Доминация"/>
-                <span>Доминация</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Бандаж"/>
-                <span>Бандаж</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Порка"/>
-                <span>Порка</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Госпожа"/>
-                <span>Госпожа</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Рабыня"/>
-                <span>Рабыня</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Страпон"/>
-                <span>Страпон</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Игрушки"/>
-                <span>Игрушки</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Анилингус девушке"/>
-                <span>Анилингус девушке</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="bdsm[]" value="Анилингус клиенту"/>
-                <span>Анилингус клиенту</span>
-            </label>
-        </p>
+            <h5>Массаж</h5>
+            <p>
+                <label>
+                    <input type="checkbox" name="massage[]" value="Эротический массаж"
+                           data-classik="Эротический массаж"/>
+                    <span>Эротический массаж</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="massage[]" value="Расслабляющий массаж"
+                           data-classik="Расслабляющий массаж"/>
+                    <span>Расслабляющий массаж</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="massage[]" value="Урологический массаж"
+                           data-classik="Урологический массаж"/>
+                    <span>Урологический массаж</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="massage[]" value="Тайский массаж" data-classik="Тайский массаж"/>
+                    <span>Тайский массаж</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="massage[]" value="Профессиональный массаж"
+                           data-classik="Профессиональный массаж"/>
+                    <span>Профессиональный массаж</span>
+                </label>
+            </p>
 
-        <h5>Классические услуги</h5>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Kлассический секс"/>
-                <span>Kлассический секс</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Минет в презервативе"/>
-                <span>Минет в презервативе</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Минет без презерватива"/>
-                <span>Минет без презерватива</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Глубокий минет"/>
-                <span>Глубокий минет</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Окончание на грудь"/>
-                <span>Окончание на грудь</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Окончание в рот"/>
-                <span>Окончание в рот</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Окончание на лицо"/>
-                <span>Окончание  на лицо</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Анал"/>
-                <span>Анал</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Кунилингус"/>
-                <span>Кунилингус</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="classik[]" value="Поза 69"/>
-                <span>Поза 69</span>
-            </label>
-        </p>
-        <h5>Массаж</h5>
-        <p>
-            <label>
-                <input type="checkbox" name="massage[]" value="Эротический массаж"/>
-                <span>Kлассический секс</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="massage[]" value="Расслабляющий массаж"/>
-                <span>Расслабляющий секс</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="massage[]" value="Урологический массаж"/>
-                <span>Урологический массаж</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="massage[]" value="Тайский массаж"/>
-                <span>Тайский массаж</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="massage[]" value="Профессиональный массаж"/>
-                <span>Профессиональный массаж</span>
-            </label>
-        </p>
-        <h5>Разное:</h5>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Лесби шоу"/>
-                <span>Лесби шоу</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Груповой секс"/>
-                <span>Груповой секс</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Стриптиз профи"/>
-                <span>Стриптиз профи</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Стриптиз любительский"/>
-                <span>Стриптиз любительский</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Экспресс"/>
-                <span>Экспресс</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Услуги в авто"/>
-                <span>Услуги в авто</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Продажа фото/видео"/>
-                <span>Продажа фото/видео</span>
-            </label>
-        </p>
-        <p>
-            <label>
-                <input type="checkbox" name="other[]" value="Вирт"/>
-                <span>Вирт</span>
-            </label>
-        </p>
-        <input type="hidden" name="appraisal" value="0">
-        <button class="btn waves-effect waves-light" type="submit">Добавить
-            <i class="material-icons right">send</i>
-        </button>
+            <h5>Разное:</h5>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Лесби шоу" data-classik="Лесби шоу"/>
+                    <span>Лесби шоу</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Груповой секс" data-classik="Груповой секс"/>
+                    <span>Груповой секс</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Стриптиз профи" data-classik="Стриптиз профи"/>
+                    <span>Стриптиз профи</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Стриптиз любительский"
+                           data-classik="Стриптиз любительский"/>
+                    <span>Стриптиз любительский</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Экспресс" data-classik="Экспресс"/>
+                    <span>Экспресс</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Услуги в авто" data-classik="Услуги в авто"/>
+                    <span>Услуги в авто</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Продажа фото/видео" data-classik="Продажа фото/видео"/>
+                    <span>Продажа фото/видео</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="other[]" value="Вирт" data-classik="Вирт"/>
+                    <span>Вирт</span>
+                </label>
+
+            </p>
+            <button class="btn waves-effect waves-light" id="btn-lk" type="submit">Добавить
+                <i class="material-icons right">send</i>
+            </button>
+        </div>
     </form>
 </div>
+
+
+<!--<div class="form">-->
+<!--    <h4>Добавление объявления</h4>-->
+<!--    <form action="/add" method="post" enctype="multipart/form-data">-->
+<!--        <div class="input-field col s4">-->
+<!--            <select name="type" id="type">-->
+<!--                <option value="">Выбрать раздел</option>-->
+<!--                <option value="escort">Эскорт</option>-->
+<!--                <option value="work">Вакансии</option>-->
+<!--                <option value="appartament">Квартиры посуточно</option>-->
+<!--            </select>-->
+<!--            <select name="city">-->
+<!--                <option value="">Выбрать город</option>-->
+        <!--&lt;!&ndash;                    {{#each city}}&ndash;&gt;-->
+        <!--&lt;!&ndash;                            <optgroup label="{{name}}">{{name}}</optgroup>&ndash;&gt;-->
+        <!--                        {{#each cities}}-->
+        <!--                            <option value="{{nameEn}}">{{name}}</option>-->
+        <!--                        {{/each}}-->
+        <!--&lt;!&ndash;                    {{/each}}&ndash;&gt;-->
+        <!--            </select>-->
+        <!--            <div class="input-field col s4">-->
+        <!--                <input id="address" type="text" class="validate" name="address">-->
+
+        <!--                <label for="address"><i class="fas fa-user-cog"></i>Адрес</label>-->
+        <!--            </div>-->
+
+        <!--        </div>-->
+
+
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="name" type="text" class="validate" name="name">-->
+        <!--            <label for="name"><i class="fas fa-user-cog"></i> Имя</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+        <!--            <input id="age" type="number" class="validate" name="paramModel[]">-->
+        <!--            <label for="age"><i class="fas fa-user-cog"></i> Возраст</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+        <!--            <input id="growth" type="number" class="validate" name="paramModel[]">-->
+        <!--            <label for="growth"><i class="fas fa-user-cog"></i> Рост</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+        <!--            <input id="weight" type="number" class="validate" name="paramModel[]">-->
+        <!--            <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+        <!--            <input id="chest" type="number" class="validate" name="paramModel[]">-->
+        <!--            <label for="chest"><i class="fas fa-user-cog"></i> Грудь</label>-->
+        <!--        </div>-->
+        <!--        <input type="hidden" class="validate" name="paramModel[]">-->
+
+
+        <!--        <div class="input-field col s4">-->
+        <!--            <input id="telephone" type="tel" class="validate" name="phone[]">-->
+        <!--            <label for="telephone"><i class="fas fa-phone"></i> Телефон</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="whatsapp" type="text" class="validate" name="phone[]">-->
+        <!--            <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="telegram" type="text" class="validate" name="phone[]">-->
+        <!--            <label for="telegram"> <i class="fab fa-telegram"></i> Telegram</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="Viber" type="text" class="validate" name="phone[]">-->
+        <!--            <label for="Viber"><i class="fab fa-viber"></i> Viber</label>-->
+        <!--        </div>-->
+
+
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="price" type="text" class="validate" name="price[]">-->
+        <!--            <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="price1" type="text" class="validate" name="price[]">-->
+        <!--            <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>-->
+        <!--        </div>-->
+        <!--        <div class="input-field col s4">-->
+
+        <!--            <input id="price2" type="text" class="validate" name="price[]">-->
+        <!--            <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>-->
+        <!--        </div>-->
+
+
+        <!--        <div class="file-field input-field">-->
+        <!--            <div class="btn">-->
+        <!--                <span>File</span>-->
+        <!--                <input type="file" name="photo[]" multiple>-->
+        <!--            </div>-->
+        <!--            <div class="file-path-wrapper">-->
+        <!--                <input class="file-path validate" type="text">-->
+        <!--            </div>-->
+        <!--        </div>-->
+
+
+        <!--        <div class="input-field col s12">-->
+        <!--            <textarea id="description" class="materialize-textarea" name="description"></textarea>-->
+        <!--            <label for="description"><i class="far fa-comment-dots"></i> Описание</label>-->
+        <!--        </div>-->
+
+        <!--        <h5>BDSM</h5>-->
+
+
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Доминация"/>-->
+        <!--                <span>Доминация</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Бандаж"/>-->
+        <!--                <span>Бандаж</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Порка"/>-->
+        <!--                <span>Порка</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Госпожа"/>-->
+        <!--                <span>Госпожа</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Рабыня"/>-->
+        <!--                <span>Рабыня</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Страпон"/>-->
+        <!--                <span>Страпон</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Игрушки"/>-->
+        <!--                <span>Игрушки</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Анилингус девушке"/>-->
+        <!--                <span>Анилингус девушке</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="bdsm[]" value="Анилингус клиенту"/>-->
+        <!--                <span>Анилингус клиенту</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+
+        <!--        <h5>Классические услуги</h5>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Kлассический секс"/>-->
+        <!--                <span>Kлассический секс</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Минет в презервативе"/>-->
+        <!--                <span>Минет в презервативе</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Минет без презерватива"/>-->
+        <!--                <span>Минет без презерватива</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Глубокий минет"/>-->
+        <!--                <span>Глубокий минет</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Окончание на грудь"/>-->
+        <!--                <span>Окончание на грудь</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Окончание в рот"/>-->
+        <!--                <span>Окончание в рот</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Окончание на лицо"/>-->
+        <!--                <span>Окончание  на лицо</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Анал"/>-->
+        <!--                <span>Анал</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Кунилингус"/>-->
+        <!--                <span>Кунилингус</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="classik[]" value="Поза 69"/>-->
+        <!--                <span>Поза 69</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <h5>Массаж</h5>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="massage[]" value="Эротический массаж"/>-->
+        <!--                <span>Kлассический секс</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="massage[]" value="Расслабляющий массаж"/>-->
+        <!--                <span>Расслабляющий секс</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="massage[]" value="Урологический массаж"/>-->
+        <!--                <span>Урологический массаж</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="massage[]" value="Тайский массаж"/>-->
+        <!--                <span>Тайский массаж</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="massage[]" value="Профессиональный массаж"/>-->
+        <!--                <span>Профессиональный массаж</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <h5>Разное:</h5>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Лесби шоу"/>-->
+        <!--                <span>Лесби шоу</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Груповой секс"/>-->
+        <!--                <span>Груповой секс</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Стриптиз профи"/>-->
+        <!--                <span>Стриптиз профи</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Стриптиз любительский"/>-->
+        <!--                <span>Стриптиз любительский</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Экспресс"/>-->
+        <!--                <span>Экспресс</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Услуги в авто"/>-->
+        <!--                <span>Услуги в авто</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Продажа фото/видео"/>-->
+        <!--                <span>Продажа фото/видео</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <p>-->
+        <!--            <label>-->
+        <!--                <input type="checkbox" name="other[]" value="Вирт"/>-->
+        <!--                <span>Вирт</span>-->
+        <!--            </label>-->
+        <!--        </p>-->
+        <!--        <input type="hidden" name="appraisal" value="0">-->
+        <!--        <button class="btn waves-effect waves-light" type="submit">Добавить-->
+        <!--            <i class="material-icons right">send</i>-->
+        <!--        </button>-->
+        <!--    </form>-->
+        <!--</div>-->

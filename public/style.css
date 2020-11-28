@@ -295,6 +295,9 @@ form > .range-field {
 #block3{
     margin-top: 20px;
 }
+#block2{
+    min-height: 280px;
+}
 #block3 > p,
 #block3 > h5 {
     margin-left: 20px;
@@ -335,6 +338,9 @@ form > .range-field {
 @media(max-width: 600px) {
     .block--price--lk {
         margin-top: 158%;
+    }
+    .lk2{
+        margin-top: 193%;
     }
 }
 
@@ -425,4 +431,7 @@ form > .range-field {
 #block2 > h6 {
     text-align: center;
     color: grey;
+}
+.btn > label{
+    color: white;
 }
