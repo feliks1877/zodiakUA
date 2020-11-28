@@ -297,6 +297,7 @@ form > .range-field {
 }
 #block2{
     min-height: 280px;
+    padding-top: 24%;
 }
 #block3 > p,
 #block3 > h5 {
@@ -341,6 +342,7 @@ form > .range-field {
     }
     .lk2{
         margin-top: 193%;
+        width: 155px;
     }
 }
 
