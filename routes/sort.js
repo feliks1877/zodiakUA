@@ -19,6 +19,7 @@ function pagination(arr) {
     }
     return page
 }
+
 router.get('/sort/', async (req, res) => {
     res.render('sort', {
         title: 'SORT'
@@ -30,12 +31,12 @@ router.get('/sort/:filter', async (req, res) => {
     const filter = req.params.filter
     const pageNumber = req.params.page
     let arrLen = await Objects.find({active: 1})
-    const objects = await filterAll(filter,pageNumber)
+    const objects = await filterAll(filter, pageNumber)
     let title = await tit(filter)
     const page = await pagination(arrLen)
     console.log(filter)
 
-   let description = desc(filter)
+    let description = desc(filter)
     await res.render('sort', {
         title: `${title}`,
         meta: `${title}, ${description}`,
@@ -47,8 +48,9 @@ router.get('/sort/:filter/page/:page', async (req, res) => {
     const filter = req.params.filter
     const pageNumber = req.params.page
     const city = await City.getAll()
+
     let arrLen = await Objects.find({active: 1})
-    const objects = await filterAll(filter,pageNumber)
+    const objects = await filterAll(filter, pageNumber)
     let title = await tit(filter)
     const page = await pagination(arrLen)
     let description = desc(filter)
@@ -64,15 +66,15 @@ router.get('/city/:city/sort/:filter/page/:page', async (req, res) => {
     const pageNumber = req.params.page
     const city = await City.getAll()
     const cityes = await City.getByCity(req.params.city)
-    let arrLen = await Objects.find({active: 1,city: cityes.nameEn})
-    const objects = await filterAllCity(cityes.nameEn,filter,pageNumber)
+    let arrLen = await Objects.find({active: 1, city: cityes.nameEn})
+    const objects = await filterAllCity(cityes.nameEn, filter, pageNumber)
     let title = await tit(filter)
     const page = await pagination(arrLen)
     let description = desc(filter)
     await res.render('sort', {
         title: `${title} ${cityes.name}`,
         meta: `${title} города ${cityes.name} ${description}`,
-        cityes,objects, city, user, filter, page
+        cityes, objects, city, user, filter, page
     })
 })
 router.get('/city/:city/sort/:filter', async (req, res) => {
@@ -80,8 +82,8 @@ router.get('/city/:city/sort/:filter', async (req, res) => {
     const pageNumber = req.params.page
     const city = await City.getAll()
     const cityes = await City.getByCity(req.params.city)
-    let arrLen = await Objects.find({active: 1,city: cityes.nameEn})
-    const objects = await filterAllCity(cityes.nameEn,filter,pageNumber)
+    let arrLen = await Objects.find({active: 1, city: cityes.nameEn})
+    const objects = await filterAllCity(cityes.nameEn, filter, pageNumber)
     const user = req.session.user
     let title = await tit(filter)
     const page = await pagination(arrLen)
@@ -89,7 +91,7 @@ router.get('/city/:city/sort/:filter', async (req, res) => {
     await res.render('sort', {
         title: `${title} ${cityes.name}`,
         meta: `${title} города ${cityes.name} ${description}`,
-        cityes,objects, city, user, filter, page
+        cityes, objects, city, user, filter, page
     })
 })
 

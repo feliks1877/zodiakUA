@@ -112,7 +112,7 @@ router.get('/id/:id', async (req, res) => {
     await res.render('model', {
         title: `Model ${object.name}`,
         meta: object.description,
-        object, review, rcm, user , city
+        object, review, rcm, user, city
     })
 })
 
@@ -129,33 +129,32 @@ router.get('/:id/edit', async (req, res) => {
 })
 
 
-
 router.post('/edit', async (req, res) => {
     try {
+        console.log(req.body.photo)
         if (req.files.length) {
-
             req.files.forEach((el) => {
                 req.body.photo.unshift(el.filename)
-                new Promise((resolve,reject) => {
-                   const data = savePhoto(el)
-                    if (data === true){
+                new Promise((resolve, reject) => {
+                    const data = savePhoto(el)
+                    if (data === true) {
                         resolve(data)
-                    }else{
+                    } else {
                         req.flash('error', 'Что то пошло не так, попробуйте позже')
                         res.redirect('/lk')
                         reject(false)
                     }
                 }).then(data => {
-                    console.log('Save photo',data)
+                    console.log('Save photo', data)
                 })
             })
-            await req.body.photo.forEach((e) => {
-                if (!e.length) {
-                    req.body.photo.pop()
-                }
-            })
         }
-
+        await req.body.photo.forEach((e,i) => {
+            if (e.length <= 0) {
+                req.body.photo.splice(i, 1)
+            }
+        })
+        console.log(req.body.photo)
         await Objects.findByIdAndUpdate(req.body.id, req.body)
         req.flash('message', 'Объявление успешно отредактировано')
         res.redirect('/lk')

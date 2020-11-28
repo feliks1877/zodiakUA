@@ -6,7 +6,7 @@
             <li class="tab col s3"><a href="#block3">Услуги</a></li>
         </ul>
     </div>
-    <form action="/edit" method="post" enctype="multipart/form-data">
+    <form id="formMain" action="/edit" method="post" enctype="multipart/form-data">
         <div id="block1" class="col s12">
             <div class="input-field col m4 s8">
                 <input type="text" id="c1" name="city" value="{{object.city}}">
@@ -18,26 +18,26 @@
                 <label for="name"><i class="fas fa-user-cog"></i>Имя</label>
             </div>
 
-                <div class="input-field col s4">
-                    <input id="age" type="number" class="validate" name="paramModel[]"
-                           value="{{object.paramModel.[0]}}">
-                    <label for="age"><i class="fas fa-user-cog"></i>Возраст</label>
-                </div>
-                <div class="input-field col s4">
-                    <input id="growth" type="number" class="validate" name="paramModel[]"
-                           value="{{object.paramModel.[1]}}">
-                    <label for="growth"><i class="fas fa-user-cog"></i>Рост</label>
-                </div>
-                <div class="input-field col s4">
-                    <input id="weight" type="number" class="validate" name="paramModel[]"
-                           value="{{object.paramModel.[2]}}">
-                    <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>
-                </div>
-                <div class="input-field col s4">
-                    <input id="chest" type="number" class="validate" name="paramModel[]"
-                           value="{{object.paramModel.[3]}}">
-                    <label for="chest"><i class="fas fa-user-cog"></i> Грудь</label>
-                </div>
+            <div class="input-field col s4">
+                <input id="age" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[0]}}">
+                <label for="age"><i class="fas fa-user-cog"></i>Возраст</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="growth" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[1]}}">
+                <label for="growth"><i class="fas fa-user-cog"></i>Рост</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="weight" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[2]}}">
+                <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>
+            </div>
+            <div class="input-field col s4">
+                <input id="chest" type="number" class="validate" name="paramModel[]"
+                       value="{{object.paramModel.[3]}}">
+                <label for="chest"><i class="fas fa-user-cog"></i> Грудь</label>
+            </div>
 
 
             <div class="input-field col s7">
@@ -62,26 +62,26 @@
 
 
             <div class="block--price--lk">
-            <div class="input-field">
+                <div class="input-field">
 
-                <input id="price" type="text" class="validate" name="price[]" value="{{object.price.[0]}}">
-                <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>
+                    <input id="price" type="text" class="validate" name="price[]" value="{{object.price.[0]}}">
+                    <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>
+                </div>
+                <div class="input-field">
+
+                    <input id="price1" type="text" class="validate" name="price[]" value="{{object.price.[1]}}">
+
+                    <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>
+                </div>
+                <div class="input-field">
+
+                    <input id="price2" type="text" class="validate" name="price[]" value="{{object.price.[2]}}">
+                    <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>
+                </div>
             </div>
-            <div class="input-field">
-
-                <input id="price1" type="text" class="validate" name="price[]" value="{{object.price.[1]}}">
-
-                <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>
-            </div>
-            <div class="input-field">
-
-                <input id="price2" type="text" class="validate" name="price[]" value="{{object.price.[2]}}">
-                <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>
-            </div>
-          </div>
         </div>
         <div id="block2" class="col s12">
-            <div class="img--block--lk">
+            <div class="img--block--lk" id="photoBlock">
                 {{#if object.photo}}
                     {{#each object.photo}}
                         {{#if this}}
@@ -89,6 +89,7 @@
                             <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}" alt="">
                             <label for="{{this}}" data-remove="removeImg">Удалить</label>
                             <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}">
+                            <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>
                         {{/if}}
                     {{/each}}
                 {{/if}}
@@ -111,7 +112,58 @@
                           name="description">{{object.description}}</textarea>
                 <label for="description"><i class="far fa-comment-dots"></i> Описание</label>
             </div>
-
+            <h5>Классические услуги</h5>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Kлассический секс" data-classik="Kлассический секс"/>
+                    <span>Kлассический секс</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Минет в презервативе"
+                           data-classik="Минет в презервативе"/>
+                    <span>Минет в презервативе</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Минет без презерватива"
+                           data-classik="Минет без презерватива"/>
+                    <span>Минет без презерватива</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Глубокий минет" data-classik="Глубокий минет"/>
+                    <span>Глубокий минет</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Окончание на грудь"
+                           data-classik="Окончание на грудь"/>
+                    <span>Окончание на грудь</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Окончание в рот" data-classik="Окончание в рот"/>
+                    <span>Окончание в рот</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Окончание на лицо" data-classik="Окончание на лицо"/>
+                    <span>Окончание  на лицо</span>
+                </label>
+            </p>
+            <p>
+                <label>
+                    <input type="checkbox" name="classik[]" value="Анал" data-classik="Анал"/>
+                    <span>Анал</span>
+                </label>
+            </p>
             <h5>BDSM</h5>
 
 
@@ -169,60 +221,6 @@
                     <span>Анилингус клиенту</span>
                 </label>
             </p>
-
-            <h5>Классические услуги</h5>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Kлассический секс" data-classik="Kлассический секс"/>
-                    <span>Kлассический секс</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Минет в презервативе"
-                           data-classik="Минет в презервативе"/>
-                    <span>Минет в презервативе</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Минет без презерватива"
-                           data-classik="Минет без презерватива"/>
-                    <span>Минет без презерватива</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Глубокий минет" data-classik="Глубокий минет"/>
-                    <span>Глубокий минет</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Окончание на грудь"
-                           data-classik="Окончание на грудь"/>
-                    <span>Окончание на грудь</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Окончание в рот" data-classik="Окончание в рот"/>
-                    <span>Окончание в рот</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Окончание на лицо" data-classik="Окончание на лицо"/>
-                    <span>Окончание  на лицо</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input type="checkbox" name="classik[]" value="Анал" data-classik="Анал"/>
-                    <span>Анал</span>
-                </label>
-            </p>
-
 
             <h5>Массаж</h5>
             <p>

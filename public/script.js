@@ -137,6 +137,7 @@ removeImg.forEach((e) => {
     e.addEventListener('click', () => {
         e.nextElementSibling.setAttribute('value', '')
         e.previousElementSibling.style.display = 'none'
+        e.previousElementSibling.previousElementSibling.style.display = 'none'
         e.style.display = 'none'
     })
 })
@@ -159,6 +160,47 @@ if (photoSize) {
         })
     }
 }
+///////////////// ВЫБОР ГЛАВНОГО ФОТО //////////////
+let mainThingPhoto = document.querySelectorAll('[data-mainThingPhoto]')
+let photoBlock = document.getElementById('photoBlock')
+let photo = document.getElementsByName('photo[]')
+let arrPhoto = Array.prototype.slice.call(photo)
+arrPhoto.pop()
+mainThingPhoto.forEach((e, i) => {
+    e.onclick = () => {
+        let mainPhoto = arrPhoto.splice(i, 1)
+        arrPhoto.unshift(mainPhoto[0])
+        let childBlock = photoBlock.children
+        let arr = Array.prototype.slice.call(childBlock)
+        arr.forEach(e => {
+            e.remove()
+        })
+        arrPhoto.forEach(e => {
+            let img = document.createElement('img')
+            img.src = 'https://zodaikapp.s3.us-east-2.amazonaws.com/img/' + e.id
+            img.classList.add('img--lk')
+            let elem = document.createElement('input')
+            elem.type = 'hidden'
+            elem.setAttribute('name', 'photo[]')
+            elem.setAttribute('id', e.value)
+            elem.setAttribute('value', e.value)
+            let label = document.createElement('label')
+            label.textContent = 'Удалить'
+            label.setAttribute('for', e.id)
+            label.setAttribute('data-remove', 'removeImg')
 
+            let labelMain = document.createElement('label')
+            labelMain.textContent = 'Сделать главным'
+            labelMain.setAttribute('for', e.id)
+            labelMain.setAttribute('data-mainThingPhoto', e.id)
+
+            photoBlock.insertAdjacentElement('beforeend', img)
+            photoBlock.insertAdjacentElement('beforeend', label)
+            photoBlock.insertAdjacentElement('beforeend', elem)
+            photoBlock.insertAdjacentElement('beforeend', labelMain)
+        })
+
+    }
+})
 
 

@@ -19,13 +19,27 @@ module.exports = function savePhoto(el) {
         if (err) throw err;
         if (el.mimetype === 'image/webp') {
             const params = {
-                Bucket: 'zodaikapp',
+                Bucket: keys.S3_BUCKET+'/img',
                 Key: el.filename,
                 Body: data,
                 ContentType: el.mimetype,
                 ACL: 'public-read'
             }
             s3.putObject(params, function (err, data) {
+                if (err) {
+                    console.log(err)
+                } else {
+                    console.log("Successfully uploaded data to myBucket/webp", data);
+                }
+            })
+            const paramsFan = {
+                Bucket: keys.S3_BUCKET+'/imgFancy',
+                Key: el.filename,
+                Body: data,
+                ContentType: el.mimetype,
+                ACL: 'public-read'
+            };
+            s3.putObject(paramsFan, function (err, data) {
                 if (err) {
                     console.log(err)
                 } else {
@@ -39,7 +53,7 @@ module.exports = function savePhoto(el) {
                     data.print(
                         font,
                         data.bitmap.width / 2,
-                        data.bitmap.height / 2.4,
+                        data.bitmap.height / 2.1,
                         {
                             text: 'ZODIAK',
                             alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
