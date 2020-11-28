@@ -422,3 +422,7 @@ form > .range-field {
     font-size: medium;
     color: #1e1e1e;
 }
+#block2 > h6 {
+    text-align: center;
+    color: grey;
+}

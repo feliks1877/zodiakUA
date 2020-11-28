@@ -61,7 +61,7 @@
 
                     <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
                     <span class="card-title title-lk">{{name}}</span>
-                    <span class="card-title status title-lk" data-status="/active/{{id}}?active=" data-act="{{active}}"></span>
+                    <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active=" data-act="{{active}}"></span>
                 </div>
 
 
@@ -146,7 +146,7 @@
         justify-content: space-around;
     }
 
-    .status {
+    .statusLk {
         position: absolute;
         top: 0;
     }
@@ -194,7 +194,7 @@
             width: 50%;
         }
     }
-    .status:active{
+    .statusLk:active{
         transform: scale(0.97);
     }
 </style>
