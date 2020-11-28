@@ -85,7 +85,7 @@ table.striped>tbody>tr>td {
 .objectInd{
     max-width: 179px;
     height: 231px;
-    margin: 0 3px 3px !important;
+    margin: 0 1.3px 1.4px !important;
 }
 .es .es img {
     height: -webkit-fill-available;
