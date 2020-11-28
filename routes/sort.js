@@ -73,7 +73,7 @@ router.get('/city/:city/sort/:filter/page/:page', async (req, res) => {
     let description = desc(filter)
     await res.render('sort', {
         title: `${title} ${cityes.name}`,
-        meta: `${title} города ${cityes.name} ${description}`,
+        meta: `${title} города ${cityes.name} ${description} из г.${cityes.name}`,
         cityes, objects, city, user, filter, page
     })
 })
@@ -90,7 +90,7 @@ router.get('/city/:city/sort/:filter', async (req, res) => {
     let description = desc(filter)
     await res.render('sort', {
         title: `${title} ${cityes.name}`,
-        meta: `${title} города ${cityes.name} ${description}`,
+        meta: `${title} города ${cityes.name} ${description} города ${cityes.name}`,
         cityes, objects, city, user, filter, page
     })
 })

@@ -78,7 +78,7 @@ router.get('/escort/:name', async (req, res) => {
             res.render('city', {
                 title: `Эскорт ${cityes.name}`,
                 headCity: `${cityes.name}`,
-                meta: `${meta.cityMeta} ${cityes.name} ${meta.cityMeta2}`,
+                meta: `${meta.cityMeta} ${cityes.name} ${meta.cityMeta2} ${cityes.name}`,
                 cityes, object, city, user, page
             })
         }
@@ -97,7 +97,7 @@ router.get('/city/:name/page/:page', async (req, res) => {
     res.render('city', {
         title: `Эскорт ${cityes.name}`,
         headCity: `${cityes.name}`,
-        meta: `${cityes.name}`,
+        meta: `${meta.cityMeta} ${cityes.name} ${meta.cityMeta2} ${cityes.name}`,
         object, cityes, city, user, page
     })
 })
