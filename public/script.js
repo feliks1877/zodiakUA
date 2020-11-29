@@ -144,7 +144,6 @@ let photoSize = document.getElementById('photo')
 if (photoSize) {
     photoSize.onchange = () => {
         const selectFiles = [...photoSize.files]
-        console.log(selectFiles)
         selectFiles.forEach(e => {
             console.log(e.size)
             if (e.size > 2000000) {
@@ -152,10 +151,14 @@ if (photoSize) {
                 document.getElementById('btn-lk').setAttribute('disabled', true)
                 document.getElementById('btn-lk').textContent = 'Выбери другой файл'
             } else {
+                photoSize.textContent = 'Выбрано '+selectFiles+ 'фото'
                 document.getElementById('btn-lk').removeAttribute('disabled')
-                document.getElementById('btn-lk').textContent = 'Отредактировать'
+                document.getElementById('btn-lk').textContent = 'Загрузить'
             }
         })
+        let toastHTML = '<span>Подтвердите загрузку фото</span>';
+        M.toast({html: toastHTML});
+        photoSize.previousElementSibling.textContent = 'Выбрано '+selectFiles.length+ ' фото'
     }
 }
 ///////////////// ВЫБОР ГЛАВНОГО ФОТО //////////////
