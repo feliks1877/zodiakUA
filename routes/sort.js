@@ -12,7 +12,7 @@ const tit = require('../function/title')
 const router = Router()
 
 function pagination(arr) {
-    const p = arr.length / 6
+    const p = arr.length / 50
     const page = []
     for (let i = 0; i < p; i++) {
         page.push(i + 1)
