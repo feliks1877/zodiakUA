@@ -137,7 +137,8 @@ removeImg.forEach((e) => {
     e.addEventListener('click', () => {
         e.nextElementSibling.setAttribute('value', '')
         e.previousElementSibling.style.display = 'none'
-        e.previousElementSibling.previousElementSibling.style.display = 'none'
+        e.previousElementSibling.style.display = 'none'
+        document.querySelector('[data-mainThingPhoto]').remove()
         e.style.display = 'none'
     })
 })
