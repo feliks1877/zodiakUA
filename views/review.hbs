@@ -1,19 +1,20 @@
 <h5 style="text-align: center">Оставить отзыв</h5>
 <main class="content">
 
+
     <div class="review">
-        <form action="/review" method="post">
+        <form action="/review" id="formRev" method="post">
             <span>{{user.login}}</span>
             <input type="hidden" name="login" value="{{user.login}}">
             <p>
                 <label>
-                    <input name="disc[]" type="checkbox" value="Салон" />
+                    <input name="disc[]" type="checkbox" value="Салон"/>
                     <span>Салон</span>
                 </label>
             </p>
             <p>
                 <label>
-                    <input name="disc[]" type="checkbox" value="Индивидуалка" />
+                    <input name="disc[]" type="checkbox" value="Индивидуалка"/>
                     <span>Индивидуалка</span>
                 </label>
             </p>
@@ -26,7 +27,7 @@
                 <input type="range" id="very" class="rng" name="very" min="0" max="5" step="1"/>
             </p>
             <div class="input-field col s12">
-                <textarea id="review" class="materialize-textarea" name="review"></textarea>
+                <textarea id="review" class="materialize-textarea" name="review" minlength="50" required></textarea>
                 <label for="review"><i class="far fa-comment-dots"></i>Отзыв</label>
             </div>
             <input name="objId" type="hidden" value="{{id}}">
@@ -36,3 +37,6 @@
         </form>
     </div>
 </main>
+<script>
+
+</script>
