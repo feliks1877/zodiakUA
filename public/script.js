@@ -156,8 +156,16 @@ if (photoSize) {
                 document.getElementById('btn-lk').textContent = 'Загрузить'
             }
         })
-        let toastHTML = '<span>Подтвердите загрузку фото</span>';
-        M.toast({html: toastHTML});
+
+        if(url === '/add' && selectFiles.length < 2){
+            photoSize.parentElement.style.background = 'rgba(247, 43, 11, 0.51)'
+            let toastHTML = '<span>Минимум 2 фото</span>';
+            M.toast({html: toastHTML});
+        }else{
+            photoSize.parentElement.style.background = '#26a69a'
+            let toastHTML = '<span>Подтвердите загрузку фото</span>';
+            M.toast({html: toastHTML});
+        }
         photoSize.previousElementSibling.textContent = 'Выбрано '+selectFiles.length+ ' фото'
     }
 }
@@ -205,7 +213,7 @@ mainThingPhoto.forEach((e, i) => {
 
     }
 })
-////////////////// ВАЛИДАЦИЯ ФОРМЫ///////////////
+////////////////// ВАЛИДАЦИЯ ФОРМЫ ДОБАВЛЕНРИЯ ЭСКОРТ///////////////
 function validation(butt) {
     console.log(butt.dataset.block)
     let v = document.getElementById(butt.dataset.block)
@@ -227,9 +235,7 @@ function validation(butt) {
     }
 }
 
-let v = document.getElementsByClassName('validation')
-let vl = Array.prototype.slice.call(v)
-let validObj = document.getElementsByClassName('validateMain')
+let vl = Array.prototype.slice.call(document.getElementsByClassName('validation'))
 vl.forEach((e) => {
     e.addEventListener('click', function () {
         validation(this)
