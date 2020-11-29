@@ -136,10 +136,7 @@ let removeImg = document.querySelectorAll('[data-remove]')
 removeImg.forEach((e) => {
     e.addEventListener('click', () => {
         e.nextElementSibling.setAttribute('value', '')
-        e.previousElementSibling.style.display = 'none'
-        e.previousElementSibling.style.display = 'none'
-        document.querySelector('[data-mainThingPhoto]').remove()
-        e.style.display = 'none'
+        e.parentElement.remove()
     })
 })
 /////////////////// ПРОВЕРЯЮ РАЗМЕР ЗАГРРУЖАЕМЫХ ФОТО МАКСИМУМ 2МГБ////////////
@@ -177,6 +174,8 @@ mainThingPhoto.forEach((e, i) => {
             e.remove()
         })
         arrPhoto.forEach(e => {
+            let div = document.createElement('div')
+            div.classList.add('block--photo')
             let img = document.createElement('img')
             img.src = 'https://zodaikapp.s3.us-east-2.amazonaws.com/img/' + e.id
             img.classList.add('img--lk')
@@ -194,11 +193,11 @@ mainThingPhoto.forEach((e, i) => {
             labelMain.textContent = 'Сделать главным'
             labelMain.setAttribute('for', e.id)
             labelMain.setAttribute('data-mainThingPhoto', e.id)
-
-            photoBlock.insertAdjacentElement('beforeend', img)
-            photoBlock.insertAdjacentElement('beforeend', label)
-            photoBlock.insertAdjacentElement('beforeend', elem)
-            photoBlock.insertAdjacentElement('beforeend', labelMain)
+            photoBlock.insertAdjacentElement('beforeend', div)
+            div.insertAdjacentElement('beforeend', img)
+            div.insertAdjacentElement('beforeend', label)
+            div.insertAdjacentElement('beforeend', elem)
+            div.insertAdjacentElement('beforeend', labelMain)
         })
 
     }

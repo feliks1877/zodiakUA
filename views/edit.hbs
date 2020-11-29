@@ -86,11 +86,12 @@
                 {{#if object.photo}}
                     {{#each object.photo}}
                         {{#if this}}
-
-                            <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}" alt="">
-                            <label for="{{this}}" data-remove="removeImg">Удалить</label>
-                            <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}">
-                            <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>
+                           <div class="block--photo">
+                                <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"  alt="">
+                                <label for="{{this}}" data-remove="removeImg">Удалить</label>
+                                <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}">
+                                <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>
+                            </div>
                         {{/if}}
                     {{/each}}
                 {{/if}}

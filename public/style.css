@@ -270,25 +270,39 @@ form > .range-field {
     left: 0 !important;
 }
 
-.img--block--lk > .img--lk{
-    width: 110px;
-    border-radius: 76%;
-    height: 110px;
+/*.img--block--lk > .img--lk{*/
+/*    width: 110px;*/
+/*    border-radius: 76%;*/
+/*    height: 110px;*/
+/*    object-fit: cover;*/
+/*    margin: 8px;*/
+/*}*/
+/*.img--block--lk{*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    align-items: center;*/
+/*    flex-direction: column;*/
+/*}*/
+/*.img--block--lk > label{*/
+/*    font-size: large;*/
+/*    border-bottom: 2px solid;*/
+/*    margin-bottom: 19px;*/
+/*}*/
+.img--lk{
+    width: 146px;
+    height: 137px;
+    border-radius: 65%;
     object-fit: cover;
-    margin: 8px;
 }
-.img--block--lk{
+.block--photo{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
     flex-direction: column;
+    align-items: center;
+    padding: 8px;
 }
-.img--block--lk > label{
-    font-size: large;
-    border-bottom: 2px solid;
-    margin-bottom: 19px;
+.block--photo > label{
+    border-bottom: 1px solid rebeccapurple;
 }
-
 /*РЕДАКТИРОВАНИЕ*/
 #block1,
 #block2,
@@ -431,7 +445,7 @@ form > .range-field {
 }
 #block2 > h6 {
     text-align: center;
-    color: grey;
+    color: #ea0f0f;
 }
 .btn > label{
     color: white;
