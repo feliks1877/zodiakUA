@@ -139,6 +139,7 @@
                 <textarea id="description" class="materialize-textarea"
                           name="description" required minlength="100" maxlength="600"></textarea>
                 <label for="description"><i class="far fa-comment-dots"></i> Описание</label>
+                <span class="helper-text">Использовано <span id="counter">0</span>/600 символов (минимум 100)</span>
                 <span class="helper-text" data-error="Описание не менее 100 и не более 600 символов" data-success="OK"></span>
             </div>
             <h5>Классические услуги</h5>
@@ -348,15 +349,5 @@
 <style>
 </style>
 <script>
-    let form = document.getElementById('formMain')
-    console.log(form)
-    form.onchange = function (event){
-        if(event.target.validity.valid === false){
-            event.target.closest('div').style.backgroundColor = 'rgba(247,43,11,0.51)'
-            console.log(false)
-        }else{
-            event.target.closest('div').style.backgroundColor = 'white'
-            console.log(true)
-        }
-    }
+
 </script>

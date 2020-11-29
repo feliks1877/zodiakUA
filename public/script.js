@@ -242,3 +242,20 @@ vl.forEach((e) => {
     })
 })
 
+let form = document.getElementById('formMain')
+form.onchange = function (event){
+    if(event.target.validity.valid === false){
+        event.target.closest('div').style.backgroundColor = 'rgba(247,43,11,0.51)'
+        console.log(false)
+    }else{
+        event.target.closest('div').style.backgroundColor = 'white'
+        console.log(true)
+    }
+}
+
+form.description.oninput = function () {
+    console.log(form.description.value);
+    document.getElementById('counter').textContent = form.description.value.length;
+}
+
+
