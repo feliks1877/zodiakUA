@@ -131,7 +131,7 @@ router.get('/:id/edit', async (req, res) => {
 
 router.post('/edit', async (req, res) => {
     try {
-        console.log(req.body.photo)
+        console.log(req.body)
         if (req.files.length) {
             req.files.forEach((el) => {
                 req.body.photo.unshift(el.filename)
@@ -149,11 +149,13 @@ router.post('/edit', async (req, res) => {
                 })
             })
         }
-        await req.body.photo.forEach((e,i) => {
+
+        await req.body.photo.forEach((e, i) => {
             if (e.length <= 0) {
                 req.body.photo.splice(i, 1)
             }
         })
+
         console.log(req.body.photo)
         await Objects.findByIdAndUpdate(req.body.id, req.body)
         req.flash('message', 'Объявление успешно отредактировано')

@@ -136,7 +136,7 @@ let removeImg = document.querySelectorAll('[data-remove]')
 removeImg.forEach((e) => {
     e.addEventListener('click', () => {
         e.nextElementSibling.setAttribute('value', '')
-        e.parentElement.remove()
+        e.parentElement.style.display = 'none'
     })
 })
 /////////////////// ПРОВЕРЯЮ РАЗМЕР ЗАГРРУЖАЕМЫХ ФОТО МАКСИМУМ 2МГБ////////////
