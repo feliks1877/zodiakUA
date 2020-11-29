@@ -451,3 +451,6 @@ form > .range-field {
 .btn > label{
     color: white;
 }
+ul:not(.browser-default) {
+    margin-top: -3px;
+}

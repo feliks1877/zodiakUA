@@ -1,21 +1,25 @@
 <div class="row">
     <div class="col s12">
         <ul class="tabs tabs-lk">
-            <li class="tab col s3"><a class="active" href="#block1">Основное</a></li>
-            <li class="tab col s3"><a href="#block2">Фото</a></li>
-            <li class="tab col s3"><a href="#block3">Услуги</a></li>
+            <li class="tab col s3 validation" data-block="block0"><a class="active" href="#block1">Основное</a></li>
+            <li class="tab col s3 validation" data-block="block1"><a href="#block2">Фото</a></li>
+            <li class="tab col s3 validation" data-block="block2"><a href="#block3">Услуги</a></li>
         </ul>
     </div>
     <form id="formMain" action="/add" method="post" enctype="multipart/form-data">
         <div id="block1" class="col s12">
             <div class="input-field col s10">
-                <select name="type" id="type">
+                <select name="type" id="type" class="validate validateMain" required>
                     <option value="">Выбрать раздел</option>
                     <option value="escort">Эскорт</option>
                     <option value="work">Вакансии</option>
                     <option value="appartament">Квартиры посуточно</option>
                 </select>
-                <select name="city">
+                <span class="helper-text" data-error="Выбрать раздел"
+                      data-success="OK">Выбрать раздел (обязательно)</span>
+            </div>
+            <div class="input-field col s10">
+                <select name="city" class="validateMain" required>
                     <option value="">Выбрать город</option>
                     {{#each city}}
                         <optgroup label="{{name}}">{{name}}</optgroup>
@@ -24,77 +28,96 @@
                         {{/each}}
                     {{/each}}
                 </select>
+                <span class="helper-text" data-error="Выбрать город"
+                      data-success="OK">Выбрать город (обязательно)</span>
             </div>
             <div class="input-field col s10">
-                <input id="address" type="text" class="validate" name="address">
+                <input id="address" type="text" class="validate validateMain" name="address" required minlength="4">
 
                 <label for="address"><i class="fas fa-user-cog"></i>Адрес</label>
+                <span class="helper-text" data-error="Укажите адрес"
+                      data-success="OK">Укажите адрес (обязательно)</span>
             </div>
 
             <div class="input-field col m4 s8">
-                <input id="name" type="text" class="validate" name="name" value="{{object.name}}">
+                <input id="name" type="text" class="validate validateMain" name="name" required
+                       pattern="[A-Za-zА-Яа-яЁё]{3,}">
                 <label for="name"><i class="fas fa-user-cog"></i>Имя</label>
+                <span class="helper-text" data-error="Укажите имя минимум 3 символа" data-success="OK">Укажите имя (обязательно)</span>
             </div>
 
             <div class="input-field col s4">
-                <input id="age" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[0]}}">
+                <input id="age" type="number" class="validate validateMain" name="paramModel[]" required
+                       pattern="[0-9]{2}">
                 <label for="age"><i class="fas fa-user-cog"></i>Возраст</label>
+                <span class="helper-text" data-error="Укажите возраст только цифры" data-success="OK">Укажите возраст (обязательно)</span>
             </div>
             <div class="input-field col s4">
-                <input id="growth" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[1]}}">
+                <input id="growth" type="number" class="validate validateMain" name="paramModel[]" required
+                       pattern="[0-9]{3}">
                 <label for="growth"><i class="fas fa-user-cog"></i>Рост</label>
+                <span class="helper-text" data-error="Укажите рост только цифры" data-success="OK">Укажите рост (обязательно)</span>
             </div>
             <div class="input-field col s4">
-                <input id="weight" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[2]}}">
-                <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>
+                <input id="weight" type="number" class="validate validateMain" name="paramModel[]" required
+                       pattern="[0-9]{1,3}">
+                <label for="weight"><i class="fas fa-user-cog"></i>Вес</label>
+                <span class="helper-text" data-error="Укажите вес только цифры" data-success="OK">Укажите вес (обязательно)</span>
             </div>
             <div class="input-field col s4">
-                <input id="chest" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[3]}}">
+                <input id="chest" type="number" class="validate validateMain" name="paramModel[]" required>
                 <label for="chest"><i class="fas fa-user-cog"></i>Грудь</label>
+                <span class="helper-text" data-error="Укажите размер только цифры" data-success="OK">Укажите размер (обязательно)</span>
             </div>
 
 
             <div class="input-field col s7">
-                <input id="telephone" type="tel" class="validate" name="phone[]" value="{{object.phone.[0]}}">
-                <label for="telephone"><i class="fas fa-phone"></i> Телефон</label>
+                <input id="telephone" type="tel" class="validate validateMain" name="phone[]" required
+                       pattern="[\D0-9]{5,15}">
+                <label for="telephone"><i class="fas fa-phone"></i>Телефон</label>
+                <span class="helper-text" data-error="Укажите номер телефона + и цифры" data-success="OK">Укажите номер телефона (обязательно)</span>
             </div>
             <div class="input-field col s7">
 
-                <input id="whatsapp" type="text" class="validate" name="phone[]" value="{{object.phone.[1]}}">
-                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
+                <input id="whatsapp" type="text" name="phone[]" class="validate" pattern="[0-9]{5,15}">
+                <label for="whatsapp"><i class="fab fa-whatsapp"></i>WhatsApp</label>
+                <span class="helper-text" data-error="Только цифры" data-success="OK"></span>
             </div>
             <div class="input-field col s7">
 
-                <input id="Viber" type="text" class="validate" name="phone[]" value="{{object.phone.[2]}}">
-                <label for="Viber"><i class="fab fa-viber"></i> Viber</label>
+                <input id="Viber" type="text" name="phone[]" class="validate" pattern="[0-9]{5,15}">
+                <label for="Viber"><i class="fab fa-viber"></i>Viber</label>
+                <span class="helper-text" data-error="Только цифры" data-success="OK"></span>
             </div>
             <div class="input-field col s7">
 
-                <input id="telegram" type="text" class="validate" name="phone[]" value="{{object.phone.[3]}}">
+                <input id="telegram" type="text" name="phone[]" maxlength="30">
                 <label for="telegram"><i class="fab fa-telegram"></i>Telegram</label>
+                <span class="helper-text" data-error="Укажите ссылку" data-success="OK">Указывайте ник пользователя без @ по номеру
+                 работать не будет</span>
             </div>
 
 
             <div class="input-field col s6">
                 <div class="input-field">
 
-                    <input id="price" type="text" class="validate" name="price[]" value="{{object.price.[0]}}">
-                    <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>
+                    <input id="price" type="text" class="validate validateMain" name="price[]" required
+                           pattern="[0-9]{2,7}">
+                    <label for="price"><i class="fas fa-money-bill-wave"></i>Цена за час</label>
+                    <span class="helper-text" data-error="Укажите цену только цифры" data-success="OK">Укажите цену за час</span>
                 </div>
                 <div class="input-field">
 
-                    <input id="price1" type="text" class="validate" name="price[]" value="{{object.price.[1]}}">
+                    <input id="price1" type="text" class="validate" name="price[]" pattern="[0-9]{3,10}">
 
-                    <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>
+                    <label for="price1"><i class="fas fa-money-bill-wave"></i>Цена за выезд</label>
+                    <span class="helper-text" data-error="Укажите цену только цифры" data-success="OK">Укажите цену за выезд</span>
                 </div>
                 <div class="input-field">
 
-                    <input id="price2" type="text" class="validate" name="price[]" value="{{object.price.[2]}}">
-                    <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>
+                    <input id="price2" type="text" class="validateMain" name="price[]" pattern="[0-9]{3,10}">
+                    <label for="price2"><i class="fas fa-money-bill-wave"></i>Цена за ночь</label>
+                    <span class="helper-text" data-error="Укажите цену только цифры" data-success="OK">Укажите цену за ночь</span>
                 </div>
             </div>
         </div>
@@ -102,13 +125,13 @@
 
             <div class="file-field input-field">
                 <div class="btn">
-                    <input type="file" class="validate"  name="photo[]" multiple id="photo" required>
+                    <input type="file" class="validate validateMain" name="photo[]" multiple id="photo" required>
                     <label for="photo">Доабавить фото</label>
-                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="Добавьте не менее двух фото"></span>
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>
                 </div>
                 <div class="file-path-wrapper">
                     <input class="file-path validate" required type="text" placeholder="Добавьте не менее двух фото">
-                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="Добавьте не менее двух фото">
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>
                 </div>
             </div>
 
@@ -116,8 +139,9 @@
         <div id="block3" class="col s12">
             <div class="input-field col s12">
                 <textarea id="description" class="materialize-textarea"
-                          name="description">{{object.description}}</textarea>
+                          name="description" required minlength="100" maxlength="600"></textarea>
                 <label for="description"><i class="far fa-comment-dots"></i> Описание</label>
+                <span class="helper-text" data-error="Описание не менее 100 и не более 600 символов" data-success="OK"></span>
             </div>
             <h5>Классические услуги</h5>
             <p>
@@ -323,3 +347,5 @@
         </button>
     </form>
 </div>
+
+

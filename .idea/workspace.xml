@@ -8,7 +8,7 @@
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/edit.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/edit.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/add.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/add.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +126,7 @@
       <workItem from="1606240920361" duration="2728000" />
       <workItem from="1606247111590" duration="47618000" />
       <workItem from="1606371969040" duration="32245000" />
-      <workItem from="1606428570993" duration="82752000" />
+      <workItem from="1606428570993" duration="101806000" />
     </task>
     <servers />
   </component>
@@ -177,9 +177,9 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="297" y="151" key="run.anything.popup/0.0.1280.680@0.0.1280.680" timestamp="1605881713076" />
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1605008577491">
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup" timestamp="1606651721795">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1605008577491" />
+    <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1606651721795" />
   </component>
 </project>

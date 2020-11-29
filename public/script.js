@@ -205,5 +205,34 @@ mainThingPhoto.forEach((e, i) => {
 
     }
 })
+////////////////// ВАЛИДАЦИЯ ФОРМЫ///////////////
+function validation(butt) {
+    console.log(butt.dataset.block)
+    let v = document.getElementById(butt.dataset.block)
+    let valColl = v.getElementsByClassName('validateMain')
+    let val = Array.prototype.slice.call(valColl)
+    let count = 0
+    val.forEach((el, i) => {
+        if (el.validity.valid === false) {
+            count++
+            el.parentElement.style.background = '#f72b0b82'
+        }
+    })
+    if (count > 0) {
+        butt.previousElementSibling.style.background = '#f72b0b82'
+        let toastHTML = '<span>Вы заполнили не все обязательные поля в предыдущем разделе</span>';
+        M.toast({html: toastHTML});
+    } else {
+        butt.previousElementSibling.style.background = 'rgb(59 202 49 / 51%)'
+    }
+}
 
+let v = document.getElementsByClassName('validation')
+let vl = Array.prototype.slice.call(v)
+let validObj = document.getElementsByClassName('validateMain')
+vl.forEach((e) => {
+    e.addEventListener('click', function () {
+        validation(this)
+    })
+})
 
