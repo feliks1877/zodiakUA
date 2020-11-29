@@ -263,7 +263,9 @@ if(form != null){
 }
 let formREV = document.getElementById('formRev')
 
-
+formREV.onsubmit = () => {
+    document.getElementById('spinner').removeAttribute('style')
+}
 
 
 
