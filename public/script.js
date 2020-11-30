@@ -272,5 +272,10 @@ if (formSub != null){
 
 }
 
+let imgParallax = document.getElementById('imgParallax')
 
+console.log(window.matchMedia(`(min-width: 600px)`).matches)
+if (window.matchMedia(`(min-width: 600px)`).matches) {
+    imgParallax.setAttribute('src', 'images/5.jpg')
+}
 

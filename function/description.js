@@ -9,7 +9,7 @@ module.exports = function metaDes(f){
         let metaR = `VIP ESCORT Самые лучшие эскотницы на сайте ZODIAK Выбор для самых изибирательных мужчин лучших индивидуалок `
         return metaR
     }else if(f === `desc`){
-        let metaR = `Дешевые индивидуалки. Прекрасный выбор проституткок на портале ZODIAK`
+        let metaR = `Дешевые индивидуалки  Прекрасный выбор проституткок на портале ZODIAK`
         return metaR
     }
 }
