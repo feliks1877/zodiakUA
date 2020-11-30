@@ -206,56 +206,67 @@
     "cities": [
       {
         "name": "Берестечко",
+        "nameEn": "Berestechko",
         "lat": "50.3505636",
         "lng": "25.1007738"
       },
       {
         "name": "Владимир-Волынский",
+        "nameEn": "Vladimir-Volinsky",
         "lat": "50.853578",
         "lng": "24.311783"
       },
       {
         "name": "Горохов",
+        "nameEn": "Gorohov",
         "lat": "50.500622",
         "lng": "24.767559"
       },
       {
         "name": "Камень-Каширский",
+        "nameEn": "Kamen-Kashirsky",
         "lat": "51.6241667",
         "lng": "24.9605556"
       },
       {
         "name": "Киверцы",
+        "nameEn": "Kivertsy",
         "lat": "50.833621",
         "lng": "25.460706"
       },
       {
         "name": "Ковель",
+        "nameEn": "Kovel",
         "lat": "51.212898",
         "lng": "24.71343"
       },
       {
         "name": "Луцк",
+        "nameEn": "Lutsk",
         "lat": "50.75",
         "lng": "25.3358333"
       },
       {
         "name": "Любомль",
+        "nameEn": "Lubomol",
         "lat": "51.2230556",
         "lng": "24.0377778"
       },
       {
         "name": "Нововолынск",
+        "nameEn": "Novovolynsk",
         "lat": "50.7333333",
         "lng": "24.1666667"
       },
       {
         "name": "Рожище",
+        "nameEn": "Rojishe",
         "lat": "50.915901",
         "lng": "25.268551"
       },
       {
         "name": "Устилуг",
+        "nameEn": "Ustilog",
         "lat": "50.86",
         "lng": "24.15"
       }
@@ -266,91 +277,109 @@
     "cities": [
       {
         "name": "Апостолово",
+        "nameEn": "Apostolovo",
         "lat": "47.65815",
         "lng": "33.697819"
       },
       {
         "name": "Верхнеднепровск",
+        "nameEn": "Verhnedneprovsk",
         "lat": "48.6561111",
         "lng": "34.3283333"
       },
       {
         "name": "Вольногорск",
+        "nameEn": "Volnogorsk",
         "lat": "48.4833333",
         "lng": "34.0166667"
       },
       {
         "name": "Днепродзержинск",
+        "nameEn": "Dneprodzerhinsk",
         "lat": "48.5166667",
         "lng": "34.6166667"
       },
       {
         "name": "Днепропетровск",
+        "nameEn": "Dnepropetrovsk",
         "lat": "48.45",
         "lng": "34.9833333"
       },
       {
         "name": "Жёлтые Воды",
+        "nameEn": "Yellow Waters",
         "lat": "48.35",
         "lng": "33.5"
       },
       {
         "name": "Кривой Рог",
+        "nameEn": "Krivoy Rog",
         "lat": "47.899726",
         "lng": "33.379534"
       },
       {
         "name": "Марганец",
+        "nameEn": "Marganec",
         "lat": "47.6397222",
         "lng": "34.6363889"
       },
       {
         "name": "Никополь",
+        "nameEn": "Nikopol",
         "lat": "47.5666667",
         "lng": "34.4"
       },
       {
         "name": "Новомосковск",
+        "nameEn": "Novomoskovsk",
         "lat": "48.6333333",
         "lng": "35.2166667"
       },
       {
         "name": "Орджоникидзе",
+        "nameEn": "Ordzhenikidze",
         "lat": "44.9643961",
         "lng": "35.3569007"
       },
       {
         "name": "Павлоград",
+        "nameEn": "Pavlograd",
         "lat": "48.533939",
         "lng": "35.869282"
       },
       {
         "name": "Перещепино",
+        "nameEn": "Pereshepino",
         "lat": "49.016251",
         "lng": "35.371681"
       },
       {
         "name": "Першотравенск",
+        "nameEn": "Pershotravensk",
         "lat": "48.3463889",
         "lng": "36.4044444"
       },
       {
         "name": "Подгородное",
+        "nameEn": "Podgorodnoe",
         "lat": "49.5355598",
         "lng": "25.5276081"
       },
       {
         "name": "Пятихатки",
+        "nameEn": "Pyatihatki",
         "lat": "48.4113889",
         "lng": "33.7105556"
       },
       {
         "name": "Синельниково",
+        "nameEn": "Sinelnikovo",
         "lat": "48.3177778",
         "lng": "35.5119444"
       },
       {
         "name": "Терновка",
+        "nameEn": "Ternovka",
         "lat": "48.5402778",
         "lng": "29.9677778"
       }
@@ -361,156 +390,187 @@
     "cities": [
       {
         "name": "Авдеевка",
+        "nameEn": "Avdeevka",
         "lat": "48.1333333",
         "lng": "37.7333333"
       },
       {
         "name": "Артёмовск",
+        "nameEn": "Artyomovsk",
         "lat": "48.599072",
         "lng": "37.999241"
       },
       {
         "name": "Волноваха",
+        "nameEn": "Volnovaha",
         "lat": "47.596119",
         "lng": "37.490429"
       },
       {
         "name": "Горловка",
+        "nameEn": "Gorlovka",
         "lat": "48.346432",
         "lng": "38.059513"
       },
       {
         "name": "Дзержинск",
+        "nameEn": "Dzerhinsk",
         "lat": "48.4",
         "lng": "37.8333333"
       },
       {
         "name": "Дебальцево",
+        "nameEn": "Debalcevo",
         "lat": "48.3333333",
         "lng": "38.4"
       },
       {
         "name": "Димитров",
+        "nameEn": "Dmitrov",
         "lat": "48.32357",
         "lng": "37.291854"
       },
       {
         "name": "Доброполье",
+        "nameEn": "Dobropole",
         "lat": "48.4691324",
         "lng": "37.0871223"
       },
       {
         "name": "Докучаевск",
+        "nameEn": "Dokuchaevsk",
         "lat": "47.770821",
         "lng": "37.684361"
       },
       {
         "name": "Донецк",
+        "nameEn": "Donetsk",
         "lat": "48.0027778",
         "lng": "37.8052778"
       },
       {
         "name": "Дружковка",
+        "nameEn": "Druzhkovka",
         "lat": "48.6166667",
         "lng": "37.5333333"
       },
       {
         "name": "Енакиево",
+        "nameEn": "Enakievo",
         "lat": "48.2166667",
         "lng": "38.2"
       },
       {
         "name": "Ждановка",
+        "nameEn": "Zhdanovka",
         "lat": "48.1462985",
         "lng": "38.2540176"
       },
       {
         "name": "Зугрэс",
+        "nameEn": "Zugares",
         "lat": "48.0166667",
         "lng": "38.2666667"
       },
       {
         "name": "Кировское",
+        "nameEn": "Kirovskoe",
         "lat": "48.15",
         "lng": "38.3666667"
       },
       {
         "name": "Краматорск",
+        "nameEn": "Kramotorsk",
         "lat": "48.736462",
         "lng": "37.57164"
       },
       {
         "name": "Красноармейск",
+        "nameEn": "Krasnoarmeisk",
         "lat": "48.2827778",
         "lng": "37.1827778"
       },
       {
         "name": "Красный Лиман",
+        "nameEn": "Red Liman",
         "lat": "48.984211",
         "lng": "37.810329"
       },
       {
         "name": "Константиновка",
+        "nameEn": "Konstantinovka",
         "lat": "48.51545",
         "lng": "37.703629"
       },
       {
         "name": "Мариуполь",
+        "nameEn": "Mariupol",
         "lat": "47.1166667",
         "lng": "37.55"
       },
       {
         "name": "Макеевка",
+        "nameEn": "Makeevka",
         "lat": "48.076179",
         "lng": "38.068427"
       },
       {
         "name": "Новогродовка",
+        "nameEn": "Novgorodovka",
         "lat": "48.2045408",
         "lng": "37.336821"
       },
       {
         "name": "Селидово",
+        "nameEn": "Selidovo",
         "lat": "48.144671",
         "lng": "37.297897"
       },
       {
         "name": "Славянск",
+        "nameEn": "Slavyansk",
         "lat": "48.846851",
         "lng": "37.57954"
       },
       {
         "name": "Снежное",
+        "nameEn": "Snezhnoe",
         "lat": "48.0282789",
         "lng": "38.7656122"
       },
       {
         "name": "Соледар",
+        "nameEn": "Soledar",
         "lat": "48.6833333",
         "lng": "38.1"
       },
       {
         "name": "Торез",
+        "nameEn": "Torez",
         "lat": "48.0166667",
         "lng": "38.6333333"
       },
       {
         "name": "Угледар",
+        "nameEn": "Ugledar",
         "lat": "47.7833333",
         "lng": "37.25"
       },
       {
         "name": "Харцызск",
+        "nameEn": "Harcizsk",
         "lat": "48.037411",
         "lng": "38.160301"
       },
       {
         "name": "Шахтёрск",
+        "nameEn": "Shahtersk",
         "lat": "48.0333333",
         "lng": "38.4833333"
       },
       {
         "name": "Ясиноватая",
+        "nameEn": "Yasinovataya",
         "lat": "48.1221425",
         "lng": "37.8765944"
       }
