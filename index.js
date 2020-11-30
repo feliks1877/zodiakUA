@@ -73,7 +73,7 @@ app.use(session({
 app.use(fileMiddleware.array('photo[]'))
 app.use(varMiddleware)
 app.use(flash())
-app.use(redirect);
+app.use(redirect());
 app.use(homeRoutes)
 app.use(escortRoutes)
 app.use(addRoutes)
