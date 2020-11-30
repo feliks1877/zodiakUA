@@ -2,10 +2,89 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/015ed16c-9819-4a71-8fe4-a557f0f00823.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0256747a-baf3-4c44-b39b-ebf254597792.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/03979744-57a9-438e-8d80-842245c74033.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0a7c0d7b-c7d1-46e1-a602-1523d60cc3c5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0ac6787a-60e7-4481-a1f6-42a1ac5bc2f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0cac5bed-8a07-470b-8881-58e80616dd40.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/0f66462e-af7d-42c8-b38a-2d6eb5dbb161.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/117accc0-c39b-4696-8b03-53393a07d655.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/17d75370-898f-4a68-ab38-339db875b6b5.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/18065bc5-73dd-4efb-a42d-a921c88c455a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/18e828bc-8348-4826-9e03-4e2ca53a9a44.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/19339aeb-a8bc-4df5-87da-c54ecda90f63.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1aabb13f-2fc8-4e13-a644-52f37c6d1e5f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/1c0ceca4-8aef-432b-9ced-383637f92521.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/245776fe-39eb-4379-9b70-ceffa978cd57.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2f2515ea-abbe-414b-b23b-8358f3469837.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/2f710046-de06-433f-8f7d-e6f229cbae83.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/367a92a5-50c1-47eb-af68-c25871f8e50c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/37083221-68da-4169-85c5-e4188eddaf0b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/37905604-dde8-4fa0-8204-fcc9894c6341.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/38b9fdbb-95b6-4a21-b2a1-59211d558e02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/38f41a9b-8e9a-4674-817f-c01a03ec2048.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/395946e2-d4d1-4e7f-bb5e-1ed11fd7957d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3a2a743c-5bdd-445c-bcf9-1837ed7f9d32.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/3e1eb463-c34d-4521-8ef6-35e1b1ba10ee.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/415b8794-bd8c-4e1d-b615-d3d4b4015cbf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/449c347a-fa23-41f3-95be-020a4b651728.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/497de107-75a6-499c-89f6-e3e04c27c0fd.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/4b421882-3ac8-4ec6-98d8-b209e2e4cb02.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/5025aa80-9c5f-416d-adc3-f31410d7fc4a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/50cfb16c-5cc5-4c0a-a1e1-cee9acdae8f3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/57754149-d881-403d-86b3-0add29704e51.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/5c43544b-a8f3-46a5-8f68-d96068f4add9.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/5ca221dc-17a3-4c9e-9899-445c70ab27d3.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/67f1cb06-4ca7-46e1-afd1-b4df4ec158ab.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/68fd03ce-880a-4d71-a228-56efe5b045a7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/6a6a0821-99e2-4b4d-899d-fcb46e50e453.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/71d44435-aa05-4f7d-b765-0c5b1d510b8f.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/746e5a7a-d3dd-4e59-a6f2-218e8de45c8a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/77f006c0-c4b1-4491-af25-dff94ae6ec77.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7f037e8a-b513-445a-b4bb-5be64559d27a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/7fbf5298-53bf-4047-9447-ec0b55fe7faf.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/803c3b35-c101-43c1-aa6a-0084592c525c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/85b4eb2a-d4a0-4451-8278-b3a686457322.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/88e2a620-3019-4d5e-8745-6f3e16b46051.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/919176d9-b1c8-4e04-9d07-572b36c81417.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/91f6aafb-8c3b-4ede-b55b-a17aa4c9322e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/9df6eb8f-ec2e-4a46-a44b-de6ff206c26c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a0b0c66d-e78c-45a0-b408-19e4e62dca43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a2819dba-a5e8-4838-a2a4-c1a03f8acb43.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/a85c8e2b-1155-456b-8386-b79eae669697.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ac9da49d-60b0-4937-a63d-dfe7bf2d0e2b.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ae32a14f-02d4-4a1e-bb85-01cc3174fbf7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ae4b1f3d-3acb-4162-87a2-2eea92e28d09.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b0246f3b-e971-460d-9b82-79de280c2021.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b3d4486a-36db-4988-ac69-84c14f3708a6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b4da8e2b-c697-4ca7-8b2f-350b4b25dab1.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/b5e1c084-e004-4bb2-954b-3508bd10cd73.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/baf269fd-610b-4d29-ba45-368a6f183497.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c02f6b72-e772-4301-916e-d3eaf5b14b6d.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c3f4220e-3375-484d-b37a-5c73dae177e8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/c924ccd4-b41e-45ba-b054-895b9f524318.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/ca1fc168-fc7f-4d27-a4c9-ba5e1a569db2.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/cecbe58c-9123-4a12-a87d-c9e450472364.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/d903eede-a01e-434d-86e2-a42cfae70f9e.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/daf6d817-cc69-493c-889a-0db53b6eff23.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/dbfa65b8-bfd2-454b-9df5-f231fd89b495.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e1714712-3408-4f56-88fa-195b3bd714a7.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e1c19a29-00f8-438f-9753-0ce45351c19a.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/e28f33db-9d54-442d-b11e-4b621ac1fef6.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/eb269159-85a4-4495-901e-a657d2750dd8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/edd131cb-514c-4748-9df8-3f7bd2641eca.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/efeef460-306e-4762-a8b9-a7cb9524fc85.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/f62a769f-2801-4a33-b58a-bac9e0902e15.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/f7540cb3-2de1-469c-b16f-2fe4f55ffe2c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/images/f957fd0d-be21-42f3-a0bb-d8519b73db3c.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ajax.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/escort.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/escort.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +120,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.14.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -55,8 +134,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\images" />
+      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\sistemphoto" />
     </key>
@@ -123,7 +202,7 @@
       <workItem from="1606240920361" duration="2728000" />
       <workItem from="1606247111590" duration="47618000" />
       <workItem from="1606371969040" duration="32245000" />
-      <workItem from="1606428570993" duration="115754000" />
+      <workItem from="1606428570993" duration="118717000" />
     </task>
     <servers />
   </component>

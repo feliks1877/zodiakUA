@@ -100,6 +100,9 @@ function ajaxOff(e, url) {
     }).catch(err => console.log('Error', err))
 }
 
+
+
+
 sta.forEach((e, i, obj) => {
     if (e.dataset.act > 0) {
         status(e, 'material-icons', 'green', 'play_circle_filled')
