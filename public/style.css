@@ -35,6 +35,7 @@ body{
 }
 .par--lk > img{
     max-width: 450px;
+    object-fit: cover;
 }
 .model > img{
     max-width: 400px;
