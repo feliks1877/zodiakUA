@@ -92,7 +92,7 @@ apl.forEach((e) => {
             a.classList.add('fas')
             a.classList.add('fa-star')
             e.appendChild(a)
-            e.style.width = b + '.5' + 'rem'
+            e.style.width = b + '.6' + 'rem'
         }
     } else {
         for (let i = 0; i < 5; i++) {
@@ -199,7 +199,6 @@ mainThingPhoto.forEach((e, i) => {
             label.textContent = 'Удалить'
             label.setAttribute('for', e.id)
             label.setAttribute('data-remove', 'removeImg')
-
             let labelMain = document.createElement('label')
             labelMain.textContent = 'Сделать главным'
             labelMain.setAttribute('for', e.id)
@@ -271,11 +270,11 @@ if (formSub != null){
     })
 
 }
-
 let imgParallax = document.getElementById('imgParallax')
-
-console.log(window.matchMedia(`(min-width: 600px)`).matches)
-if (window.matchMedia(`(min-width: 600px)`).matches) {
-    imgParallax.setAttribute('src', 'images/5.jpg')
+if(imgParallax != null){
+    console.log(window.matchMedia(`(min-width: 600px)`).matches)
+    if (window.matchMedia(`(min-width: 600px)`).matches) {
+        imgParallax.setAttribute('src', 'images/5.jpg')
+    }
 }
 

@@ -53,7 +53,7 @@ module.exports = function savePhoto(el) {
                     data.print(
                         font,
                         data.bitmap.width / 2,
-                        data.bitmap.height / 2.02,
+                        data.bitmap.height / 2,
                         {
                             text: 'ZODIAK',
                             alignmentX: Jimp.HORIZONTAL_ALIGN_CENTER,
