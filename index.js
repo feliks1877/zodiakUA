@@ -22,6 +22,7 @@ let favicon = require('serve-favicon')
 const keys = require('./keys')
 const fileMiddleware = require('./middleware/file')
 const varMiddleware = require('./middleware/variables')
+const redirect = require('./middleware/redirectwww')
 
 
 const app = express()
@@ -72,7 +73,7 @@ app.use(session({
 app.use(fileMiddleware.array('photo[]'))
 app.use(varMiddleware)
 app.use(flash())
-
+app.use(redirect);
 app.use(homeRoutes)
 app.use(escortRoutes)
 app.use(addRoutes)
