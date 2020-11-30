@@ -45,6 +45,7 @@
         {{else}}
             <li><a href="/login">Авторизация</a></li>
         {{/if}}
+        {{#if city}}
         <div name="label--drop-down" class="drop-down lab"><strong>Выбрать город</strong></div>
         <div class="status drop--down">
             {{#each city}}
@@ -56,7 +57,7 @@
                 </div>
             {{/each}}
         </div>
-
+       {{/if}}
     </ul>
 </div>
 
