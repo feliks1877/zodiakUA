@@ -1,4 +1,4 @@
-const express = require ('express')
+const express = require('express')
 const path = require('path')
 const mongoose = require('mongoose')
 const compression = require('compression')
@@ -39,10 +39,16 @@ const store = new MongoStore({
     uri: keys.MONGODB_URI
 })
 
-app.engine('hbs',hbs.engine)
+app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
-app.set('views','views')
-
+app.set('views', 'views')
+app.use(async (req, res, next) => {
+    if (req.headers.host.match(/^www/) !== null) {
+        await res.redirect(req.headers.host.replace(/^www\./, ''))
+    } else {
+        await next()
+    }
+})
 app.use(compression())
 
 const options = {
@@ -57,10 +63,10 @@ const options = {
     }
 }
 
-app.use(express.static('public',options))
-app.use(express.static('data',options))
-app.use('/images',express.static(path.join(__dirname,'images'),options))
-app.use(favicon(path.join(__dirname,'public', 'favicon.ico')))
+app.use(express.static('public', options))
+app.use(express.static('data', options))
+app.use('/images', express.static(path.join(__dirname, 'images'), options))
+app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(express.urlencoded({extended: true}))
 
 app.use(session({
@@ -86,9 +92,10 @@ app.use(cronRoutes)
 
 const PORT = process.env.PORT || 2000
 
-async function start(){
-    try{
-        await mongoose.connect(keys.MONGODB_URI,{
+
+async function start() {
+    try {
+        await mongoose.connect(keys.MONGODB_URI, {
             useNewUrlParser: true,
             useUnifiedTopology: true,
             useFindAndModify: false
@@ -96,10 +103,11 @@ async function start(){
         app.listen(PORT, () => {
             console.log(`Server is running on port ${PORT}`)
         })
-    }catch (e){
+    } catch (e) {
         console.log(e)
     }
 }
+
 start()
 
 
