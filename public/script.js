@@ -274,7 +274,7 @@ let imgParallax = document.getElementById('imgParallax')
 if(imgParallax != null){
     console.log(window.matchMedia(`(min-width: 600px)`).matches)
     if (window.matchMedia(`(min-width: 600px)`).matches) {
-        imgParallax.setAttribute('src', 'images/5.jpg')
+        imgParallax.setAttribute('src', '/images/5.jpg')
     }
 }
 
