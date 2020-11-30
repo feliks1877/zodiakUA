@@ -261,11 +261,15 @@ if(form != null){
         document.getElementById('spinner').removeAttribute('style')
     }
 }
-let formREV = document.getElementById('formRev')
-if (formREV != null){
-    formREV.onsubmit = () => {
-        document.getElementById('spinner').removeAttribute('style')
-    }
+let formSub = Array.prototype.slice.call(document.getElementsByTagName('form'))
+if (formSub != null){
+    console.log('formSUB',formSub)
+    formSub.forEach(e => {
+        e.onsubmit = () => {
+            document.getElementById('spinner').removeAttribute('style')
+        }
+    })
+
 }
 
 
