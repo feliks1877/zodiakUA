@@ -123,6 +123,11 @@ footer > .container{
 .card-title > span > .fa-check-circle{
     color: aquamarine;
 }
+@media(min-width: 600px) {
+    .card {
+        min-height: 300px;
+    }
+}
 h1 > .fa-check-circle{
     color: aquamarine;
     font-size: xx-large;
