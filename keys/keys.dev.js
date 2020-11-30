@@ -8,3 +8,4 @@ module.exports = {
     AWS_SECRET_ACCESS_KEY: 'FcA957kPS8TbtSGgGPwbVQF0FUcc9FF3J3uCFyts',
     S3_BUCKET: 'zodaikapp'
 }
+//////ПРИВАТНЫЕ КЛЮЧИ////////
