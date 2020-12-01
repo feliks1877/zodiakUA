@@ -12,6 +12,8 @@ const user = new Schema({
        type: String,
        required: true
     },
+    resetToken: String,
+    resetTokenExp: Date,
     key: Number,
     balance: Number
 })
