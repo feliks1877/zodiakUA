@@ -472,3 +472,11 @@ ul:not(.browser-default) {
     align-items: center;
     justify-content: center;
 }
+.li_filter {
+    padding: 7px 0 7px 23px;
+}
+.dropMy{
+    height: 41%;
+    overflow: hidden;
+    padding-top: 10px
+}

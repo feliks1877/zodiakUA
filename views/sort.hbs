@@ -6,15 +6,23 @@
     <div class="fil-btn">
         <ul id="dropdown2" class="dropdown-content">
             {{#if cityes}}
-                <li><a href="/city/{{cityes.nameEn}}/sort/asc">Дорогие</a></li>
-                <li><a href="/city/{{cityes.nameEn}}/sort/desc">Дешевые</a></li>
-                <li><a href="/city/{{cityes.nameEn}}/sort/very">Проверенные</a></li>
-                <li><a href="/city/{{cityes.nameEn}}/sort/reiting">Высокий рейтинг</a></li>
+                <a href="/city/{{cityes.nameEn}}/sort/asc">
+                    <li>Дорогие</li>
+                </a>
+                <a href="/city/{{cityes.nameEn}}/sort/desc">
+                    <li>Дешевые</li>
+                </a>
+                <a href="/city/{{cityes.nameEn}}/sort/very">
+                    <li>Проверенные</li>
+                </a>
+                <a href="/city/{{cityes.nameEn}}/sort/reiting">
+                    <li>Высокий рейтинг</li>
+                </a>
             {{else}}
-                <li><a href="/sort/asc">Дорогие</a></li>
-                <li><a href="/sort/desc">Дешевые</a></li>
-                <li><a href="/sort/very">Проверенные</a></li>
-                <li><a href="/sort/reiting">Высокий рейтинг</a></li>
+            <a href="/sort/asc"><li>Дорогие</li></a>
+            <a href="/sort/desc"><li>Дешевые</li></a>
+            <a href="/sort/very"><li>Проверенные</li></a>
+            <a href="/sort/reiting"><li>Высокий рейтинг</li></a>
             {{/if}}
         </ul>
         <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Фильтры<i class="material-icons right">arrow_drop_down</i></a>
@@ -49,7 +57,7 @@
             </div>
         {{/each}}
     </div>
-    {{else}}
+{{else}}
     <h5 class="pagination">Оъявлений нет
         <a href="/escort" class="btn-floating waves-effect waves-light blue-grey lighten-3"> <i
                 class="large material-icons">arrow_back</i>
