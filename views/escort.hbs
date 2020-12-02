@@ -11,14 +11,27 @@
         <!--            <li><a href="/sort/reiting">Высокий рейтинг</a></li>-->
         <!--        </ul>-->
         <!--        <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Фильтры<i class="material-icons right">arrow_drop_down</i></a>-->
-<!--        <div class="myBtn"><strong>Фильтр</strong><i class="material-icons right">arrow_drop_down</i></div>-->
+        <!--        <div class="myBtn"><strong>Фильтр</strong><i class="material-icons right">arrow_drop_down</i></div>-->
 
         <a name="label--drop-down" class="waves-effect waves-light btn-small"><i class="material-icons right">arrow_drop_down</i>Филтры</a>
-        <div class="status drop--down" style="height: 47%">
-            <li><a class="href--city" href="/sort/asc">Дорогие</a></li>
-            <li><a class="href--city" href="/sort/desc">Дешевые</a></li>
-            <li><a class="href--city" href="/sort/very">Проверенные</a></li>
-            <li><a class="href--city" href="/sort/reiting">Высокий рейтинг</a></li>
+        <div class="status drop--down dropMy">
+            <ul>
+                <a class="href--city" href="/sort/asc">
+                    <li class="li_filter">Дорогие</li>
+                </a>
+                <hr>
+                <a class="href--city" href="/sort/desc">
+                    <li class="li_filter">Дешевые</li>
+                </a>
+                <hr>
+                <a class="href--city" href="/sort/very">
+                    <li class="li_filter">Проверенные</li>
+                </a>
+                <hr>
+                <a class="href--city" href="/sort/reiting">
+                    <li class="li_filter">Высокий рейтинг</li>
+                </a>
+            </ul>
         </div>
     </div>
 </div>
@@ -71,5 +84,12 @@
             <</a></h5>
 {{/if}}
 <style>
-
+    .li_filter {
+        padding: 7px;
+    }
+    .dropMy{
+        height: 41%;
+        overflow: hidden;
+        padding-top: 10px
+    }
 </style>
