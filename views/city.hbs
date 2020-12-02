@@ -3,20 +3,60 @@
     </div>
     <h1>Проститутки<br> {{headCity}}</h1>
     <div class="fil-btn">
-        <ul id="dropdown2" class="dropdown-content">
+        <a name="label--drop-down" class="waves-effect waves-light btn-small"><i class="material-icons right">arrow_drop_down</i>Филтры</a>
+        <div class="status drop--down dropMy">
             {{#if cityes}}
-                <li><a href="/city/{{cityes.nameEn}}/sort/asc">Дорогие</a></li>
-                <li><a href="/city/{{cityes.nameEn}}/sort/desc">Дешевые</a></li>
-                <li><a href="/city/{{cityes.nameEn}}/sort/very">Проверенные</a></li>
-                <li><a href="/city/{{cityes.nameEn}}/sort/reiting">Высокий рейтинг</a></li>
+                <ul>
+                    <a class="href--city" href="/city/{{cityes.nameEn}}/sort/asc">
+                        <li class="li_filter">Дорогие</li>
+                    </a>
+                    <hr>
+                    <a class="href--city" href="/city/{{cityes.nameEn}}/sort/desc">
+                        <li class="li_filter">Дешевые</li>
+                    </a>
+                    <hr>
+                    <a class="href--city" href="/city/{{cityes.nameEn}}/sort/very">
+                        <li class="li_filter">Проверенные</li>
+                    </a>
+                    <hr>
+                    <a class="href--city" href="/city/{{cityes.nameEn}}/sort/reiting">
+                        <li class="li_filter">Высокий рейтинг</li>
+                    </a>
+                </ul>
             {{else}}
-                <li><a href="/sort/asc">Дорогие</a></li>
-                <li><a href="/sort/desc">Дешевые</a></li>
-                <li><a href="/sort/very">Проверенные</a></li>
-                <li><a href="/sort/reiting">Высокий рейтинг</a></li>
+                <ul>
+                    <a class="href--city" href="/sort/asc">
+                        <li class="li_filter">Дорогие</li>
+                    </a>
+                    <hr>
+                    <a class="href--city" href="/sort/desc">
+                        <li class="li_filter">Дешевые</li>
+                    </a>
+                    <hr>
+                    <a class="href--city" href="/sort/very">
+                        <li class="li_filter">Проверенные</li>
+                    </a>
+                    <hr>
+                    <a class="href--city" href="/sort/reiting">
+                        <li class="li_filter">Высокий рейтинг</li>
+                    </a>
+                </ul>
             {{/if}}
-        </ul>
-        <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Фильтры<i class="material-icons right">arrow_drop_down</i></a>
+        </div>
+<!--        <ul id="dropdown2" class="dropdown-content">-->
+<!--            {{#if cityes}}-->
+<!--                <li><a href="/city/{{cityes.nameEn}}/sort/asc">Дорогие</a></li>-->
+<!--                <li><a href="/city/{{cityes.nameEn}}/sort/desc">Дешевые</a></li>-->
+<!--                <li><a href="/city/{{cityes.nameEn}}/sort/very">Проверенные</a></li>-->
+<!--                <li><a href="/city/{{cityes.nameEn}}/sort/reiting">Высокий рейтинг</a></li>-->
+<!--            {{else}}-->
+<!--                <li><a href="/sort/asc">Дорогие</a></li>-->
+<!--                <li><a href="/sort/desc">Дешевые</a></li>-->
+<!--                <li><a href="/sort/very">Проверенные</a></li>-->
+<!--                <li><a href="/sort/reiting">Высокий рейтинг</a></li>-->
+<!--            {{/if}}-->
+<!--        </ul>-->
+<!--        <a class="btn dropdown-trigger" href="#!" data-target="dropdown2">Фильтры<i class="material-icons right">arrow_drop_down</i></a>-->
     </div>
 </div>
 <h4 class="zag">
