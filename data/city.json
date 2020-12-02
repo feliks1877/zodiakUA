@@ -1569,7 +1569,7 @@
       },
       {
         "name": "Первомайск",
-        "nameEn": "Pervomayask",
+        "nameEn": "PervomayaskNk",
         "lat": "48.05",
         "lng": "30.85"
       },
@@ -1776,56 +1776,67 @@
     "cities": [
       {
         "name": "Березне",
+        "nameEn": "Berezne",
         "lat": "51.0",
         "lng": "26.75"
       },
       {
         "name": "Дубно",
+        "nameEn": "Dubno",
         "lat": "50.38738",
         "lng": "25.754559"
       },
       {
         "name": "Дубровица",
+        "nameEn": "Dubrovtsa",
         "lat": "51.571209",
         "lng": "26.56805"
       },
       {
         "name": "Здолбунов",
+        "nameEn": "Zdolbunov",
         "lat": "50.5166667",
         "lng": "26.25"
       },
       {
         "name": "Корец",
+        "nameEn": "Korec",
         "lat": "50.619129",
         "lng": "27.161869"
       },
       {
         "name": "Костополь",
+        "nameEn": "Kostopol",
         "lat": "50.8833333",
         "lng": "26.45"
       },
       {
         "name": "Кузнецовск",
+        "nameEn": "Kuznetsovsk",
         "lat": "51.3436553",
         "lng": "25.8490867"
       },
       {
         "name": "Острог",
+        "nameEn": "Ostrog",
         "lat": "50.3333333",
         "lng": "26.5166667"
       },
       {
         "name": "Радивилов",
+        "nameEn": "Radivilov",
         "lat": "50.125777",
         "lng": "25.264195"
       },
       {
         "name": "Ровно",
+        "nameEn": "Rovno",
         "lat": "50.6166667",
         "lng": "26.25"
       },
       {
         "name": "Сарны",
+        "nameEn": "Sarny",
         "lat": "51.3372222",
         "lng": "26.6058333"
       }
@@ -1836,66 +1847,79 @@
     "cities": [
       {
         "name": "Ахтырка",
+        "nameEn": "Ahtyrka",
         "lat": "50.29855",
         "lng": "34.892052"
       },
       {
         "name": "Белополье",
+        "nameEn": "Belopplye",
         "lat": "51.149402",
         "lng": "34.3175225"
       },
       {
         "name": "Бурынь",
+        "nameEn": "Burun",
         "lat": "51.1978",
         "lng": "33.847351"
       },
       {
         "name": "Глухов",
+        "nameEn": "Gluhov",
         "lat": "51.6786111",
         "lng": "33.9113889"
       },
       {
         "name": "Кролевец",
+        "nameEn": "Krolevets",
         "lat": "51.550121",
         "lng": "33.38279"
       },
       {
         "name": "Конотоп",
+        "nameEn": "Konotop",
         "lat": "51.237469",
         "lng": "33.21217"
       },
       {
         "name": "Лебедин",
+        "nameEn": "Lebedin",
         "lat": "48.96",
         "lng": "31.52"
       },
       {
         "name": "Путивль",
+        "nameEn": "Putivil",
         "lat": "51.337589",
         "lng": "33.87888"
       },
       {
         "name": "Ромны",
+        "nameEn": "Romny",
         "lat": "50.743919",
         "lng": "33.475712"
       },
       {
         "name": "Середина-Буда",
+        "nameEn": "Seredina_Buda",
         "lat": "52.1833333",
         "lng": "34.0333333"
       },
       {
         "name": "Сумы",
+        "nameEn": "Sumu",
         "lat": "50.910561",
         "lng": "34.80566"
       },
       {
         "name": "Тростянец",
+        "nameEn": "Trostyanets",
         "lat": "50.9599282",
         "lng": "25.55378"
       },
       {
         "name": "Шостка",
+        "nameEn": "Shostka",
         "lat": "51.86282",
         "lng": "33.487831"
       }
@@ -1906,86 +1930,103 @@
     "cities": [
       {
         "name": "Бережаны",
+        "nameEn": "Berehany",
         "lat": "49.444191",
         "lng": "24.94486"
       },
       {
         "name": "Борщёв",
+        "nameEn": "Borshov",
         "lat": "48.803181",
         "lng": "26.041809"
       },
       {
         "name": "Бучач",
+        "nameEn": "Byrchach",
         "lat": "49.05772",
         "lng": "25.401979"
       },
       {
         "name": "Залещики",
+        "nameEn": "Zalechiki",
         "lat": "48.65",
         "lng": "25.7333333"
       },
       {
         "name": "Збараж",
+        "nameEn": "Zbarzh",
         "lat": "49.6666667",
         "lng": "25.7777778"
       },
       {
         "name": "Зборов",
+        "nameEn": "Zborov",
         "lat": "49.660696",
         "lng": "25.1434667"
       },
       {
         "name": "Кременец",
+        "nameEn": "Kremenets",
         "lat": "50.099129",
         "lng": "25.7328"
       },
       {
         "name": "Лановцы",
+        "nameEn": "Lanovtsy",
         "lat": "49.8659402",
         "lng": "26.0841931"
       },
       {
         "name": "Монастыриска",
+        "nameEn": "Monastyriska",
         "lat": "49.0888889",
         "lng": "25.1694444"
       },
       {
         "name": "Подволочиск",
+        "nameEn": "Podvolochisk",
         "lat": "49.5246859",
         "lng": "26.137326"
       },
       {
         "name": "Подгайцы",
+        "nameEn": "Podgaitsy",
         "lat": "49.2694444",
         "lng": "25.1361111"
       },
       {
         "name": "Почаев",
+        "nameEn": "Pochaev",
         "lat": "50.0",
         "lng": "25.5083333"
       },
       {
         "name": "Скалат",
+        "nameEn": "Skalat",
         "lat": "49.424214",
         "lng": "25.976246"
       },
       {
         "name": "Тернополь",
+        "nameEn": "Ternopol",
         "lat": "49.551361",
         "lng": "25.603979"
       },
       {
         "name": "Теребовля",
+        "nameEn": "Terebovlya",
         "lat": "49.29348",
         "lng": "25.699551"
       },
       {
         "name": "Чортков",
+        "nameEn": "Chortkov",
         "lat": "49.0166667",
         "lng": "25.8"
       },
       {
         "name": "Шумск",
+        "nameEn": "Shumsk",
         "lat": "50.122577",
         "lng": "26.1149716"
       }
@@ -1996,86 +2037,103 @@
     "cities": [
       {
         "name": "Балаклея",
+        "nameEn": "Balakleya",
         "lat": "49.4658333",
         "lng": "36.8677778"
       },
       {
         "name": "Барвенково",
+        "nameEn": "Barvenkovo",
         "lat": "48.9",
         "lng": "37.0166667"
       },
       {
         "name": "Богодухов",
+        "nameEn": "Bogoduhov",
         "lat": "50.1654302",
         "lng": "35.5267251"
       },
       {
         "name": "Валки",
+        "nameEn": "Valki",
         "lat": "49.843601",
         "lng": "35.61388"
       },
       {
         "name": "Великий Бурлук",
+        "nameEn": "Velikiy_Burluk",
         "lat": "50.0455556",
         "lng": "37.3905556"
       },
       {
         "name": "Волчанск",
+        "nameEn": "Volchansk",
         "lat": "50.278519",
         "lng": "36.945171"
       },
       {
         "name": "Дергачи",
+        "nameEn": "Dergachi",
         "lat": "50.110668",
         "lng": "36.114361"
       },
       {
         "name": "Змиев",
+        "nameEn": "Zmiev",
         "lat": "49.701939",
         "lng": "36.355171"
       },
       {
         "name": "Изюм",
+        "nameEn": "Izum",
         "lat": "49.2127778",
         "lng": "37.2569444"
       },
       {
         "name": "Красноград",
+        "nameEn": "Krasnograd",
         "lat": "49.3666667",
         "lng": "35.45"
       },
       {
         "name": "Купянск",
+        "nameEn": "Kupyansk",
         "lat": "49.721901",
         "lng": "37.624329"
       },
       {
         "name": "Лозовая",
+        "nameEn": "Lozovaya",
         "lat": "48.891684",
         "lng": "36.325786"
       },
       {
         "name": "Люботин",
+        "nameEn": "Lubotin",
         "lat": "49.95",
         "lng": "35.9166667"
       },
       {
         "name": "Мерефа",
+        "nameEn": "Merefa",
         "lat": "49.8166667",
         "lng": "36.05"
       },
       {
         "name": "Первомайский",
+        "nameEn": "PervomaiskHr",
         "lat": "49.3833333",
         "lng": "36.2166667"
       },
       {
         "name": "Харьков",
+        "nameEn": "Harkov",
         "lat": "49.98967",
         "lng": "36.208309"
       },
       {
         "name": "Чугуев",
+        "nameEn": "Chuguev",
         "lat": "49.8355556",
         "lng": "36.6863889"
       }
@@ -2086,46 +2144,55 @@
     "cities": [
       {
         "name": "Берислав",
+        "nameEn": "Berislav",
         "lat": "46.843822",
         "lng": "33.4375"
       },
       {
         "name": "Геническ",
+        "nameEn": "Genichesk",
         "lat": "46.171638",
         "lng": "34.80777"
       },
       {
         "name": "Голая Пристань",
+        "nameEn": "G_Pristan",
         "lat": "46.5166667",
         "lng": "32.5166667"
       },
       {
         "name": "Каховка",
+        "nameEn": "Kahovka",
         "lat": "46.817388",
         "lng": "33.494325"
       },
       {
         "name": "Новая Каховка",
+        "nameEn": "NewKahovka",
         "lat": "46.7666667",
         "lng": "33.3666667"
       },
       {
         "name": "Скадовск",
+        "nameEn": "Skadovsk",
         "lat": "46.116871",
         "lng": "32.913731"
       },
       {
         "name": "Таврийск",
+        "nameEn": "Tavryisk",
         "lat": "46.7528018",
         "lng": "33.4216856"
       },
       {
         "name": "Херсон",
+        "nameEn": "Herson",
         "lat": "46.653368",
         "lng": "32.629424"
       },
       {
         "name": "Цюрупинск",
+        "nameEn": "Curupinsk",
         "lat": "46.62",
         "lng": "32.72"
       }
@@ -2136,66 +2203,79 @@
     "cities": [
       {
         "name": "Волочиск",
+        "nameEn": "Volochinsk",
         "lat": "49.535179",
         "lng": "26.22331"
       },
       {
         "name": "Городок",
+        "nameEn": "Gorodok",
         "lat": "49.1666667",
         "lng": "26.5666667"
       },
       {
         "name": "Деражня",
+        "nameEn": "Derazhnya",
         "lat": "49.267071",
         "lng": "27.440269"
       },
       {
         "name": "Дунаевцы",
+        "nameEn": "Dunaevtsy",
         "lat": "48.8909743",
         "lng": "26.8546608"
       },
       {
         "name": "Изяслав",
+        "nameEn": "Izaslav",
         "lat": "50.119221",
         "lng": "26.82629"
       },
       {
         "name": "Каменец-Подольский",
+        "nameEn": "Kamenets_Podolskiy",
         "lat": "48.6833333",
         "lng": "26.5833333"
       },
       {
         "name": "Красилов",
+        "nameEn": "Krasilov",
         "lat": "49.6519444",
         "lng": "26.9705556"
       },
       {
         "name": "Нетешин",
+        "nameEn": "Neteshin",
         "lat": "50.3374232",
         "lng": "26.6404529"
       },
       {
         "name": "Полонное",
+        "nameEn": "Polonnoe",
         "lat": "50.122269",
         "lng": "27.511909"
       },
       {
         "name": "Славута",
+        "nameEn": "Slavuta",
         "lat": "49.0563905",
         "lng": "27.3944506"
       },
       {
         "name": "Староконстантинов",
+        "nameEn": "Starokonstantinov",
         "lat": "49.7555556",
         "lng": "27.2208333"
       },
       {
         "name": "Хмельницкий",
+        "nameEn": "Hmelnitsiy",
         "lat": "49.4166667",
         "lng": "27.0"
       },
       {
         "name": "Шепетовка",
+        "nameEn": "Shepotovka",
         "lat": "50.179131",
         "lng": "27.07732"
       }
@@ -2206,81 +2286,97 @@
     "cities": [
       {
         "name": "Ватутино",
+        "nameEn": "Vatutino",
         "lat": "49.0166667",
         "lng": "31.0666667"
       },
       {
         "name": "Городище",
+        "nameEn": "Gorodishe",
         "lat": "49.290649",
         "lng": "31.443199"
       },
       {
         "name": "Жашков",
+        "nameEn": "Zhashkov",
         "lat": "49.245522",
         "lng": "30.11998"
       },
       {
         "name": "Звенигородка",
+        "nameEn": "Zvenigorodka",
         "lat": "49.075489",
         "lng": "30.967911"
       },
       {
         "name": "Золотоноша",
+        "nameEn": "Zolotonosha",
         "lat": "49.674271",
         "lng": "32.040421"
       },
       {
         "name": "Каменка",
+        "nameEn": "Kamenka",
         "lat": "49.036347",
         "lng": "32.103481"
       },
       {
         "name": "Канев",
+        "nameEn": "Kanev",
         "lat": "49.75",
         "lng": "31.4666667"
       },
       {
         "name": "Корсунь-Шевченковский",
+        "nameEn": "Korsun_Shevchenkovskyi",
         "lat": "49.421051",
         "lng": "31.268993"
       },
       {
         "name": "Монастырище",
+        "nameEn": "Monasturishe",
         "lat": "48.9909154",
         "lng": "29.8051363"
       },
       {
         "name": "Смела",
+        "nameEn": "Smela",
         "lat": "49.224621",
         "lng": "31.878401"
       },
       {
         "name": "Тальное",
+        "nameEn": "Talnoe",
         "lat": "48.8833333",
         "lng": "30.7"
       },
       {
         "name": "Умань",
+        "nameEn": "Uman",
         "lat": "48.75",
         "lng": "30.2166667"
       },
       {
         "name": "Христиновка",
+        "nameEn": "Hristanovka",
         "lat": "48.8494444",
         "lng": "29.97"
       },
       {
         "name": "Черкассы",
+        "nameEn": "Cherkassi",
         "lat": "49.4333333",
         "lng": "32.0666667"
       },
       {
         "name": "Чигирин",
+        "nameEn": "Chigirin",
         "lat": "49.072498",
         "lng": "32.683578"
       },
       {
         "name": "Шпола",
+        "nameEn": "Shpola",
         "lat": "49.00349",
         "lng": "31.385559"
       }
@@ -2291,81 +2387,97 @@
     "cities": [
       {
         "name": "Бахмач",
+        "nameEn": "Bahmach",
         "lat": "51.1830556",
         "lng": "32.8297222"
       },
       {
         "name": "Бобровица",
+        "nameEn": "Bovrovitsa",
         "lat": "50.745",
         "lng": "31.3869444"
       },
       {
         "name": "Борзна",
+        "nameEn": "Bprzna",
         "lat": "51.249451",
         "lng": "32.43034"
       },
       {
         "name": "Городня",
+        "nameEn": "Gorodnya",
         "lat": "51.8905556",
         "lng": "31.5936111"
       },
       {
         "name": "Десна",
+        "nameEn": "Desna",
         "lat": "50.9246667",
         "lng": "30.756"
       },
       {
         "name": "Ичня",
+        "nameEn": "Ichna",
         "lat": "50.863918",
         "lng": "32.39307"
       },
       {
         "name": "Корюковка",
+        "nameEn": "Korukovka",
         "lat": "51.7754831",
         "lng": "32.2595792"
       },
       {
         "name": "Мена",
+        "nameEn": "Mena",
         "lat": "51.521759",
         "lng": "32.21888"
       },
       {
         "name": "Нежин",
+        "nameEn": "Nezhin",
         "lat": "51.0380556",
         "lng": "31.8861111"
       },
       {
         "name": "Новгород-Северский",
+        "nameEn": "Novgorod_Seveskiy",
         "lat": "52.0069896",
         "lng": "33.2537069"
       },
       {
         "name": "Носовка",
+        "nameEn": "Nosovka",
         "lat": "50.9333333",
         "lng": "31.5833333"
       },
       {
         "name": "Прилуки",
+        "nameEn": "Priluki",
         "lat": "50.594181",
         "lng": "32.38689"
       },
       {
         "name": "Седнев",
+        "nameEn": "Sednev",
         "lat": "51.6463023",
         "lng": "31.5616846"
       },
       {
         "name": "Семёновка",
+        "nameEn": "Semyenovka",
         "lat": "52.173561",
         "lng": "32.587059"
       },
       {
         "name": "Чернигов",
+        "nameEn": "Chernigovka",
         "lat": "51.503653",
         "lng": "31.293167"
       },
       {
         "name": "Щорс",
+        "nameEn": "Shors",
         "lat": "51.819321",
         "lng": "31.94846"
       }
@@ -2376,56 +2488,67 @@
     "cities": [
       {
         "name": "Вашковцы",
+        "nameEn": "Vashkovtsi",
         "lat": "48.38",
         "lng": "25.51"
       },
       {
         "name": "Вижница",
+        "nameEn": "Vizhitsa",
         "lat": "48.25",
         "lng": "25.1916667"
       },
       {
         "name": "Герца",
+        "nameEn": "Gertca",
         "lat": "48.1485764",
         "lng": "26.2572996"
       },
       {
         "name": "Заставна",
+        "nameEn": "Zastavna",
         "lat": "48.5166667",
         "lng": "25.85"
       },
       {
         "name": "Кицмань",
+        "nameEn": "Kicman",
         "lat": "48.4425",
         "lng": "25.7613889"
       },
       {
         "name": "Новоднестровск",
+        "nameEn": "Novodnestrovsk",
         "lat": "48.5833333",
         "lng": "27.4333333"
       },
       {
         "name": "Новоселица",
+        "nameEn": "Novoselitsa",
         "lat": "48.2166667",
         "lng": "26.2666667"
       },
       {
         "name": "Сокиряны",
+        "nameEn": "Sokiryani",
         "lat": "48.45",
         "lng": "27.4166667"
       },
       {
         "name": "Сторожинец",
+        "nameEn": "Storoginets",
         "lat": "48.1666667",
         "lng": "25.7166667"
       },
       {
         "name": "Хотин",
+        "nameEn": "Hotin",
         "lat": "48.5",
         "lng": "26.5"
       },
       {
         "name": "Черновцы",
+        "nameEn": "Chernovtsy",
         "lat": "48.3",
         "lng": "25.9333333"
       }
