@@ -66,11 +66,11 @@ router.get('/city/:city/sort/:filter/page/:page', async (req, res) => {
     const cityes = await City.getByCity(req.params.city)
     let arrLen = await Objects.find({active: 1, city: cityes.nameEn})
     const objects = await filterAllCity(cityes.nameEn, filter, pageNumber)
-    let title = await Meta.tit(filter)
+    let title = await Meta.tit(filter,cityes.name)
     const page = await pagination(arrLen)
     let description = await Meta.metaDes(filter,cityes.name)
     await res.render('sort', {
-        title: `${title} ${cityes.name}`,
+        title: `${title}`,
         meta: `${description}`,
         cityes, objects, city, user, filter, page
     })
@@ -83,12 +83,12 @@ router.get('/city/:city/sort/:filter', async (req, res) => {
     let arrLen = await Objects.find({active: 1, city: cityes.nameEn})
     const objects = await filterAllCity(cityes.nameEn, filter, pageNumber)
     const user = req.session.user
-    let title = await Meta.tit(filter)
+    let title = await Meta.tit(filter, cityes.name)
     const page = await pagination(arrLen)
     let description = await Meta.metaDes(filter,cityes.name)
     console.log('DESC',description)
     await res.render('sort', {
-        title: `${title} ${cityes.name}`,
+        title: `${title}`,
         meta: `${description}`,
         cityes, objects, city, user, filter, page
     })

@@ -16,6 +16,7 @@ for (let i = 0; i < labelDrop.length; i++) {
                 })
                 elem.remove()
             })
+            window.scrollTo(0, 0);
         }
     })
 }
