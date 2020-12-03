@@ -77,7 +77,6 @@ router.get('/escort/:name', async (req, res) => {
         if (cityes.name) {
             const page = pagination(c)
             let cityMph = Meta.morph(cityes.name)
-            console.log('cityMph',cityMph)
             res.render('city', {
                 title: `Эскорт ${cityes.name}`,
                 headCity: `${cityMph}`,
