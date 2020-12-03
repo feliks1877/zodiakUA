@@ -20,9 +20,10 @@ for (let i = 0; i < labelDrop.length; i++) {
         }
     })
 }
-document.getElementById('parentDrop').addEventListener('click', function (event) {
-    event.currentTarget.scrollTo(0, 0);
-})
+let parentDrop = document.getElementById('parentDrop')
+parentDrop !== null ? parentDrop.onclick = (event) => {
+    event.currentTarget.scrollTo(0, 0)
+} : null
 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.sidenav');
@@ -154,22 +155,22 @@ if (photoSize) {
                 document.getElementById('btn-lk').setAttribute('disabled', true)
                 document.getElementById('btn-lk').textContent = 'Выбери другой файл'
             } else {
-                photoSize.textContent = 'Выбрано '+selectFiles+ 'фото'
+                photoSize.textContent = 'Выбрано ' + selectFiles + 'фото'
                 document.getElementById('btn-lk').removeAttribute('disabled')
                 document.getElementById('btn-lk').textContent = 'Загрузить'
             }
         })
 
-        if(url === '/add' && selectFiles.length < 2){
+        if (url === '/add' && selectFiles.length < 2) {
             photoSize.parentElement.style.background = 'rgba(247, 43, 11, 0.51)'
             let toastHTML = '<span>Минимум 2 фото</span>';
             M.toast({html: toastHTML});
-        }else{
+        } else {
             photoSize.parentElement.style.background = '#26a69a'
             let toastHTML = '<span>Подтвердите загрузку фото</span>';
             M.toast({html: toastHTML});
         }
-        photoSize.previousElementSibling.textContent = 'Выбрано '+selectFiles.length+ ' фото'
+        photoSize.previousElementSibling.textContent = 'Выбрано ' + selectFiles.length + ' фото'
     }
 }
 ///////////////// ВЫБОР ГЛАВНОГО ФОТО //////////////
@@ -215,6 +216,7 @@ mainThingPhoto.forEach((e, i) => {
 
     }
 })
+
 ////////////////// ВАЛИДАЦИЯ ФОРМЫ ДОБАВЛЕНРИЯ ЭСКОРТ///////////////
 function validation(butt) {
     console.log(butt.dataset.block)
@@ -245,12 +247,12 @@ vl.forEach((e) => {
 })
 
 let form = document.getElementById('formMain')
-if(form != null){
-    form.onchange = function (event){
-        if(event.target.validity.valid === false){
+if (form != null) {
+    form.onchange = function (event) {
+        if (event.target.validity.valid === false) {
             event.target.closest('div').style.backgroundColor = 'rgba(247,43,11,0.51)'
             console.log(false)
-        }else{
+        } else {
             event.target.closest('div').style.backgroundColor = 'white'
             console.log(true)
         }
@@ -264,8 +266,8 @@ if(form != null){
     }
 }
 let formSub = Array.prototype.slice.call(document.getElementsByTagName('form'))
-if (formSub != null){
-    console.log('formSUB',formSub)
+if (formSub != null) {
+    console.log('formSUB', formSub)
     formSub.forEach(e => {
         e.onsubmit = () => {
             document.getElementById('spinner').removeAttribute('style')
@@ -274,7 +276,7 @@ if (formSub != null){
 
 }
 let imgParallax = document.getElementById('imgParallax')
-if(imgParallax != null){
+if (imgParallax != null) {
     console.log(window.matchMedia(`(min-width: 600px)`).matches)
     if (window.matchMedia(`(min-width: 600px)`).matches) {
         imgParallax.setAttribute('src', '/images/5.jpg')
