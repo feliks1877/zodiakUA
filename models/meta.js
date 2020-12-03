@@ -4,9 +4,9 @@ const path = require('path')
 class Meta {
     static morph(city) {
         let arr = []
-        let symbol = ['к', 'в', 'м', 'д', 'ч', 'р', 'н', 'с', 'я']
+        let symbol = ['к', 'в', 'м', 'д', 'ч', 'р', 'н', 'с']
         let symbol_2 = ['а']
-        let nonSymbol = ['т', 'ц', 'н', 'с']
+        let nonSymbol = ['т', 'ц', 'н','с','я']
         for (let i = 0; i < city.length; i++) {
             arr.push(city[i])
         }
