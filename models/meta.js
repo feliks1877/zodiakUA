@@ -6,7 +6,7 @@ class Meta {
         let arr = []
         let symbol = ['к','в','м','д','ч','р','н','с','я']
         let symbol_2 = ['а']
-        let nonSymbol = ['т','ц','н','c']
+        let nonSymbol = ['т','ц','н','с']
         for (let i = 0;i < city.length;i++){
              arr.push(city[i])
         }
@@ -23,7 +23,8 @@ class Meta {
                 city = arr.toString().replace(/,/g,'')
                 return city
             }
-        }else if(result_3 !== undefined){
+        }
+        if(result_3 !== undefined){
             let result_2 = symbol_2.find(e => e === arr[arr.length -1])
             if(result_2 !== undefined){
                 arr.pop()
