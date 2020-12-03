@@ -6,7 +6,7 @@ class Meta {
         let arr = []
         let symbol = ['к','в','м','д','ч','р','н','с','я']
         let symbol_2 = ['а']
-        let nonSymbol = ['т','ц','н']
+        let nonSymbol = ['т','ц','н','c']
         for (let i = 0;i < city.length;i++){
              arr.push(city[i])
         }
