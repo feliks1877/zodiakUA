@@ -20,7 +20,9 @@ for (let i = 0; i < labelDrop.length; i++) {
         }
     })
 }
-
+document.getElementById('parentDrop').addEventListener('click', function (event) {
+    event.currentTarget.scrollTo(0, 0);
+})
 
 document.addEventListener('DOMContentLoaded', function () {
     var elems = document.querySelectorAll('.sidenav');
