@@ -2,6 +2,28 @@ const fs = require('fs')
 const path = require('path')
 
 class Meta {
+
+    static morph(city){
+        let arr = []
+        let symbol = ['к','в','м','д','ч','р','н','с']
+        let symbol_2 = ['а']
+        for (let i = 0;i < city.length;i++){
+             arr.push(city[i])
+        }
+        let result = symbol.find(e => e === arr[arr.length -1])
+        if(result !== undefined){
+            return city + 'а'
+        }
+        let result_2 = symbol_2.find(e => e === arr[arr.length -1])
+        if(result_2 !== undefined){
+            arr.pop()
+            arr.push('и')
+            city = arr.toString().replace(/,/g,'')
+            return city
+        }
+        return city
+    }
+
     static metaDes(f){
         if(f === 'very'){
             let metaR = `Индивидуалки представленные в этом разделе реальные и соответсвуют фотографиям`

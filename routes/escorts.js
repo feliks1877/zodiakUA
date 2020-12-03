@@ -76,10 +76,12 @@ router.get('/escort/:name', async (req, res) => {
         filBalance(c, object)
         if (cityes.name) {
             const page = pagination(c)
+            let cityMph = Meta.morph(cityes.name)
+            console.log('cityMph',cityMph)
             res.render('city', {
                 title: `Эскорт ${cityes.name}`,
-                headCity: `${cityes.name}`,
-                meta: `${meta.cityMeta} ${cityes.name} ${meta.cityMeta2} ${cityes.name}`,
+                headCity: `${cityMph}`,
+                meta: `${meta.cityMeta} ${cityMph} ${meta.cityMeta2} ${cityMph}`,
                 cityes, object, city, user, page
             })
         }
@@ -95,10 +97,11 @@ router.get('/city/:name/page/:page', async (req, res) => {
     const object = await Objects.find({active: 1}).where('city').equals(req.params.name).sort({date: 'desc'})
         .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId').populate('userId')
     const page = pagination(arr)
+    let cityMph = Meta.morph(cityes.name)
     res.render('city', {
         title: `Эскорт ${cityes.name}`,
-        headCity: `${cityes.name}`,
-        meta: `${meta.cityMeta} ${cityes.name} ${meta.cityMeta2} ${cityes.name}`,
+        headCity: `${cityMph}`,
+        meta: `${meta.cityMeta} ${cityMph} ${meta.cityMeta2} ${cityMph}`,
         object, cityes, city, user, page
     })
 })
