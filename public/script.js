@@ -16,13 +16,14 @@ for (let i = 0; i < labelDrop.length; i++) {
                 })
                 elem.remove()
             })
-            window.scrollTo(0, 0);
         }
+        window.scrollTo(0, 0);
     })
 }
 let parentDrop = document.getElementById('parentDrop')
 parentDrop !== null ? parentDrop.onclick = (event) => {
     event.currentTarget.scrollTo(0, 0)
+
 } : null
 
 document.addEventListener('DOMContentLoaded', function () {
