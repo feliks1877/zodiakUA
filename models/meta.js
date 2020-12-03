@@ -2,11 +2,11 @@ const fs = require('fs')
 const path = require('path')
 
 class Meta {
-
     static morph(city){
         let arr = []
-        let symbol = ['к','в','м','д','ч','р','н','с']
+        let symbol = ['к','в','м','д','ч','р','н','с','я']
         let symbol_2 = ['а']
+        let nonSymbol = ['т','ц','н']
         for (let i = 0;i < city.length;i++){
              arr.push(city[i])
         }
@@ -14,12 +14,23 @@ class Meta {
         if(result !== undefined){
             return city + 'а'
         }
-        let result_2 = symbol_2.find(e => e === arr[arr.length -1])
-        if(result_2 !== undefined){
-            arr.pop()
-            arr.push('и')
-            city = arr.toString().replace(/,/g,'')
-            return city
+        let result_3 = nonSymbol.find(e => e === arr[arr.length -2])
+        if(result_3 === undefined){
+            let result_2 = symbol_2.find(e => e === arr[arr.length -1])
+            if(result_2 !== undefined){
+                arr.pop()
+                arr.push('и')
+                city = arr.toString().replace(/,/g,'')
+                return city
+            }
+        }else if(result_3 !== undefined){
+            let result_2 = symbol_2.find(e => e === arr[arr.length -1])
+            if(result_2 !== undefined){
+                arr.pop()
+                arr.push('ы')
+                city = arr.toString().replace(/,/g,'')
+                return city
+            }
         }
         return city
     }
