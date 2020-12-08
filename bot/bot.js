@@ -32,6 +32,11 @@ function searchCity(region) {
     })
     return city
 }
+bot.command('start', async (ctx) => {
+    await ctx.reply(`Я помогу найти анкеты проверенных эскортниц в любом городе Украины размещённых на сате ZODIAK,
+    просто начни вводить /`)
+    await ctx.replyWithHTML(`<a href="http://zodiak.world">ZODIAK WORLD</a>`)
+})
 
 bot.command( 'random',  async (ctx) => {
     const object = await Object.find({active: 1}).sort({date: 'desc'}).limit(10)
