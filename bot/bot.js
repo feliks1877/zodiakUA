@@ -1,0 +1,102 @@
+const {Telegraf} = require('telegraf')
+const {MenuTemplate, MenuMiddleware} = require('telegraf-inline-menu')
+const keys = require('../keys')
+const BOT_TOKEN = keys.BOT_TOKEN
+const bot = new Telegraf(BOT_TOKEN)
+const City = require('../models/city')
+const Object = require('../models/objects')
+
+const region = City.getAll()
+const regionArr = []
+region.then((el) => {
+    for (let i = 0; i < el.length; i++) {
+        regionArr.push(el[i])
+    }
+})
+
+const city = City.getAll()
+const cityArr = []
+city.then((el) => {
+    for (let i = 0; i < el.length; i++) {
+        cityArr.push(el[i])
+    }
+    return cityArr
+})
+
+function searchCity(region) {
+    let c = region.replace('/', '')
+    let citAr = cityArr.find(e => e.nameEn === c)
+    let city = []
+    citAr.cities.forEach(el => {
+        city.push(el)
+    })
+    return city
+}
+
+bot.command( 'random',  async (ctx) => {
+    const object = await Object.find({active: 1}).sort({date: 'desc'}).limit(10)
+    if(object.length <= 0){
+       await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
+    }
+    object.forEach(el => {
+        ctx.replyWithPhoto(`https://zodaikapp.s3.us-east-2.amazonaws.com/img/${el.photo[0]}`, {
+            caption: `${el.city}\r\n${el.description}`,
+            reply_markup: {
+                inline_keyboard: [
+                    [{text: `${el.name}`, url: `http://zodiak.world/id/${el._id}`}]
+                ]
+            }
+        })
+    })
+    return true
+})
+
+bot.use(async (ctx, next) => {
+    try {
+        if (ctx.updateType === 'message') {
+            const choiceCity = new MenuTemplate(`Выбрать город`)
+            const listCity = searchCity(ctx.update.message.text)
+            listCity.forEach(e => {
+                choiceCity.interact(`${e.name}`, `${e.nameEn}`, {
+                    do: async ctx => {
+                        await ctx.replyToContext(ctx)
+                        return true
+                    }
+                })
+            })
+            const cityMiddle = new MenuMiddleware('/city/', choiceCity)
+            return cityMiddle.replyToContext(ctx)
+        }
+        const trigger = ctx.update.callback_query.data.match('/city/')
+        if (trigger[0] === '/city/') {
+            const cityDB = ctx.update.callback_query.data.replace('/city/', '')
+            const object = await Object.find({active: 1}).where('city').equals(cityDB).sort({date: 'desc'}).limit(3)
+            if(object.length <= 0){
+               await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
+            }
+            object.forEach(el => {
+                ctx.replyWithPhoto(`https://zodaikapp.s3.us-east-2.amazonaws.com/img/${el.photo[0]}`, {
+                    caption: `${cityDB}\r\n${el.description}`,
+                    reply_markup: {
+                        inline_keyboard: [
+                            [{text: `${el.name}`, url: `http://zodiak.world/id/${el._id}`}]
+                        ]
+                    }
+                })
+            })
+        }
+    } catch (e) {
+        console.log('ERROR_COMAND', e)
+    }
+})
+
+bot.catch(error => {
+    console.log('telegraf error', error.response, error.parameters, error.on || error)
+})
+
+bot.launch().then(res => {
+    console.log('Started Bot')
+}).catch(e => console.log(e))
+
+
+

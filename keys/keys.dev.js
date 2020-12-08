@@ -6,6 +6,7 @@ module.exports = {
     BASE_URL: 'http://localhost:2000',
     AWS_ACCESS_KEY_ID: 'AKIAQOBDJDDPBAKNKWEO',
     AWS_SECRET_ACCESS_KEY: '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',
-    S3_BUCKET: 'zodaikapp'
+    S3_BUCKET: 'zodaikapp',
+    BOT_TOKEN: '1495089997:AAGdjj9b04hnebmnBF9LV5Y8zzWWFoBXl3s'
 }
 //////ПРИВАТНЫЕ КЛЮЧИ////////

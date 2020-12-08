@@ -1,6 +1,7 @@
 [
   {
     "name": "Крым",
+    "nameEn": "krym",
     "cities": [
       {
         "name": "Алупка",
@@ -108,6 +109,7 @@
   },
   {
     "name": "Винницкая область",
+    "nameEn": "vinitskaya",
     "cities": [
       {
         "name": "Бар",
@@ -203,6 +205,7 @@
   },
   {
     "name": "Волынская область",
+    "nameEn": "volynskaya",
     "cities": [
       {
         "name": "Берестечко",
@@ -274,6 +277,7 @@
   },
   {
     "name": "Днепропетровская область",
+    "nameEn": "dnepropetrovskaya",
     "cities": [
       {
         "name": "Апостолово",
@@ -387,6 +391,7 @@
   },
   {
     "name": "Донецкая область",
+    "nameEn": "donetskaya",
     "cities": [
       {
         "name": "Авдеевка",
@@ -578,6 +583,7 @@
   },
   {
     "name": "Житомирская область",
+    "nameEn": "zhitomirskaya",
     "cities": [
       {
         "name": "Андрушёвка",
@@ -643,6 +649,7 @@
   },
   {
     "name": "Закарпатская область",
+    "nameEn": "zakorpatskaya",
     "cities": [
       {
         "name": "Берегово",
@@ -714,6 +721,7 @@
   },
   {
     "name": "Запорожская область",
+    "nameEn": "zaporozhskaya",
     "cities": [
       {
         "name": "Бердянск",
@@ -803,6 +811,7 @@
   },
   {
     "name": "Ивано-Франковская область",
+    "nameEn": "iavanofrankovskaya",
     "cities": [
       {
         "name": "Болехов",
@@ -898,6 +907,7 @@
   },
   {
     "name": "Киевская область",
+    "nameEn": "kievskaya",
     "cities": [
       {
         "name": "Белая Церковь",
@@ -1053,6 +1063,7 @@
   },
   {
     "name": "Кировоградская область",
+    "nameEn": "kirovogradskaya",
     "cities": [
       {
         "name": "Александрия",
@@ -1118,6 +1129,7 @@
   },
   {
     "name": "Луганская область",
+    "nameEn": "luganskaya",
     "cities": [
       {
         "name": "Александровск",
@@ -1333,6 +1345,7 @@
   },
   {
     "name": "Львовская область",
+    "nameEn": "lvovskaya",
     "cities": [
       {
         "name": "Белз",
@@ -1530,6 +1543,7 @@
   },
   {
     "name": "Николаевская область",
+    "nameEn": "nikolaevskaya",
     "cities": [
       {
         "name": "Баштанка",
@@ -1589,6 +1603,7 @@
   },
   {
     "name": "Одесская область",
+    "nameEn": "odesskaya",
     "cities": [
       {
         "name": "Ананьев",
@@ -1678,6 +1693,7 @@
   },
   {
     "name": "Полтавская область",
+    "nameEn": "poltavskaya",
     "cities": [
       {
         "name": "Гадяч",
@@ -1773,6 +1789,7 @@
   },
   {
     "name": "Ровенская область",
+    "nameEn": "rovenskaya",
     "cities": [
       {
         "name": "Березне",
@@ -1844,6 +1861,7 @@
   },
   {
     "name": "Сумская область",
+    "nameEn": "sumskaya",
     "cities": [
       {
         "name": "Ахтырка",
@@ -1927,6 +1945,7 @@
   },
   {
     "name": "Тернопольская область",
+    "nameEn": "ternopolskaya",
     "cities": [
       {
         "name": "Бережаны",
@@ -2034,6 +2053,7 @@
   },
   {
     "name": "Харьковская область",
+    "nameEn": "harkovskaya",
     "cities": [
       {
         "name": "Балаклея",
@@ -2141,6 +2161,7 @@
   },
   {
     "name": "Херсонская область",
+    "nameEn": "hersonskaya",
     "cities": [
       {
         "name": "Берислав",
@@ -2200,6 +2221,7 @@
   },
   {
     "name": "Хмельницкая область",
+    "nameEn": "hmelnitskaya",
     "cities": [
       {
         "name": "Волочиск",
@@ -2283,6 +2305,7 @@
   },
   {
     "name": "Черкасская область",
+    "nameEn": "cherkasskaya",
     "cities": [
       {
         "name": "Ватутино",
@@ -2384,6 +2407,7 @@
   },
   {
     "name": "Черниговская область",
+    "nameEn": "chernigovskaya",
     "cities": [
       {
         "name": "Бахмач",
@@ -2485,6 +2509,7 @@
   },
   {
     "name": "Черновицкая область",
+    "nameEn": "chernovitskaya",
     "cities": [
       {
         "name": "Вашковцы",

@@ -94,7 +94,7 @@ router.get('/city/:name/page/:page', async (req, res) => {
     const pageNumber = req.params.page
     const arr = await Objects.find({active: 1}).where('city').equals(req.params.name)
     const object = await Objects.find({active: 1}).where('city').equals(req.params.name).sort({date: 'desc'})
-        .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId').populate('userId')
+        .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
     const page = pagination(arr)
     let cityMph = Meta.morph(cityes.name)
     res.render('city', {
