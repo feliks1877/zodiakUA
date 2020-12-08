@@ -33,9 +33,15 @@ function searchCity(region) {
     return city
 }
 bot.command('start', async (ctx) => {
-    await ctx.reply(`Я помогу найти анкеты проверенных эскортниц в любом городе Украины размещённых на сате ZODIAK,
-    просто начни вводить /`)
-    await ctx.replyWithHTML(`<a href="http://zodiak.world">ZODIAK WORLD</a>`)
+    await ctx.reply(`Я помогу найти анкеты проверенных эскортниц в любом городе Украины размещённых на сайте ZODIAK, просто начни вводить /`)
+    await ctx.replyWithPhoto(`http://zodiak.world/images/2.jpg`, {
+        caption: `ЛУЧШИЕ ЭСКОРТ МОДЕЛИ`,
+        reply_markup: {
+            inline_keyboard: [
+                [{text: `ZODIAK`, url: `http://zodiak.world/`}]
+            ]
+        }
+    })
 })
 
 bot.command( 'random',  async (ctx) => {
