@@ -62,24 +62,23 @@
         width: 100%;
         object-fit: cover;
         border-radius: 6px;
-        box-shadow: 2px 6px 7px black;
+        box-shadow: 1px 3px 3px black;
     }
 
     .block--work--disc {
-        text-shadow: 0.4px 1px 4px black;
+        text-shadow: 2px 1px 2px black;
         position: relative;
         top: 6px;
         color: white;
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
     }
 
     .block--work--blur {
         position: absolute;
-        height: 206px;
-        width: 89%;
         border-radius: 5px;
+        width: 333px;
         /*border: 3px solid #27e26e;*/
         -webkit-backdrop-filter: blur(3px);
         backdrop-filter: blur(3px)
@@ -87,6 +86,7 @@
 
     .work--svg {
         position: absolute;
+        filter: drop-shadow(1px 1px 1px black);
         background: linear-gradient(152deg, #efe7e70f, #f3eeeef5, #ffffff1a);
         height: 2px;
         margin-top: 8%;
@@ -99,7 +99,7 @@
         color: #444;
         background: aliceblue;
         position: relative;
-        bottom: 0;
+        bottom: 4px;
         width: 101.5%;
         opacity: 0.8;
         border-radius: 0 0 7px 7px;
@@ -127,7 +127,7 @@
         }
         .block--work--disc {
             position: relative;
-            width: 399px;
+            width: 398px;
         }
         .block--work--desc {
             width: 399px;
