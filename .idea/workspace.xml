@@ -6,7 +6,10 @@
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/work.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/partials/footer.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/partials/footer.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/work.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/work.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/workId.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/workId.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -134,7 +137,7 @@
       <workItem from="1607182829844" duration="112467000" />
       <workItem from="1607511750942" duration="605000" />
       <workItem from="1607538745315" duration="32595000" />
-      <workItem from="1607635089752" duration="35406000" />
+      <workItem from="1607635089752" duration="39465000" />
     </task>
     <servers />
   </component>
@@ -177,10 +180,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1606387760538" />
-    <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1606733100150">
+    <state x="347" y="73" width="587" height="534" key="find.popup" timestamp="1607728243273">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1606733100150" />
+    <state x="347" y="73" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1607728243273" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1606940521316">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

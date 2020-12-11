@@ -268,7 +268,6 @@ if (form != null) {
 }
 let formSub = Array.prototype.slice.call(document.getElementsByTagName('form'))
 if (formSub != null) {
-    console.log('formSUB', formSub)
     formSub.forEach(e => {
         e.onsubmit = () => {
             document.getElementById('spinner').removeAttribute('style')
@@ -278,7 +277,6 @@ if (formSub != null) {
 }
 let imgParallax = document.getElementById('imgParallax')
 if (imgParallax != null) {
-    console.log(window.matchMedia(`(min-width: 600px)`).matches)
     if (window.matchMedia(`(min-width: 600px)`).matches) {
         imgParallax.setAttribute('src', '/images/5.jpg')
     }
