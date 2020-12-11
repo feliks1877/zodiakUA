@@ -1,6 +1,8 @@
 const {Router} = require('express')
 const City = require('../models/city')
 const workObj = require('../models/workObj')
+const savePhoto = require('../function/savePhoto')
+const Country = require('../models/country')
 const router = Router()
 
 function filBalance(arr, ob) {
@@ -69,5 +71,56 @@ router.get('/work/id/:id', async (req, res) => {
         title: `Вакансия ${object.podtype}`,
         object
     })
+})
+router.get('/:id/editwork', async (req, res) => {
+    if (!req.query.allow) {
+        return res.redirect('/escort')
+    } else {
+        let country = await Country.getAll()
+        const object = await workObj.findById(req.params.id)
+        res.render('editwork', {
+            title: 'Редактирование',
+            object,country
+        })
+    }
+})
+
+
+router.post('/editwork', async (req, res) => {
+    try {
+        console.log(req.body)
+        if (req.files.length) {
+            req.files.forEach((el) => {
+                req.body.photo.unshift(el.filename)
+                new Promise((resolve, reject) => {
+                    const data = savePhoto(el)
+                    if (data === true) {
+                        resolve(data)
+                    } else {
+                        req.flash('error', 'Что то пошло не так, попробуйте позже')
+                        res.redirect('/lk')
+                        reject(false)
+                    }
+                }).then(data => {
+                    console.log('Save photo', data)
+                })
+            })
+        }
+
+        await req.body.photo.forEach((e, i) => {
+            if (e.length <= 0) {
+                req.body.photo.splice(i, 1)
+            }
+        })
+
+        console.log(req.body.photo)
+        await workObj.findByIdAndUpdate(req.body.id, req.body)
+        req.flash('message', 'Объявление успешно отредактировано')
+        res.redirect('/lk')
+    } catch (e) {
+        req.flash('message', 'Ошибка редактирования, повторите попытку позже')
+        console.log('Редактирование', e)
+        res.redirect('/lk')
+    }
 })
 module.exports = router
