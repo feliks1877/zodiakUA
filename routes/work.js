@@ -40,19 +40,20 @@ router.get('/work/page/:page', async (req, res) => {
     try {
         const city = await City.getAll()
         const user = req.session.user
-        const objects = []
         const pageNumber = req.params.page
-        const arr = await workObj.find().where({active: 1}).sort({date: 'desc'})
+        const objects = await workObj.find().where({active: 1}).sort({date: 'desc'})
             .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
-        const amount = await workObj.find().where({active: 1})
-        await Func.filBalance(arr, objects)
-        const page = await Func.pagination(amount)
-        await res.render('escort', {
-            title: 'Escort',
-            objects, city, user, page
+        await objects.forEach(el => {
+            el.description[0] = el.description[0].substring(0, 150)
+        })
+        const page = await Func.pagination(objects)
+        await Func.timeConvert(objects)
+        await res.render('work', {
+            title: `Вакансии`,
+            objects,city,user,page
         })
     } catch (e) {
-        console.log('ERROR ESCORT PAGE', e)
+        console.log('ERROR WORK PAGE', e)
     }
 
 })
@@ -69,8 +70,6 @@ router.get('/:id/editwork', async (req, res) => {
         })
     }
 })
-
-
 router.post('/editwork', async (req, res) => {
     try {
         console.log(req.body)
