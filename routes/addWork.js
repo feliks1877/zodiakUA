@@ -18,7 +18,6 @@ function payAdd(pay,userId,object){
     })
 }
 
-
 router.get('/add/workadd', async ( req,res) => {
     let country = await Country.getAll()
     await res.render('addWork', {

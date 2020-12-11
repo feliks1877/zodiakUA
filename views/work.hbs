@@ -40,7 +40,7 @@
         <ul class="pagination">
             <li id="prevLi"><a href="" id="prev"><i class="material-icons">chevron_left</i></a></li>
             {{#each page}}
-                <li><a href="/page/{{this}}" data-path="/page/{{this}}">{{this}}</a></li>
+                <li><a href="/work/page/{{this}}" data-path="/work/page/{{this}}">{{this}}</a></li>
             {{/each}}
             <li class="waves-effect"><a href="" id="next"><i class="material-icons">chevron_right</i></a></li>
         </ul>
@@ -52,89 +52,5 @@
             <</a></h5>
 {{/if}}
 <style>
-    .block--work {
-        width: 90%;
-        height: 245px;
-    }
 
-    .block--work--img {
-        height: 200px;
-        width: 100%;
-        object-fit: cover;
-        border-radius: 6px;
-        box-shadow: 1px 3px 3px black;
-    }
-
-    .block--work--disc {
-        text-shadow: 2px 1px 2px black;
-        position: relative;
-        top: 6px;
-        color: white;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
-    }
-
-    .block--work--blur {
-        position: absolute;
-        border-radius: 5px;
-        width: 339px;
-        /*border: 3px solid #27e26e;*/
-        -webkit-backdrop-filter: blur(3px);
-        backdrop-filter: blur(3px)
-    }
-
-    .work--svg {
-        position: absolute;
-        filter: drop-shadow(1px 1px 1px black);
-        background: linear-gradient(152deg, #efe7e70f, #f3eeeef5, #ffffff1a);
-        height: 2px;
-        margin-top: 8%;
-    }
-
-    .block--work--bottom {
-        display: flex;
-        justify-content: space-around;
-        padding: 3px 5px 4px 0;
-        color: #444;
-        background: aliceblue;
-        /*position: relative;*/
-        /*bottom: 4px;*/
-        /*width: 101.5%;*/
-        opacity: 0.8;
-        border-radius: 0 0 7px 7px;
-    }
-    .block--work--bottom > a{
-        color: #3fa7a7;
-    }
-    .block--work--desc {
-        text-shadow: 0.4px 1px 4px black;
-        color: white;
-        margin-top: 9px;
-        height: 144px;
-        padding: 30px;
-        font-variant: oldstyle-nums;
-        text-align: justify;
-        line-height: 17px;
-    }
-    @media (min-width: 600px) {
-        .block--work {
-            width: 400px;
-            margin: 10px;
-        }
-        .block--work--bottom {
-            width: 399px;
-        }
-        .work--svg {
-            margin-top: 6%;
-        }
-        .block--work--disc {
-            position: relative;
-            width: 398px;
-        }
-        .block--work--desc {
-            width: 399px;
-            margin-top: 30px;
-        }
-    }
 </style>

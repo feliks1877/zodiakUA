@@ -4,33 +4,17 @@ const Objects = require('../models/objects')
 const Review = require('../models/review')
 const meta = require('../headers/meta')
 const Meta = require('../models/meta')
+const Func = require('../function/func')
 const savePhoto = require('../function/savePhoto')
 const router = Router()
-
-function filBalance(arr, ob) {
-    for (let i = 0; i < arr.length; i++) {
-        if (arr[i].userId.balance > 0) {
-            ob.push(arr[i])
-        }
-    }
-}
-
-function pagination(arr) {
-    const p = arr.length / 50
-    const page = []
-    for (let i = 0; i < p; i++) {
-        page.push(i + 1)
-    }
-    return page
-}
 
 router.get('/escort', async (req, res) => {
     const user = req.session.user
     const city = await City.getAll()
     const objects = []
     const arr = await Objects.find().where({active: 1}).sort({date: 'desc'}).populate('userId')
-    await filBalance(arr, objects)
-    const page = await pagination(arr)
+    await Func.filBalance(arr, objects)
+    const page = await Func.pagination(arr)
     await res.render('escort', {
         title: meta.titleEscort,
         meta: meta.contentEscort,
@@ -40,7 +24,6 @@ router.get('/escort', async (req, res) => {
 
 router.get('/page/:page', async (req, res) => {
     try {
-
         const city = await City.getAll()
         const user = req.session.user
         const objects = []
@@ -48,8 +31,8 @@ router.get('/page/:page', async (req, res) => {
         const arr = await Objects.find().where({active: 1}).sort({date: 'desc'})
             .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
         const amount = await Objects.find().where({active: 1})
-        await filBalance(arr, objects)
-        const page = await pagination(amount)
+        await Func.filBalance(arr, objects)
+        const page = await Func.pagination(amount)
         await res.render('escort', {
             title: 'Escort',
             objects, city, user, page
@@ -73,9 +56,9 @@ router.get('/escort/:name', async (req, res) => {
             .populate('userId')
         resolve(c)
     }).then((c) => {
-        filBalance(c, object)
+        Func.filBalance(c, object)
         if (cityes.name) {
-            const page = pagination(c)
+            const page = Func.pagination(c)
             let cityMph = Meta.morph(cityes.name)
             res.render('city', {
                 title: `Эскорт ${cityes.name}`,
@@ -95,7 +78,7 @@ router.get('/city/:name/page/:page', async (req, res) => {
     const arr = await Objects.find({active: 1}).where('city').equals(req.params.name)
     const object = await Objects.find({active: 1}).where('city').equals(req.params.name).sort({date: 'desc'})
         .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
-    const page = pagination(arr)
+    const page = Func.pagination(arr)
     let cityMph = Meta.morph(cityes.name)
     res.render('city', {
         title: `Эскорт ${cityes.name}`,
@@ -134,8 +117,7 @@ router.get('/:id/edit', async (req, res) => {
 
 router.post('/edit', async (req, res) => {
     try {
-        console.log(req.body)
-        if (req.files.length) {
+        if(req.files.length) {
             req.files.forEach((el) => {
                 req.body.photo.unshift(el.filename)
                 new Promise((resolve, reject) => {
@@ -152,14 +134,11 @@ router.post('/edit', async (req, res) => {
                 })
             })
         }
-
         await req.body.photo.forEach((e, i) => {
             if (e.length <= 0) {
                 req.body.photo.splice(i, 1)
             }
         })
-
-        console.log(req.body.photo)
         await Objects.findByIdAndUpdate(req.body.id, req.body)
         req.flash('message', 'Объявление успешно отредактировано')
         res.redirect('/lk')
