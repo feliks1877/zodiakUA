@@ -8,7 +8,7 @@
                 <select name="podtype">
                     <option value="" disabled selected>Выбрать сферу</option>
                     <option value="Эскорт">Escort</option>
-                    <option value="Админтсратор">Администратор</option>
+                    <option value="Администратор">Администратор</option>
                     <option value="Диспетчер">Диспетчер</option>
                     <option value="Водитель">Водитель</option>
                 </select>
@@ -17,6 +17,7 @@
             <div class="input-field col s6">
                 {{#if country}}
                     <select name="country" id="country">
+                        <option value="disabled" >Выбрать страну</option>
                         {{#each country}}
                             <option value="{{this}}">{{this}}</option>
                         {{/each}}
