@@ -28,7 +28,7 @@ function timeConvert(obj) {
         if (time < 24) {
             let t = Math.round(time)
             let s = (t === 0) ? 'Сегодня' : (t === 1 || t === 21) ? `${t} час назад` :
-                (t >= 2 && t <= 4 || t < 22)
+                (t >= 2 && t <= 4 || t >= 22)
                     ? `${t} часа назад` : (t >= 5 && t <= 20) ?
                         `${t} часов назад` :  null
             el.description.push(s)
