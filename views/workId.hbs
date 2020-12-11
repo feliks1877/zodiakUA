@@ -1,0 +1,79 @@
+<div class="parallax-container">
+    <div class="parallax par--lk">
+        <img alt="Escort Model" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{object.photo.[0]}}">
+    </div>
+    <h1>{{object.country}}</h1>
+</div>
+<br>
+<div class="container">
+    <div class="block1">
+        <hr>
+        <p>{{object.description.[0]}}</p>
+        <hr>
+    </div>
+    <table class="centered striped">
+        <thead>
+        <tr>
+            <th>Вакансия</th>
+            <th>Город</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{object.podtype}}</td>
+            <td>{{object.city}}</td>
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+            <th>График</th>
+            <th>Рабочие часы</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{object.description.[1]}}</td>
+            <td>{{object.description.[2]}}</td>
+        </tr>
+        </tbody>
+        <thead>
+        <tr>
+            <th>Предлагаемая з/п</th>
+            <th>Дата объявления</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>{{object.description.[3]}}</td>
+            <td>{{object.description.[4]}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+<div class="fixed-action-btn">
+    <a class="btn-floating btn-large cyan darken-3">
+        <i class="large material-icons">phone</i>
+    </a>
+    <ul>
+        {{#if object.phone.[0]}}
+            <li><a href="tel:{{object.phone.[0]}}" class="btn-floating blue-grey lighten-2"><i
+                    class="large material-icons">phone</i></a></li>
+        {{/if}}
+        {{#if object.phone.[1]}}
+            <li><a href="https://wa.me/{{object.phone.[1]}}?text=Привет! Я пишу с сайта ZODIAK" class="btn-floating green"><i
+                    class="fab fa-whatsapp"></i></a></li>
+        {{/if}}
+        {{#if object.phone.[2]}}
+            <li><a href="viber://add?number={{object.phone.[2]}}" class="btn-floating deep-purple"><i
+                    class="fab fa-viber"></i></a>
+            </li>
+        {{/if}}
+        {{#if object.phone.[3]}}
+            <li><a href="https://t.me/{{object.phone.[3]}}" class="btn-floating  light-blue"><i
+                    class="fab fa-telegram"></i></a>
+            </li>
+        {{/if}}
+    </ul>
+</div>
+<br>
+<br>

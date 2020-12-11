@@ -1,17 +1,15 @@
 <div class="parallax-container">
     <div class="parallax par--lk">
-        <img src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{object.photo.[0]}}">
+        <img alt="Escort Model" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{object.photo.[0]}}">
     </div>
     <h1>{{object.name}}
         {{#if object.veryfication}}
-            <i class="fas fa-check-circle"></i></span><br>
+           <span><i class="fas fa-check-circle"></i></span><br>
         {{/if}}
     </h1>
     <div class="appr" data-appraisal="{{object.appraisal}}"></div>
 </div>
 <div class="container">
-    <!--    <span>{{object.date}}</span>-->
-
     <div class="carousel">
         {{#if object.photo.length}}
             {{#each object.photo}}
@@ -26,9 +24,7 @@
         <hr>
         <p>{{object.description}}</p>
         <hr>
-
         {{#if object.paramModel.length}}
-
             <table class="centered striped">
 
                 <thead>
@@ -196,15 +192,9 @@
                         </div>
                     </a>
                 </div>
-
-
             {{/each}}
         </div>
-    {{else}}
-        <p>Пусто</p>
     {{/if}}
-
-
     <div id="btnReview">
         <a href="/review/{{object.id}}" class="btn waves-effect waves-purple">Оставить отзыв</a>
     </div>

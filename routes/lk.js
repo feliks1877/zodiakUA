@@ -1,6 +1,7 @@
 const {Router} = require('express')
 const City = require('../models/city')
 const Object = require('../models/objects')
+const workObj = require('../models/workObj')
 const User = require('../models/user')
 const Pay = require('../models/pay')
 const router = Router()
@@ -29,10 +30,11 @@ router.get('/lk', async (req, res) => {
     if(req.session.isAuthenticated === true) {
     const user = await User.findById(req.session.user._id)
     const objects = await Object.find().where('userId').equals(req.session.user._id).sort({date: 'desc'})
+    const WorkObj = await workObj.find({userId: req.session.user._id}).sort({date: 'desc'})
     res.render('lk', {
         title: req.session.user.login,
         message: req.flash('message'),
-        objects,
+        objects, WorkObj,
         user
     })}else {
         req.flash('error', 'Сначала авторизуйтесь')
@@ -40,7 +42,7 @@ router.get('/lk', async (req, res) => {
     }
 })
 router.get('/:id/lk', async (req, res) => {
-    const obj = await Object.findByIdAndUpdate({_id: req.params.id}, {date: new Date()}, {balance: -25})
+    const obj = await Object.findByIdAndUpdate({_id: req.params.id}, {date: new Date()})
     const user = await User.findById({_id: req.session.user._id})
     const balance = user.balance - 25
     await User.updateOne({_id: req.session.user._id}, {balance: balance})
@@ -50,13 +52,12 @@ router.get('/:id/lk', async (req, res) => {
 })
 
 router.get('/active/:id', async (req,res) => {
-    // console.log('active', req.params,'www',req.query)
     await Object.updateOne({_id: req.params.id}, {active: req.query.active})
-    res.redirect('/lk')
+    await res.redirect('/lk')
 })
 router.post('/lk/:autoTop',async (req,res) => {
     await Object.findByIdAndUpdate(req.body.id,{ autoTop: req.body.time})
-    res.redirect('/lk')
+    await res.redirect('/lk')
 })
 
 router.get('/pay/:pay',async (req,res)=>{

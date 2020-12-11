@@ -1,4 +1,3 @@
-
 <div id="lk">
     <h5>Личный кабинет</h5>
     {{#if message}}
@@ -10,7 +9,8 @@
             <span class="title">Добавить объявление</span>
         </li>
         <li class="collection-item avatar">
-            <a href="#!" class="btn-floating waves-effect waves-light blue-grey"><i class="material-icons">add</i></a>
+            <a href="/add/workadd" class="btn-floating waves-effect waves-light blue-grey"><i
+                    class="material-icons">add</i></a>
             <span class="title">В раздел вакнсии</span>
         </li>
         <li class="collection-item avatar">
@@ -49,6 +49,13 @@
         </table>
     </div>
 </div>
+<div class="col s12">
+    <ul class="tabs tabs-lk">
+        <li class="tab col s3" data-block="block0"><a class="active" href="#block1">Эскорт</a></li>
+        <li class="tab col s3" data-block="block1"><a href="#block2">Вакансии</a></li>
+    </ul>
+</div>
+<div id="block1" class="col s12">
 {{#if objects.length}}
 
     <div class="block--lk">
@@ -61,7 +68,8 @@
 
                     <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
                     <span class="card-title title-lk">{{name}}</span>
-                    <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active=" data-act="{{active}}"></span>
+                    <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active="
+                          data-act="{{active}}"></span>
                 </div>
 
 
@@ -107,6 +115,68 @@
         {{/each}}
     </div>
 {{/if}}
+</div>
+<div id="block2" class="col s12">
+{{#if WorkObj}}
+    <div class="block--lk">
+        {{#each WorkObj}}
+
+            <div class="card">
+                <div class="card-image">
+
+                    <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
+                    <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active="
+                          data-act="{{active}}"></span>
+                </div>
+
+
+                <!-- Modal Structure -->
+                <div id="{{this.id}}" class="modal">
+
+                    <div class="modal-content">
+                        <form method="post" action="/lk/:autoTop" name="autoOn">
+                            <input name="id" type="hidden" value="{{this.id}}">
+                            <input type="time" name="time" value="{{this.autoTop}}">
+                            {{#if autoTop}}
+                                <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} по Мск
+                                    времени</p>
+                            {{else}}
+                                <p>Автоподнятие отключено</p>
+                            {{/if}}
+                            <button type="button" name="btnOn" class=" modal-close waves-effect waves-green btn-flat">
+                                Включить
+                            </button>
+                        </form>
+
+
+                        <form method="post" action="/lk/:autoTop">
+                            <input name="id" type="hidden" value="{{this.id}}">
+                            <input type="hidden" name="time" value="">
+                            <button type="button" name="btnOn" class="modal-close waves-effect waves-green btn-flat">
+                                Отключить
+                            </button>
+                        </form>
+
+                    </div>
+                </div>
+
+                <div class="block-btn">
+                    <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>
+                    <a data-rcm="{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
+
+                    <a data-top="/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
+                    <a href="/{{id}}/edit?allow=true" class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}
+</div>
+
+
+
+
+
 <style>
     .modal-content > form > button {
         -webkit-appearance: button;
@@ -173,7 +243,8 @@
         width: 180px !important;
         object-fit: cover;
     }
-    .title-lk{
+
+    .title-lk {
         padding: 5px !important;
         font-size: 20px !important;
     }
@@ -194,7 +265,8 @@
             width: 50%;
         }
     }
-    .statusLk:active{
+
+    .statusLk:active {
         transform: scale(0.97);
     }
 </style>

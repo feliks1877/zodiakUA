@@ -11,6 +11,7 @@ const {allowInsecurePrototypeAccess} = require('@handlebars/allow-prototype-acce
 const homeRoutes = require('./routes/home')
 const escortRoutes = require('./routes/escorts')
 const addRoutes = require('./routes/add')
+const addWorkRoutes = require('./routes/addWork')
 const luxRoutes = require('./routes/lux')
 const workRoutes = require('./routes/work')
 const reviewRoutes = require('./routes/review')
@@ -23,7 +24,6 @@ const keys = require('./keys')
 const bot = require('./bot/bot')
 const fileMiddleware = require('./middleware/file')
 const varMiddleware = require('./middleware/variables')
-
 
 const app = express()
 
@@ -84,6 +84,7 @@ app.use(flash())
 app.use(homeRoutes)
 app.use(escortRoutes)
 app.use(addRoutes)
+app.use(addWorkRoutes)
 app.use(luxRoutes)
 app.use(workRoutes)
 app.use(reviewRoutes)

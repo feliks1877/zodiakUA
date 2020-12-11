@@ -1,7 +1,137 @@
 <div class="parallax-container">
-    <div class="parallax"><img src="https://u-stena.ru/upload/iblock/7a7/7a70421b850b0219f4591985c8f28664.jpg"></div>
+    <div class="parallax"><img src="/images/2.jpg"></div>
     <h3>WORK</h3>
 </div>
-</br>
-</br>
-<h3>Вакансии</h3>
+
+<h4 class="zag">
+    <hr>
+    {{title}}
+    <hr>
+</h4>
+{{#if objects.length}}
+    <div class="contObj">
+        {{#each objects}}
+
+            <div class="block--work">
+                <div class="block--work--blur">
+                    <div class="block--work--disc">
+                        <span>{{country}}</span><br>
+                        <span>{{podtype}}</span><br>
+                        <span>{{description.[3]}}</span>
+                        <svg width="300" height="25" class="work--svg">
+                            <path d="M -10 22 H 0 300" fill="transparent" stroke="#3c95e8"></path>
+                        </svg>
+
+                    </div>
+                    <div class="block--work--desc">
+                        <span>{{description.[0]}}</span>
+                    </div>
+                    <div class="block--work--bottom">
+                        <span>{{description.[4]}}</span>
+                        <a href="/work/id/{{id}}">Подробнее</a>
+                    </div>
+                </div>
+                <img class="block--work--img" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}"
+                     alt="WORK">
+            </div>
+        {{/each}}
+    </div>
+    {{#if page}}
+        <ul class="pagination">
+            <li id="prevLi"><a href="" id="prev"><i class="material-icons">chevron_left</i></a></li>
+            {{#each page}}
+                <li><a href="/page/{{this}}" data-path="/page/{{this}}">{{this}}</a></li>
+            {{/each}}
+            <li class="waves-effect"><a href="" id="next"><i class="material-icons">chevron_right</i></a></li>
+        </ul>
+    {{/if}}
+{{else}}
+    <h5 class="pagination">Оъявлений нет
+        <a href="/work" class="btn-floating waves-effect waves-light blue-grey lighten-3"> <i
+                class="large material-icons">arrow_back</i>
+            <</a></h5>
+{{/if}}
+<style>
+    .block--work {
+        width: 90%;
+        height: 245px;
+    }
+
+    .block--work--img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 6px;
+        box-shadow: 3px 5px 6px black;
+    }
+
+    .block--work--disc {
+        text-shadow: 0.4px 1px 4px black;
+        position: relative;
+        top: 6px;
+        color: white;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+    }
+
+    .block--work--blur {
+        position: absolute;
+        height: 206px;
+        width: 89%;
+        border-radius: 5px;
+        /*border: 3px solid #27e26e;*/
+        -webkit-backdrop-filter: blur(3px);
+        backdrop-filter: blur(3px)
+    }
+
+    .work--svg {
+        position: absolute;
+        background: linear-gradient(152deg, #efe7e70f, #f3eeeef5, #ffffff1a);
+        height: 2px;
+        margin-top: 10%;
+    }
+
+    .block--work--bottom {
+        display: flex;
+        justify-content: space-around;
+        padding: 3px 5px 4px 0;
+        color: #444;
+        background: aliceblue;
+        position: fixed;
+        bottom: 0;
+        width: 101.5%;
+        opacity: 0.8;
+        border-radius: 0 0 7px 7px;
+    }
+
+    .block--work--desc {
+        text-shadow: 0.4px 1px 4px black;
+        color: white;
+        margin-top: 13px;
+        padding: 30px;
+        font-variant: oldstyle-nums;
+        text-align: justify;
+        line-height: 17px;
+    }
+    @media (min-width: 600px) {
+        .block--work {
+            width: 400px;
+            margin: 10px;
+        }
+        .block--work--bottom {
+            width: 399px;
+        }
+        .work--svg {
+            margin-top: 6%;
+        }
+        .block--work--disc {
+            position: fixed;
+            width: 399px;
+        }
+        .block--work--desc {
+            width: 399px;
+            margin-top: 30px;
+        }
+    }
+</style>

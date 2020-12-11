@@ -1,4 +1,3 @@
-const fs = require('fs');
 const {Router} = require('express')
 const City = require('../models/city')
 const savePhoto = require('../function/savePhoto')
@@ -7,16 +6,14 @@ const User = require('../models/user')
 const keys = require('../keys')
 const router = Router()
 
-
-
 router.get('/add', async (req, res) => {
     const city = await City.getAll()
-    if(req.session.isAuthenticated === true) {
+    if (req.session.isAuthenticated === true) {
         await res.render('add', {
-        title: 'Добавить объявление',
-        city
-    })
-    }else {
+            title: 'Добавить объявление',
+            city
+        })
+    } else {
         await req.flash('error', 'Чтобы добавить объявление необходимо авторизоваться')
         res.redirect('/login')
     }
@@ -25,7 +22,7 @@ router.get('/add', async (req, res) => {
 router.post('/add', async (req, res) => {
     const userId = req.session.user._id
     const path = []
-    await req.files.forEach((el)=>{
+    await req.files.forEach((el) => {
         path.push(el.filename)
     })
     const object = new Object({
@@ -55,21 +52,22 @@ router.post('/add', async (req, res) => {
         const user = await User.findById(userId)
         const balance = user.balance - 25
         await User.updateOne({_id: req.session.user._id}, {balance: balance})
-        await req.files.forEach((el)=> {
-            new Promise((resolve,reject) => {
+        await req.files.forEach((el) => {
+            new Promise((resolve, reject) => {
                 const data = savePhoto(el)
                 resolve(data)
                 reject(false)
             }).then(data => {
-                console.log('Save photo',data)
+                console.log('Save photo', data)
             })
         })
         req.flash('message', 'Объявление успешно добавлено')
-        res.redirect('/escort')
-    }catch (e) {
+        res.redirect('/lk')
+    } catch (e) {
         console.log(e)
     }
 })
+
 
 module.exports = router
 

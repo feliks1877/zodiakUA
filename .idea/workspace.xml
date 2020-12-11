@@ -2,11 +2,27 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/data/country.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/country.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/workObj.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/addWork.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/addWork.hbs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/workId.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bot/bot.js" beforeDir="false" afterPath="$PROJECT_DIR$/bot/bot.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/add.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/add.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/cron.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/cron.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/lk.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/lk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/work.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/work.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/add.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/add.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/auth/login.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/lk.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/model.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/model.hbs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/work.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/work.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +58,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="14.14.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.0" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,6 +72,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\data" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\images" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP" />
@@ -130,7 +147,10 @@
       <workItem from="1606899232505" duration="20265000" />
       <workItem from="1606984003835" duration="27270000" />
       <workItem from="1607026346532" duration="21000" />
-      <workItem from="1607182829844" duration="109580000" />
+      <workItem from="1607182829844" duration="112467000" />
+      <workItem from="1607511750942" duration="605000" />
+      <workItem from="1607538745315" duration="32595000" />
+      <workItem from="1607635089752" duration="18664000" />
     </task>
     <servers />
   </component>
@@ -145,30 +165,30 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="267" y="19" key="#Inspections/0.0.1280.680@0.0.1280.680" timestamp="1606305453785" />
-    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1606072645409">
+    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1607682485020">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1606072645409" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1606743630019">
+    <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1607682485020" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607612858570">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1606743630019" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1607612858570" />
     <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1606387785353">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1606387785353" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1607183228891">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1607539218425">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607183228891" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1607539218425" />
     <state x="233" y="74" key="Vcs.Push.Dialog.v2" timestamp="1606047248294">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="233" y="74" key="Vcs.Push.Dialog.v2/0.0.1280.680@0.0.1280.680" timestamp="1606047248294" />
-    <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1606254276580">
+    <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1607612275473">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1606254276580" />
+    <state x="247" y="0" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1280.680@0.0.1280.680" timestamp="1607612275473" />
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1606387760538">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -185,16 +205,5 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="303" y="1" width="672" height="678" key="search.everywhere.popup/0.0.1280.680@0.0.1280.680" timestamp="1607196557621" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/function/savePhoto.js</url>
-          <line>57</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

@@ -44,22 +44,26 @@ bot.command('start', async (ctx) => {
     })
 })
 
-bot.command( 'random',  async (ctx) => {
-    const object = await Object.find({active: 1}).sort({date: 'desc'}).limit(10)
-    if(object.length <= 0){
-       await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
-    }
-    object.forEach(el => {
-        ctx.replyWithPhoto(`https://zodaikapp.s3.us-east-2.amazonaws.com/img/${el.photo[0]}`, {
-            caption: `${el.city}\r\n${el.description}`,
-            reply_markup: {
-                inline_keyboard: [
-                    [{text: `${el.name}`, url: `http://zodiak.world/id/${el._id}`}]
-                ]
-            }
+bot.command( 'random',  async (ctx,next) => {
+    try {
+        const object = await Object.find({active: 1}).sort({date: 'desc'}).limit(10)
+        if(object.length <= 0){
+            await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
+        }
+        object.forEach(el => {
+            ctx.replyWithPhoto(`https://zodaikapp.s3.us-east-2.amazonaws.com/img/${el.photo[0]}`, {
+                caption: `${el.city}\r\n${el.description}`,
+                reply_markup: {
+                    inline_keyboard: [
+                        [{text: `${el.name}`, url: `http://zodiak.world/id/${el._id}`}]
+                    ]
+                }
+            })
         })
-    })
-    return true
+        return true
+    }catch (e) {
+        console.log('ERR RANDOM BOT', e)
+    }
 })
 
 bot.use(async (ctx, next) => {
@@ -98,9 +102,12 @@ bot.use(async (ctx, next) => {
         }
     } catch (e) {
         console.log('ERROR_COMAND', e)
+        return next()
     }
 })
-
+bot.use(async (ctx) => {
+    await ctx.reply('Вы ввели что то не внятное, введите слэш "/" и дождитесть списка команд')
+})
 bot.catch(error => {
     console.log('telegraf error', error.response, error.parameters, error.on || error)
 })

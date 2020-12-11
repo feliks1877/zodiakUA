@@ -8,16 +8,7 @@
     </div>
     <form id="formMain" action="/add" method="post" enctype="multipart/form-data">
         <div id="block1" class="col s12">
-            <div class="input-field col s10">
-                <select name="type" id="type" class="validate validateMain" required>
-                    <option value="">Выбрать раздел</option>
-                    <option value="escort">Эскорт</option>
-                    <option value="work">Вакансии</option>
-                    <option value="appartament">Квартиры посуточно</option>
-                </select>
-                <span class="helper-text" data-error="Выбрать раздел"
-                      data-success="OK">Выбрать раздел (обязательно)</span>
-            </div>
+            <input type="hidden" name="type" value="escort">
             <div class="input-field col s10">
                 <select name="city" class="validateMain" required>
                     <option value="">Выбрать город</option>

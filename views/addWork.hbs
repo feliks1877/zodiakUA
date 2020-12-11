@@ -1,0 +1,102 @@
+<br>
+<h5 style="text-align: center">В раздел вакансии</h5>
+<div class="row">
+    <form class="col s12" method="post" action="/add/workadd" enctype="multipart/form-data">
+        <div class="row" style="padding: 11px">
+            <div class="input-field col s6">
+                <input type="hidden" name="type" value="work">
+                <select name="podtype">
+                    <option value="" disabled selected>Выбрать сферу</option>
+                    <option value="Эскорт">Escort</option>
+                    <option value="Админтсратор">Администратор</option>
+                    <option value="Диспетчер">Диспетчер</option>
+                    <option value="Водитель">Водитель</option>
+                </select>
+                <span class="helper-text" data-error="Предлагаемая сфера" data-success="right">Выбрать сферу</span>
+            </div>
+            <div class="input-field col s6">
+                {{#if country}}
+                    <select name="country" id="country">
+                        {{#each country}}
+                            <option value="{{this}}">{{this}}</option>
+                        {{/each}}
+                    </select>
+                {{/if}}
+            </div>
+            <div class="input-field col s12">
+                <input id="city" type="text" name="city" class="validate"
+                       placeholder="Указать город">
+                <label for="city">Город</label>
+            </div>
+            <div class="input-field col s12">
+                <textarea id="textarea1" name="description[]" required minlength="150"
+                          class="materialize-textarea"></textarea>
+                <label for="textarea1">Описание</label>
+                <span class="helper-text" data-error="Заполните не менее 150 символов" data-success="right">Условия работы</span>
+                <br>
+            </div>
+            <div class="input-field col s12">
+                <input id="grafik" type="text" name="description[]" class="validate"
+                       placeholder="Например: График два через два или пн-пт">
+                <label for="grafik">График работы (дни рабочие/выходные)</label>
+            </div>
+
+
+            <div class="input-field col s12">
+                <input id="hour" type="text" name="description[]" class="validate"
+                       placeholder="Например С 9 до 20 рабочие часы">
+                <label for="hour">График работы (В часах)</label>
+            </div>
+            <div class="input-field col s12">
+                <input id="price" type="text" name="description[]" class="validate" placeholder="З/П от 50 до 100">
+                <label for="price">Ожидаемая з/п</label>
+            </div>
+
+        </div>
+        <div class="input-field col s12">
+            <!--                <label for="photo">Доабавить фото</label>-->
+            <!--                <input type="file" name="photo[]" id="photo" multiple>-->
+            <div class="file-field input-field">
+                <div class="btn">
+                    <label for="photo">Доабавить фото</label>
+                    <input type="file" class="validate validateMain" name="photo[]" multiple id="photo" required>
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>
+                </div>
+                <div class="file-path-wrapper">
+                    <input class="file-path validate" required type="text" placeholder="Добавьте не менее двух фото">
+                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-field col s7">
+            <input id="telephone" type="tel" class="validate validateMain" name="phone[]" required
+                   pattern="[\D0-9]{5,15}">
+            <label for="telephone"><i class="fas fa-phone"></i>Телефон</label>
+            <span class="helper-text" data-error="Укажите номер телефона + и цифры" data-success="OK">Укажите номер телефона (обязательно)</span>
+        </div>
+        <div class="input-field col s7">
+
+            <input id="whatsapp" type="text" name="phone[]" class="validate" pattern="[0-9]{5,15}">
+            <label for="whatsapp"><i class="fab fa-whatsapp"></i>WhatsApp</label>
+            <span class="helper-text" data-error="Международный формат" data-success="OK">Международный формат</span>
+        </div>
+        <div class="input-field col s7">
+
+            <input id="Viber" type="text" name="phone[]" class="validate" pattern="[0-9]{5,15}">
+            <label for="Viber"><i class="fab fa-viber"></i>Viber</label>
+            <span class="helper-text" data-error="Международный формат" data-success="OK">Международный формат</span>
+        </div>
+        <div class="input-field col s7">
+
+            <input id="telegram" type="text" name="phone[]" maxlength="30">
+            <label for="telegram"><i class="fab fa-telegram"></i>Telegram</label>
+            <span class="helper-text" data-error="Укажите ссылку" data-success="OK">Указывайте ник пользователя без @ по номеру
+                 работать не будет</span>
+
+        </div>
+        <div class="input-field col s7">
+            <button type="submit" class="btn">Добавить</button>
+        </div>
+
+    </form>
+</div>

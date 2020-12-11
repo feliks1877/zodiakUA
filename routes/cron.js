@@ -42,7 +42,7 @@ let jobMidnight = new cron('0 0 0 * * *', async function () {
             pay.save()
             resolve(newuser)
         }).then((data) => {
-            console.log('списание за сутки',rbalance)
+            console.log('Списание за сутки',rbalance)
         })
     })
 })
