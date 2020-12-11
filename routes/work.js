@@ -3,6 +3,7 @@ const City = require('../models/city')
 const workObj = require('../models/workObj')
 const savePhoto = require('../function/savePhoto')
 const Func = require('../function/func')
+const meta = require('../headers/meta')
 const Country = require('../models/country')
 const router = Router()
 
@@ -20,6 +21,7 @@ router.get('/work', async (req, res) => {
     await Func.timeConvert(objects)
     res.render('work', {
         title: 'Вакансии',
+        meta: meta.workMeta,
         city, page, objects, user
     })
 
@@ -32,6 +34,7 @@ router.get('/work/id/:id', async (req, res) => {
     await Func.timeConvert(o)
     res.render('workId', {
         title: `Вакансия ${object.podtype}`,
+        meta: `${object.description[0]}`,
         object
     })
 })
@@ -50,6 +53,7 @@ router.get('/work/page/:page', async (req, res) => {
         await Func.timeConvert(objects)
         await res.render('work', {
             title: `Вакансии`,
+            meta: meta.workMeta,
             objects,city,user,page
         })
     } catch (e) {

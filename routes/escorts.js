@@ -35,6 +35,7 @@ router.get('/page/:page', async (req, res) => {
         const page = await Func.pagination(amount)
         await res.render('escort', {
             title: 'Escort',
+            meta: meta.contentEscort,
             objects, city, user, page
         })
     } catch (e) {
