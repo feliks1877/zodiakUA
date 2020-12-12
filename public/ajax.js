@@ -66,15 +66,19 @@ let sta = Array.prototype.slice.call(document.querySelectorAll('span[data-status
 counterFn(sta)
 function statusIcon(el){
     el.removeChild(el.firstChild)
-    if (el.getAttribute('data-act') === '1'){
-        el.insertAdjacentHTML('afterbegin','<i class="green material-icons">play_circle_filled</i>')
-        let toastHTML = '<span>Объявление опубликовано</span>';
-        M.toast({html: toastHTML})
-    }else {
-        el.insertAdjacentHTML('afterbegin','<i class="red material-icons">remove_circle</i>')
-        let toastHTML = '<span>Объявление снято с публикации</span>'
-        M.toast({html: toastHTML});
-    }
+    new Promise((resolve, reject) => {
+        if (el.getAttribute('data-act') === '1'){
+            el.insertAdjacentHTML('afterbegin','<i class="green material-icons">play_circle_filled</i>')
+            let toastHTML = '<span>Объявление опубликовано</span>';
+            M.toast({html: toastHTML})
+        }else {
+            el.insertAdjacentHTML('afterbegin','<i class="red material-icons">remove_circle</i>')
+            let toastHTML = '<span>Объявление снято с публикации</span>'
+            M.toast({html: toastHTML});
+        }
+    }).then(data => {
+        console.log(data)
+    })
 }
 
 sta.forEach(e => {
