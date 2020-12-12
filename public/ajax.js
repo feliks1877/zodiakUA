@@ -114,11 +114,11 @@ sta.forEach(e => {
     e.onclick = async function (event) {
         let elem = event.target.parentElement
         let url = elem.getAttribute('data-status') + (elem.getAttribute('data-act') === '1' ? 0 : 1)
-        await ajax(url).then(async e => {
+        await ajax(url).then(e => {
             let st = elem.getAttribute('data-act') === '1' ? 0 : 1
-            await elem.setAttribute('data-act', st)
-            await statusIcon(elem)
-            await counterFn(sta)
+            elem.setAttribute('data-act', st)
+            counterFn(sta)
+            statusIcon(elem)
         })
     }
 })
