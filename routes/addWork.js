@@ -19,7 +19,12 @@ function payAdd(pay,userId,object){
 }
 
 router.get('/add/workadd', async ( req,res) => {
-    let country = await Country.getAll()
+    let c = await Country.getAll()
+    let country = []
+    Object.keys(c).forEach(key => {
+        country.push(c[key])
+    })
+    await country.sort()
     await res.render('addWork', {
         title: 'Добавить объявление',
         country
