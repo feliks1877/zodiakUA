@@ -22,9 +22,12 @@ function ajax(url) {
     return new Promise((resolve, reject) => {
         const xhttp = new XMLHttpRequest()
         xhttp.open("GET", url, true)
-        xhttp.onload = () => resolve(xhttp.readyState)
-        xhttp.onerror = () => reject(xhttp.onreadystatechange)
-        xhttp.send();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState === 4 && this.status === 200) {
+                resolve(xhttp.readyState)
+            }
+        }
+        xhttp.send()
     })
 }
 
@@ -63,26 +66,22 @@ function counterFn(e1) {
         }
     })
 }
-
+//////////////////////////// ВКЛЮЧЕНИЕ ОТКЛЮЧЕНИЕ//////////////////////////////////////////
 let sta = Array.prototype.slice.call(document.querySelectorAll('span[data-status]'))
 counterFn(sta)
-
 function statusIcon(el) {
     new Promise((resolve, reject) => {
-            el.firstChild.textContent = ''
+            el.firstChild.remove()
             if (el.getAttribute('data-act') === '1') {
-                el.firstChild.textContent = 'play_circle_filled'
-                el.firstChild.classList.remove('red')
-                el.firstChild.classList.add('green')
+                el.insertAdjacentHTML('afterbegin', '<i class="green material-icons">play_circle_filled</i>')
                 let toastHTML = '<span>Объявление опубликовано</span>';
                 M.toast({html: toastHTML})
             } else {
-                el.firstChild.textContent = 'remove_circle'
-                el.firstChild.classList.remove('green')
-                el.firstChild.classList.add('red')
+                el.insertAdjacentHTML('afterbegin', '<i class="red material-icons">remove_circle</i>')
                 let toastHTML = '<span>Объявление снято с публикации</span>'
-                M.toast({html: toastHTML});
+                M.toast({html: toastHTML})
             }
+            resolve(counterFn(sta))
     }).catch(e => {
         console.log(e)
     })
@@ -98,16 +97,13 @@ sta.forEach(e => {
 
 sta.forEach(e => {
     e.onclick = async function (event) {
+        console.log(event.target)
         let elem = event.target.parentElement
         let url = elem.getAttribute('data-status') + (elem.getAttribute('data-act') === '1' ? 0 : 1)
         ajax(url).then(e => {
-            console.log(e)
-            if (e === 4){
-                let st = elem.getAttribute('data-act') === '1' ? 0 : 1
+                let st = elem.getAttribute('data-act') === '1' ? '0' : '1'
                 elem.setAttribute('data-act', st)
-                counterFn(sta)
                 statusIcon(elem)
-            }
         })
     }
 })
