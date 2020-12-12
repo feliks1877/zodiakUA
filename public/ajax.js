@@ -101,10 +101,13 @@ sta.forEach(e => {
         let elem = event.target.parentElement
         let url = elem.getAttribute('data-status') + (elem.getAttribute('data-act') === '1' ? 0 : 1)
         ajax(url).then(e => {
-            let st = elem.getAttribute('data-act') === '1' ? 0 : 1
-            elem.setAttribute('data-act', st)
-            counterFn(sta)
-            statusIcon(elem)
+            console.log(e)
+            if (e === 4){
+                let st = elem.getAttribute('data-act') === '1' ? 0 : 1
+                elem.setAttribute('data-act', st)
+                counterFn(sta)
+                statusIcon(elem)
+            }
         })
     }
 })
