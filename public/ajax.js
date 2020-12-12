@@ -68,8 +68,8 @@ let sta = Array.prototype.slice.call(document.querySelectorAll('span[data-status
 counterFn(sta)
 
 function statusIcon(el) {
-
     new Promise((resolve, reject) => {
+            el.firstChild.textContent = ''
             if (el.getAttribute('data-act') === '1') {
                 el.firstChild.textContent = 'play_circle_filled'
                 el.firstChild.classList.remove('red')
@@ -83,20 +83,6 @@ function statusIcon(el) {
                 let toastHTML = '<span>Объявление снято с публикации</span>'
                 M.toast({html: toastHTML});
             }
-    //     let elem = el.removeChild(el.firstChild)
-    //     console.log('ELEM',elem)
-    //     resolve(elem)
-    // }).then(data => {
-    //     console.log('DATA',data)
-    //     if (el.getAttribute('data-act') === '1') {
-    //         el.insertAdjacentHTML('afterbegin', '<i class="green material-icons">play_circle_filled</i>')
-    //         let toastHTML = '<span>Объявление опубликовано</span>';
-    //         M.toast({html: toastHTML})
-    //     } else {
-    //         el.insertAdjacentHTML('afterbegin', '<i class="red material-icons">remove_circle</i>')
-    //         let toastHTML = '<span>Объявление снято с публикации</span>'
-    //         M.toast({html: toastHTML});
-    //     }
     }).catch(e => {
         console.log(e)
     })
@@ -118,8 +104,6 @@ sta.forEach(e => {
             let st = elem.getAttribute('data-act') === '1' ? 0 : 1
             elem.setAttribute('data-act', st)
             counterFn(sta)
-            return elem
-        }).then(elem => {
             statusIcon(elem)
         })
     }
