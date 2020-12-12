@@ -5,15 +5,15 @@ let passiveSupported = true
 function blce(e) {
     let options = {style: 'currency', currency: 'UAH'}
     let newBalance = new Intl.NumberFormat('ua-UA', options)
-    if(e.dataset.balance === 'value='){
+    if (e.dataset.balance === 'value=') {
         e.textContent = 'Цена не указана'
-    }else {
+    } else {
         e.textContent = newBalance.format(e.dataset.balance)
     }
 }
 
 if (balance) {
-    balance.forEach((e)=>{
+    balance.forEach((e) => {
         blce(e)
     })
 }
@@ -31,7 +31,7 @@ function ajax(url) {
 a.forEach((e) => {
     e.addEventListener('click', () => {
         ajax(e.dataset.top).then((el) => {
-            balance.forEach((el)=>{
+            balance.forEach((el) => {
                 el.dataset.balance = el.dataset.balance - 25
                 blce(el)
             })
@@ -50,6 +50,7 @@ function counterFn(e1) {
             return currCount++
         }
     }
+
     let amount = counter()
     let active = counter()
     let passive = counter()
@@ -62,35 +63,55 @@ function counterFn(e1) {
         }
     })
 }
+
 let sta = Array.prototype.slice.call(document.querySelectorAll('span[data-status]'))
 counterFn(sta)
-function statusIcon(el){
-    el.removeChild(el.firstChild)
+
+function statusIcon(el) {
+
     new Promise((resolve, reject) => {
-        if (el.getAttribute('data-act') === '1'){
-            el.insertAdjacentHTML('afterbegin','<i class="green material-icons">play_circle_filled</i>')
-            let toastHTML = '<span>Объявление опубликовано</span>';
-            M.toast({html: toastHTML})
-        }else {
-            el.insertAdjacentHTML('afterbegin','<i class="red material-icons">remove_circle</i>')
-            let toastHTML = '<span>Объявление снято с публикации</span>'
-            M.toast({html: toastHTML});
-        }
-    }).then(data => {
-        console.log(data)
+            if (el.getAttribute('data-act') === '1') {
+                el.firstChild.textContent = 'play_circle_filled'
+                el.firstChild.classList.remove('red')
+                el.firstChild.classList.add('green')
+                let toastHTML = '<span>Объявление опубликовано</span>';
+                M.toast({html: toastHTML})
+            } else {
+                el.firstChild.textContent = 'remove_circle'
+                el.firstChild.classList.remove('green')
+                el.firstChild.classList.add('red')
+                let toastHTML = '<span>Объявление снято с публикации</span>'
+                M.toast({html: toastHTML});
+            }
+    //     let elem = el.removeChild(el.firstChild)
+    //     console.log('ELEM',elem)
+    //     resolve(elem)
+    // }).then(data => {
+    //     console.log('DATA',data)
+    //     if (el.getAttribute('data-act') === '1') {
+    //         el.insertAdjacentHTML('afterbegin', '<i class="green material-icons">play_circle_filled</i>')
+    //         let toastHTML = '<span>Объявление опубликовано</span>';
+    //         M.toast({html: toastHTML})
+    //     } else {
+    //         el.insertAdjacentHTML('afterbegin', '<i class="red material-icons">remove_circle</i>')
+    //         let toastHTML = '<span>Объявление снято с публикации</span>'
+    //         M.toast({html: toastHTML});
+    //     }
+    }).catch(e => {
+        console.log(e)
     })
 }
 
 sta.forEach(e => {
-    if (e.getAttribute('data-act') === '1'){
-        e.insertAdjacentHTML('afterbegin','<i class="green material-icons">play_circle_filled</i>')
-    }else {
-        e.insertAdjacentHTML('afterbegin','<i class="red material-icons">remove_circle</i>')
+    if (e.getAttribute('data-act') === '1') {
+        e.insertAdjacentHTML('afterbegin', '<i class="green material-icons">play_circle_filled</i>')
+    } else {
+        e.insertAdjacentHTML('afterbegin', '<i class="red material-icons">remove_circle</i>')
     }
 })
 
 sta.forEach(e => {
-    e.onclick = async function(event) {
+    e.onclick = async function (event) {
         let elem = event.target.parentElement
         let url = elem.getAttribute('data-status') + (elem.getAttribute('data-act') === '1' ? 0 : 1)
         await ajax(url).then(async e => {
@@ -127,14 +148,14 @@ auto.forEach((elem) => {
 })
 ////////////////////// R E C O M E N D A T I O N//////////////////////////
 let rcm = document.querySelectorAll('[data-rcm]')
-rcm.forEach( e => {
-    e.onclick = function(event){
+rcm.forEach(e => {
+    e.onclick = function (event) {
         console.log(event.target.getAttribute('data-rcm'))
         ajax(event.target.getAttribute('data-rcm')).then(e => {
-            if(e === 4){
+            if (e === 4) {
                 let toastHTML = '<span>Добавлено в рекомендуемые</span>'
                 M.toast({html: toastHTML})
-            }else{
+            } else {
                 let toastHTML = '<span>Ошибка попробуйте позже</span>'
                 M.toast({html: toastHTML})
             }
