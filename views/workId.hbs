@@ -1,6 +1,7 @@
 <div class="parallax-container">
     <div class="parallax par--lk">
-        <img alt="Escort Model" id="imgParallax" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{object.photo.[0]}}">
+        <img alt="Escort Model" id="imgParallax"
+             src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{object.photo.[0]}}">
     </div>
     <h1>{{object.country}}</h1>
 </div>
@@ -60,7 +61,8 @@
                     class="large material-icons">phone</i></a></li>
         {{/if}}
         {{#if object.phone.[1]}}
-            <li><a href="https://wa.me/{{object.phone.[1]}}?text=Привет! Я пишу с сайта ZODIAK" class="btn-floating green"><i
+            <li><a href="https://wa.me/{{object.phone.[1]}}?text=Привет! Я пишу с сайта ZODIAK"
+                   class="btn-floating green"><i
                     class="fab fa-whatsapp"></i></a></li>
         {{/if}}
         {{#if object.phone.[2]}}
