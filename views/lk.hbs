@@ -105,7 +105,7 @@
 
                 <div class="block-btn">
                     <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>
-                    <a data-rcm="{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
+                    <a data-rcm="/rcm/{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
 
                     <a data-top="/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
                     <a href="/{{id}}/edit?allow=true" class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
@@ -125,7 +125,7 @@
                 <div class="card-image">
 
                     <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
-                    <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active="
+                    <span class="card-title statusLk title-lk" data-status="/workactive/{{id}}?active="
                           data-act="{{active}}"></span>
                 </div>
 
@@ -162,7 +162,7 @@
 
                 <div class="block-btn">
                     <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>
-                    <a data-rcm="{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
+                    <a data-rcm="/workrcm/{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
 
                     <a data-top="/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
                     <a href="/{{id}}/editwork?allow=true" class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>

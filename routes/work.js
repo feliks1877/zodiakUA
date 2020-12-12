@@ -1,12 +1,22 @@
 const {Router} = require('express')
 const City = require('../models/city')
 const workObj = require('../models/workObj')
+const User = require('../models/user')
+const Pay = require('../models/pay')
 const savePhoto = require('../function/savePhoto')
 const Func = require('../function/func')
 const meta = require('../headers/meta')
 const Country = require('../models/country')
 const router = Router()
 
+function payAdd(pay, userId, object) {
+    return new Pay({
+        pay: pay,
+        userId: userId,
+        object: object,
+        date: new Date()
+    })
+}
 
 router.get('/work', async (req, res) => {
     const user = req.session.user
@@ -54,13 +64,33 @@ router.get('/work/page/:page', async (req, res) => {
         await res.render('work', {
             title: `Вакансии`,
             meta: meta.workMeta,
-            objects,city,user,page
+            objects, city, user, page
         })
     } catch (e) {
         console.log('ERROR WORK PAGE', e)
     }
 
 })
+router.get('/workactive/:id', async (req, res) => {
+    console.log(req.params.id, req.query.active)
+    await workObj.updateOne({_id: req.params.id}, {active: req.query.active})
+    await res.redirect('/lk')
+})
+
+router.get('/workrcm/:rcm', async (req, res) => {
+    try {
+        await workObj.findByIdAndUpdate({_id: req.params.rcm}, {rcm: new Date()}).populate('userId')
+        const user = await User.findById({_id: req.session.user._id})
+        const balance = user.balance - 30
+        await User.updateOne({_id: req.session.user._id}, {balance: balance})
+        const pay = payAdd(`Платеж за добавление в рекомендуемые вакансии -30UAH`, req.session.user._id)
+        await pay.save()
+        res.send('GOOD')
+    } catch (e) {
+        console.log('ERROR R E C O M E N D A T I O N  WORK', e)
+    }
+})
+
 
 router.get('/:id/editwork', async (req, res) => {
     if (!req.query.allow) {
@@ -70,7 +100,7 @@ router.get('/:id/editwork', async (req, res) => {
         const object = await workObj.findById(req.params.id)
         res.render('editwork', {
             title: 'Редактирование',
-            object,country
+            object, country
         })
     }
 })
@@ -94,7 +124,6 @@ router.post('/editwork', async (req, res) => {
                 })
             })
         }
-
         await req.body.photo.forEach((e, i) => {
             if (e.length <= 0) {
                 req.body.photo.splice(i, 1)

@@ -292,7 +292,7 @@ function isVisible(elem) {
     let topVisible = coords.top > 0 && coords.top < windowHeight;
     // нижний край элемента виден?
     let bottomVisible = coords.bottom < windowHeight && coords.bottom > 0;
-    console.log(bottomVisible,topVisible,windowHeight)
+
     return topVisible || bottomVisible;
 }
 function showVisible() {
