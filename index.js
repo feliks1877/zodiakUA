@@ -45,7 +45,7 @@ app.set('view engine', 'hbs')
 app.set('views', 'views')
 app.use(async (req, res, next) => {
     if (req.headers.host.match(/^www/) !== null) {
-        await res.redirect(req.headers.host.replace(/^www\./, ''))
+        await res.redirect('https://zodiak.world/')
     } else {
         await next()
     }
