@@ -39,9 +39,10 @@ app.use(helmet.permittedCrossDomainPolicies())
 app.use(helmet.referrerPolicy())
 app.use(helmet.xssFilter())
 
+
 app.use(async (req, res, next) => {
     if (req.headers.host.match(/^www/) !== null) {
-        await res.redirect('https://zodiak.world/')
+        await res.redirect(301,'https://zodiak.world/')
     }else{
         await next()
     }
@@ -124,6 +125,8 @@ async function start() {
     }
 }
 
-start()
+start().catch(e => {
+    console.log('ERR START',e)
+})
 
 
