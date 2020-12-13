@@ -26,13 +26,13 @@ const fileMiddleware = require('./middleware/file')
 const varMiddleware = require('./middleware/variables')
 
 const app = express()
-// app.use(async (req, res, next) => {
-//     if (req.headers.host.match(/^www/) !== null) {
-//         await res.redirect('https://zodiak.world/')
-//     }else{
-//         await next()
-//     }
-// })
+app.use(async (req, res, next) => {
+    if (req.headers.host.match(/^www/) !== null) {
+        await res.redirect('https://zodiak.world/')
+    }else{
+        await next()
+    }
+})
 const hbs = exphbs.create({
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     defaultLayout: 'main',
