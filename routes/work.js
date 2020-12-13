@@ -77,6 +77,16 @@ router.get('/workactive/:id', async (req, res) => {
     await res.redirect('/lk')
 })
 
+router.get('/worktop/:id/lk', async (req, res) => {
+    const obj = await workObj.findByIdAndUpdate({_id: req.params.id}, {date: new Date()})
+    const user = await User.findById({_id: req.session.user._id})
+    const balance = user.balance - 25
+    await User.updateOne({_id: req.session.user._id}, {balance: balance})
+    const pay = payAdd(`Платеж за поднятие вакансии -25 UAH.`,req.session.user._id,obj.id,)
+    await pay.save()
+    res.redirect('/lk')
+})
+
 router.get('/workrcm/:rcm', async (req, res) => {
     try {
         await workObj.findByIdAndUpdate({_id: req.params.rcm}, {rcm: new Date()}).populate('userId')

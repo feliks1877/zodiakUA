@@ -26,7 +26,13 @@ const fileMiddleware = require('./middleware/file')
 const varMiddleware = require('./middleware/variables')
 
 const app = express()
-
+// app.use(async (req, res, next) => {
+//     if (req.headers.host.match(/^www/) !== null) {
+//         await res.redirect('https://zodiak.world/')
+//     }else{
+//         await next()
+//     }
+// })
 const hbs = exphbs.create({
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     defaultLayout: 'main',
@@ -43,13 +49,7 @@ const store = new MongoStore({
 app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs')
 app.set('views', 'views')
-app.use(async (req, res, next) => {
-    if (req.headers.host.match(/^www/) !== null) {
-        await res.redirect('https://zodiak.world/')
-    } else {
-        await next()
-    }
-})
+
 app.use(compression())
 
 const options = {

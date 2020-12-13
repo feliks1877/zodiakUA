@@ -1,4 +1,4 @@
-let a = document.querySelectorAll('a[data-top]')
+let topObj = document.querySelectorAll('[data-top]')
 let balance = document.querySelectorAll('[data-balance]')
 let passiveSupported = true
 
@@ -31,20 +31,29 @@ function ajax(url) {
     })
 }
 
-a.forEach((e) => {
-    e.addEventListener('click', () => {
-        ajax(e.dataset.top).then((el) => {
-            balance.forEach((el) => {
-                el.dataset.balance = el.dataset.balance - 25
-                blce(el)
-            })
-            let toastHTML = '<span>Объявление успешно поднято</span>';
-            M.toast({html: toastHTML});
-        }).catch((err) => {
-            console.log('errorTop', err)
+topObj.forEach(e => {
+    e.onclick = function (event) {
+        console.log(event.target.getAttribute('data-top'))
+        ajax(event.target.getAttribute('data-top')).then(e => {
+            console.log(e)
         })
-    }, passiveSupported ? {passive: true} : false)
+    }
 })
+
+// a.forEach((e) => {
+//     e.addEventListener('click', () => {
+//         ajax(e.dataset.top).then((el) => {
+//             balance.forEach((el) => {
+//                 el.dataset.balance = el.dataset.balance - 25
+//                 blce(el)
+//             })
+//             let toastHTML = '<span>Объявление успешно поднято</span>';
+//             M.toast({html: toastHTML});
+//         }).catch((err) => {
+//             console.log('errorTop', err)
+//         })
+//     }, passiveSupported ? {passive: true} : false)
+// })
 
 function counterFn(e1) {
     function counter() {
