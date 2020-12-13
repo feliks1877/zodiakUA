@@ -1,4 +1,5 @@
 const express = require('express')
+const helmet = require("helmet");
 const path = require('path')
 const mongoose = require('mongoose')
 const compression = require('compression')
@@ -26,6 +27,18 @@ const fileMiddleware = require('./middleware/file')
 const varMiddleware = require('./middleware/variables')
 
 const app = express()
+app.disable('x-powered-by')
+app.use(helmet.dnsPrefetchControl())
+app.use(helmet.expectCt())
+app.use(helmet.frameguard())
+app.use(helmet.hidePoweredBy())
+app.use(helmet.hsts())
+app.use(helmet.ieNoOpen())
+app.use(helmet.noSniff())
+app.use(helmet.permittedCrossDomainPolicies())
+app.use(helmet.referrerPolicy())
+app.use(helmet.xssFilter())
+
 app.use(async (req, res, next) => {
     if (req.headers.host.match(/^www/) !== null) {
         await res.redirect('https://zodiak.world/')
