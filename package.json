@@ -25,6 +25,7 @@
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
     "express-session": "^1.17.1",
+    "express-validator": "^6.8.0",
     "handlebars": "^4.7.6",
     "helmet": "^4.2.0",
     "jimp": "^0.16.1",

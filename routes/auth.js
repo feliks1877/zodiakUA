@@ -6,6 +6,8 @@ const sendgrid = require('nodemailer-sendgrid-transport')
 const keys = require('../keys')
 const regEmail = require('../emails/registration')
 const resetEmail = require('../emails/reset')
+const {validationResult} = require('express-validator')
+const {loginValidators,regValidators} = require('../utils/validator')
 const router = Router()
 
 const transporter = nodemailer.createTransport(sendgrid({
@@ -24,8 +26,14 @@ router.get('/logout', async (req, res) => {
         res.redirect('/login')
     })
 })
-router.post('/register', async (req, res) => {
+router.post('/register',regValidators, async (req, res) => {
     try {
+        const err = validationResult(req)
+        console.log(err)
+        if(!err.isEmpty()){
+            req.flash('error', err.array()[0].msg)
+            return res.status(422).redirect('/login')
+        }
         const user = new User({
             login: req.body.login,
             email: req.body.email,
@@ -39,15 +47,19 @@ router.post('/register', async (req, res) => {
             req.flash('error', 'Пользователь с такой почтой уже зарегистрирован')
             res.redirect('/login#register')
         } else {
-            req.flash('error', 'Удачная регистрация')
             await user.save()
+            // noinspection JSUnresolvedVariable
             req.session.user = user
+            // noinspection JSUnresolvedVariable
             req.session.isAuthenticated = true
+            // noinspection JSUnresolvedVariable
             req.session.save(err => {
                 if (err) {
                     throw err
                 } else {
-                    isAuth: true,
+                    // noinspection UnnecessaryLabelJS
+                    isAuth: // noinspection JSUnresolvedFunction,CommaExpressionJS
+                        true,
                         req.flash('error', 'Удачная регистрация')
                     res.redirect('/lk')
                 }
@@ -58,16 +70,26 @@ router.post('/register', async (req, res) => {
         console.log(e)
     }
 })
-router.post('/login', async (req, res) => {
+router.post('/login', loginValidators, async (req, res) => {
     try {
+        const err = validationResult(req)
+        if(!err.isEmpty()){
+            // noinspection JSUnresolvedFunction
+            req.flash('error', err.array()[0].msg)
+            return res.status(422).redirect('/login')
+        }
+
         const {email, password} = req.body
+        console.log(email)
         const candidate = await User.findOne({email})
         if (candidate) {
-
             const areSame = password === candidate.password
             if (areSame) {
+                // noinspection JSUnresolvedVariable
                 req.session.user = candidate
+                // noinspection JSUnresolvedVariable
                 req.session.isAuthenticated = true
+                // noinspection JSUnresolvedVariable
                 req.session.save(err => {
                     if (err) {
                         throw err
@@ -83,7 +105,7 @@ router.post('/login', async (req, res) => {
             }
         } else {
             req.flash('error', 'Пользователь с такой почтой не зарегистрирован')
-            console.log('Пользователь не зарегестрирован')
+            console.log('Пользователь не зарегистрирован')
             res.redirect('/login')
         }
     } catch (e) {

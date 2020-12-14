@@ -5,6 +5,8 @@ const Review = require('../models/review')
 const meta = require('../headers/meta')
 const Meta = require('../models/meta')
 const Func = require('../function/func')
+const {validationResult} = require('express-validator')
+const {addValidators,editValidation} = require('../utils/validator')
 const savePhoto = require('../function/savePhoto')
 const router = Router()
 
@@ -72,7 +74,10 @@ router.get('/escort/:name', async (req, res) => {
 })
 
 router.get('/city/:name/page/:page', async (req, res) => {
+
+    // noinspection JSUnresolvedFunction,SpellCheckingInspection
     const cityes = await City.getByCity(req.params.name)
+    // noinspection JSUnresolvedFunction
     const city = await City.getAll()
     const user = req.session.user
     const pageNumber = req.params.page
@@ -81,6 +86,7 @@ router.get('/city/:name/page/:page', async (req, res) => {
         .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
     const page = Func.pagination(arr)
     let cityMph = Meta.morph(cityes.name)
+    // noinspection SpellCheckingInspection
     res.render('city', {
         title: `Эскорт ${cityes.name}`,
         headCity: `${cityMph}`,
@@ -91,6 +97,7 @@ router.get('/city/:name/page/:page', async (req, res) => {
 
 router.get('/id/:id', async (req, res) => {
     const object = await Objects.findById(req.params.id).where({active: 1})
+    // noinspection JSUnresolvedFunction
     const city = await City.getAll()
     const review = await Review.find({objectId: req.params.id})
     const user = req.session.user
@@ -107,18 +114,32 @@ router.get('/:id/edit', async (req, res) => {
     if (!req.query.allow) {
         return res.redirect('/escort')
     } else {
+        const city = await City.getAll()
         const object = await Objects.findById(req.params.id)
         res.render('edit', {
             title: 'Редактирование',
-            object
+            object,city
         })
     }
 })
 
 
-router.post('/edit', async (req, res) => {
+router.post('/edit',  editValidation ,async (req, res) => {
     try {
+        const err = validationResult(req)
+        console.log(err)
+        if(!err.isEmpty()){
+            // noinspection JSUnresolvedFunction
+            req.flash('message', err.array()[0].msg)
+            return res.status(422).redirect('/lk')
+        }
+        // noinspection JSUnresolvedVariable
+        console.log(req.files)
+        // noinspection JSUnresolvedVariable
         if(req.files.length) {
+            // noinspection JSUnresolvedVariable
+            console.log('REQ',req.body)
+            // noinspection JSUnresolvedVariable
             req.files.forEach((el) => {
                 req.body.photo.unshift(el.filename)
                 new Promise((resolve, reject) => {
@@ -126,6 +147,7 @@ router.post('/edit', async (req, res) => {
                     if (data === true) {
                         resolve(data)
                     } else {
+                        // noinspection JSUnresolvedFunction
                         req.flash('error', 'Что то пошло не так, попробуйте позже')
                         res.redirect('/lk')
                         reject(false)
@@ -141,9 +163,11 @@ router.post('/edit', async (req, res) => {
             }
         })
         await Objects.findByIdAndUpdate(req.body.id, req.body)
+        // noinspection JSUnresolvedFunction
         req.flash('message', 'Объявление успешно отредактировано')
         res.redirect('/lk')
     } catch (e) {
+        // noinspection JSUnresolvedFunction
         req.flash('message', 'Ошибка редактирования, повторите попытку позже')
         console.log('Редактирование', e)
         res.redirect('/lk')

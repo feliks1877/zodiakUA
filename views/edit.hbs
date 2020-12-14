@@ -1,118 +1,175 @@
 <div class="row">
     <div class="col s12">
         <ul class="tabs tabs-lk">
-            <li class="tab col s3"><a class="active" href="#block1">Основное</a></li>
-            <li class="tab col s3"><a href="#block2">Фото</a></li>
-            <li class="tab col s3"><a href="#block3">Услуги</a></li>
+            <li class="tab col s3 validation" data-block="block0"><a class="active" href="#block1">Основное</a></li>
+            <li class="tab col s3 validation" data-block="block1"><a href="#block2">Фото</a></li>
+            <li class="tab col s3 validation" data-block="block2"><a href="#block3">Услуги</a></li>
         </ul>
     </div>
     <form id="formMain" action="/edit" method="post" enctype="multipart/form-data">
         <div id="block1" class="col s12">
-            <div class="input-field col m4 s8">
-                <input type="text" id="c1" name="city" value="{{object.city}}">
-                <label for="c1"><i class="fas fa-user-cog"></i>Город</label>
+            <input type="hidden" name="type" value="escort">
+            <div class="input-field col s10">
+                <select name="city" class="validateMain" required>
+                    <option value="{{object.city}}">{{object.city}}</option>
+                    {{#each city}}
+                        <optgroup label="{{name}}">{{name}}</optgroup>
+                        {{#each cities}}
+                            <option value="{{nameEn}}">{{name}}</option>
+                        {{/each}}
+                    {{/each}}
+                </select>
+                <span class="helper-text" data-error="Выбрать город"
+                      data-success="OK">Выбрать город (обязательно)</span>
+            </div>
+            <div class="input-field col s10">
+                <input id="address" type="text" class="validate validateMain"
+                       name="address" value="{{object.address}}" required pattern="[A-Za-zА-Яа-яЁё]{3,20}">
+
+                <label for="address"><i class="fas fa-user-cog"></i>Адрес</label>
+                <span class="helper-text" data-error="Укажите адрес"
+                      data-success="OK">Укажите адрес (обязательно)</span>
             </div>
 
             <div class="input-field col m4 s8">
-                <input id="name" type="text" class="validate" name="name" value="{{object.name}}">
+                <input id="name" type="text" class="validate validateMain" name="name" required
+                       pattern="[A-Za-zА-Яа-яЁё]{3,15}" value="{{object.name}}">
                 <label for="name"><i class="fas fa-user-cog"></i>Имя</label>
+                <span class="helper-text" data-error="Укажите имя минимум 3 символа" data-success="OK">Укажите имя (обязательно)</span>
             </div>
 
             <div class="input-field col s4">
-                <input id="age" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[0]}}">
+                <input id="age" type="text" class="validate validateMain" value="{{object.paramModel.[0]}}"
+                       name="paramModel[]" required pattern="[0-9]{2}">
                 <label for="age"><i class="fas fa-user-cog"></i>Возраст</label>
+                <span class="helper-text" data-error="Укажите возраст только цифры" data-success="OK">Укажите возраст (обязательно)</span>
             </div>
             <div class="input-field col s4">
-                <input id="growth" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[1]}}">
+                <input id="growth" type="text" class="validate validateMain" name="paramModel[]" required
+                       pattern="[0-9]{3}" value="{{object.paramModel.[1]}}">
                 <label for="growth"><i class="fas fa-user-cog"></i>Рост</label>
+                <span class="helper-text" data-error="Укажите рост только цифры" data-success="OK">Укажите рост (обязательно)</span>
             </div>
             <div class="input-field col s4">
-                <input id="weight" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[2]}}">
-                <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>
+                <input id="weight" type="text" class="validate validateMain"
+                       name="paramModel[]" required pattern="[0-9]{1,3}" value="{{object.paramModel.[2]}}">
+                <label for="weight"><i class="fas fa-user-cog"></i>Вес</label>
+                <span class="helper-text" data-error="Укажите вес только цифры" data-success="OK">Укажите вес (обязательно)</span>
             </div>
             <div class="input-field col s4">
-                <input id="chest" type="number" class="validate" name="paramModel[]"
-                       value="{{object.paramModel.[3]}}">
-                <label for="chest"><i class="fas fa-user-cog"></i> Грудь</label>
+                <input id="chest" type="text" class="validate validateMain"
+                       name="paramModel[]" required pattern="[0-9]{1}" value="{{object.paramModel.[3]}}">
+                <label for="chest"><i class="fas fa-user-cog"></i>Грудь</label>
+                <span class="helper-text" data-error="Укажите размер только цифры" data-success="OK">Укажите размер (обязательно)</span>
             </div>
 
 
             <div class="input-field col s7">
-                <input id="telephone" type="tel" class="validate" name="phone[]" value="{{object.phone.[0]}}">
-                <label for="telephone"><i class="fas fa-phone"></i> Телефон</label>
+                <input id="telephone" type="tel" class="validate validateMain" name="phone[]" required
+                       pattern="[\D0-9]{5,15}" value="{{object.phone.[0]}}">
+                <label for="telephone"><i class="fas fa-phone"></i>Телефон</label>
+                <span class="helper-text" data-error="Укажите номер телефона в международном формате" data-success="OK">Укажите номер телефона (обязательно)</span>
             </div>
             <div class="input-field col s7">
 
-                <input id="whatsapp" type="text" class="validate" name="phone[]" value="{{object.phone.[1]}}">
-                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>
+                <input id="whatsapp" type="text" name="phone[]" class="validate"
+                       pattern="[0-9]{5,15}" value="{{object.phone.[1]}}">
+                <label for="whatsapp"><i class="fab fa-whatsapp"></i>WhatsApp</label>
+                <span class="helper-text" data-error="Только цифры" data-success="OK"></span>
             </div>
             <div class="input-field col s7">
 
-                <input id="Viber" type="text" class="validate" name="phone[]" value="{{object.phone.[2]}}">
-                <label for="Viber"><i class="fab fa-viber"></i> Viber</label>
+                <input id="Viber" type="text" name="phone[]"
+                       class="validate" pattern="[0-9]{5,15}" value="{{object.phone.[2]}}">
+                <label for="Viber"><i class="fab fa-viber"></i>Viber</label>
+                <span class="helper-text" data-error="Только цифры" data-success="OK"></span>
             </div>
             <div class="input-field col s7">
 
-                <input id="telegram" type="text" class="validate" name="phone[]" value="{{object.phone.[3]}}">
-                <label for="telegram"> <i class="fab fa-telegram"></i> Telegram</label>
+                <input id="telegram" type="text" name="phone[]" maxlength="30" value="{{object.phone.[3]}}">
+                <label for="telegram"><i class="fab fa-telegram"></i>Telegram</label>
+                <span class="helper-text" data-error="Укажите ссылку" data-success="OK">Указывайте ник пользователя без @ по номеру
+                 работать не будет</span>
             </div>
 
 
-            <div class="block--price--lk">
+            <div class="input-field col s6">
                 <div class="input-field">
 
-                    <input id="price" type="text" class="validate" name="price[]" value="{{object.price.[0]}}">
-                    <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>
+                    <input id="price" type="text" class="validate validateMain" name="price[]" required
+                           pattern="[0-9]{2,7}" value="{{object.price.[0]}}">
+                    <label for="price"><i class="fas fa-money-bill-wave"></i>Цена за час</label>
+                    <span class="helper-text" data-error="Укажите цену только цифры" data-success="OK">Укажите цену за час</span>
                 </div>
                 <div class="input-field">
 
-                    <input id="price1" type="text" class="validate" name="price[]" value="{{object.price.[1]}}">
-
-                    <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>
+                    <input id="price1" type="text" class="validate" name="price[]"
+                           pattern="[0-9]{3,10}" value="{{object.price.[1]}}">
+                    <label for="price1"><i class="fas fa-money-bill-wave"></i>Цена за выезд</label>
+                    <span class="helper-text" data-error="Укажите цену только цифры" data-success="OK">Укажите цену за выезд</span>
                 </div>
                 <div class="input-field">
 
-                    <input id="price2" type="text" class="validate" name="price[]" value="{{object.price.[2]}}">
-                    <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>
+                    <input id="price2" type="text" class="validateMain" name="price[]"
+                           pattern="[0-9]{3,10}" value="{{object.price.[2]}}" required>
+                    <label for="price2"><i class="fas fa-money-bill-wave"></i>Цена за ночь</label>
+                    <span class="helper-text" data-error="Укажите цену только цифры" data-success="OK">Укажите цену за ночь</span>
                 </div>
             </div>
         </div>
         <div id="block2" class="col s12">
-            <h6>Главное фото</h6>
-            <div class="img--block--lk" id="photoBlock">
-                {{#if object.photo}}
-                    {{#each object.photo}}
-                        {{#if this}}
-                           <div class="block--photo">
-                                <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"  alt="">
-                                <label for="{{this}}" data-remove="removeImg">Удалить</label>
-                                <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}">
-                                <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>
-                            </div>
-                        {{/if}}
-                    {{/each}}
-                {{/if}}
-            </div>
-            <div class="file-field input-field">
-                <div class="btn">
+            <div id="block2" class="col s12">
+                <h6>Главное фото</h6>
+                <div class="img--block--lk" id="photoBlock">
+                    {{#if object.photo}}
+                        {{#each object.photo}}
+                            {{#if this}}
+                                <div class="block--photo">
+                                    <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"
+                                         alt="">
+                                    <label for="{{this}}" data-remove="removeImg">Удалить</label>
+                                    <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}" required>
+                                    <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
+                </div>
+                <div class="file-field input-field">
+                    <div class="btn">
 
-                    <label for="photo">Добавить фото</label>
-                    <input type="file" name="photo[]" multiple id="photo">
+                        <label for="photo">Добавить фото</label>
+                        <input type="file" name="photo[]" multiple id="photo">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" type="text">
-                </div>
+
             </div>
+
+            <!--            <div class="file-field input-field">-->
+            <!--                <div class="btn">-->
+            <!--                    <label for="photo">Доабавить фото</label>-->
+            <!--                    <input type="file" class="validate validateMain"-->
+            <!--                           value="{{object.photo}}" name="photo[]" multiple id="photo" required>-->
+            <!--                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>-->
+            <!--                </div>-->
+            <!--                <div class="file-path-wrapper">-->
+            <!--                    <input class="file-path validate" required type="text" placeholder="Добавьте не менее двух фото">-->
+            <!--                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>-->
+            <!--                </div>-->
+            <!--            </div>-->
 
         </div>
         <div id="block3" class="col s12">
             <div class="input-field col s12">
                 <textarea id="description" class="materialize-textarea"
-                          name="description">{{object.description}}</textarea>
+                          name="description" required minlength="100" maxlength="600">{{object.description}}</textarea>
                 <label for="description"><i class="far fa-comment-dots"></i> Описание</label>
+                <span class="helper-text">Использовано <span id="counter">0</span>/600 символов (минимум 100)</span>
+                <span class="helper-text" data-error="Описание не менее 100 и не более 600 символов"
+                      data-success="OK"></span>
             </div>
             <h5>Классические услуги</h5>
             <p>
@@ -311,28 +368,12 @@
                 </label>
 
             </p>
-
-            <p>
-                <label>
-                    <input name="active" value="1" type="radio" checked/>
-                    <span>Опубликовать</span>
-                </label>
-            </p>
-            <p>
-                <label>
-                    <input name="active" value="0" type="radio"/>
-                    <span>Снять с публикации</span>
-                </label>
-            </p>
-
-            <input type="text" name="id" value="{{object.id}}">
-            {{#if appraisal}}
-                <input type="hidden" name="appraisal" value="{{appraisal}}">
-            {{/if}}
-
-
         </div>
-        <button class="btn waves-effect waves-light" id="btn-lk" type="submit">Отредактировать
+        <input type="text" name="id" value="{{object.id}}">
+        {{#if appraisal}}
+            <input type="hidden" name="appraisal" value="{{appraisal}}">
+        {{/if}}
+        <button class="btn waves-effect waves-light" id="btn-lk" type="submit">Редактировать
             <i class="material-icons right">send</i>
         </button>
     </form>
@@ -360,5 +401,381 @@
     {{/if}}
 </div>
 
-<script>
-</script>
+
+<!--<div class="row">-->
+<!--    <div class="col s12">-->
+<!--        <ul class="tabs tabs-lk">-->
+<!--            <li class="tab col s3 validation"><a class="active" href="#block1">Основное</a></li>-->
+<!--            <li class="tab col s3 validation"><a href="#block2">Фото</a></li>-->
+<!--            <li class="tab col s3 validation"><a href="#block3">Услуги</a></li>-->
+<!--        </ul>-->
+<!--    </div>-->
+<!--    <form id="formMain" action="/edit" method="post" enctype="multipart/form-data">-->
+<!--        <div id="block1" class="col s12">-->
+<!--&lt;!&ndash;            <div class="input-field col m4 s8">&ndash;&gt;-->
+<!--&lt;!&ndash;                <input type="text" id="c1" name="city" class="validation" value="{{object.city}}" required>&ndash;&gt;-->
+<!--&lt;!&ndash;                <label for="c1"><i class="fas fa-user-cog"></i>Город</label>&ndash;&gt;-->
+<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<!--            <div class="input-field col s6">-->
+<!--                <select name="city" class="validateMain" required>-->
+<!--                    <option value="{{object.city}}">{{object.city}}</option>-->
+        <!--                    {{#each city}}-->
+<!--                        <optgroup label="{{name}}">{{name}}</optgroup>-->
+        <!--                        {{#each cities}}-->
+<!--                            <option value="{{nameEn}}">{{name}}</option>-->
+        <!--                        {{/each}}-->
+        <!--                    {{/each}}-->
+<!--                </select>-->
+<!--                <span class="helper-text" data-error="Выбрать город"-->
+<!--                      data-success="OK">Выбрать город (обязательно)</span>-->
+<!--            </div>-->
+<!--            <div class="input-field col m4 s8">-->
+<!--                <input id="name" type="text" class="validate" name="name" value="{{object.name}}" required>-->
+<!--                <label for="name"><i class="fas fa-user-cog"></i>Имя</label>-->
+<!--            </div>-->
+
+<!--            <div class="input-field col s4">-->
+<!--                <input id="age" type="number" class="validate" name="paramModel[]"-->
+<!--                       value="{{object.paramModel.[0]}}" required>-->
+<!--                <label for="age"><i class="fas fa-user-cog"></i>Возраст</label>-->
+<!--            </div>-->
+<!--            <div class="input-field col s4">-->
+<!--                <input id="growth" type="number" class="validate" name="paramModel[]"-->
+<!--                       value="{{object.paramModel.[1]}}" required>-->
+<!--                <label for="growth"><i class="fas fa-user-cog"></i>Рост</label>-->
+<!--            </div>-->
+<!--            <div class="input-field col s4">-->
+<!--                <input id="weight" type="number" class="validate" name="paramModel[]"-->
+<!--                       value="{{object.paramModel.[2]}}" required>-->
+<!--                <label for="weight"><i class="fas fa-user-cog"></i> Вес</label>-->
+<!--            </div>-->
+<!--            <div class="input-field col s4">-->
+<!--                <input id="chest" type="number" class="validate" name="paramModel[]"-->
+<!--                       value="{{object.paramModel.[3]}}" required>-->
+<!--                <label for="chest"><i class="fas fa-user-cog"></i> Грудь</label>-->
+<!--            </div>-->
+
+
+<!--            <div class="input-field col s7">-->
+<!--                <input id="telephone" type="tel" class="validate" name="phone[]" required value="{{object.phone.[0]}}">-->
+<!--                <label for="telephone"><i class="fas fa-phone"></i> Телефон</label>-->
+<!--            </div>-->
+<!--            <div class="input-field col s7">-->
+
+<!--                <input id="whatsapp" type="text" class="validate" name="phone[]" value="{{object.phone.[1]}}">-->
+<!--                <label for="whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp</label>-->
+<!--            </div>-->
+<!--            <div class="input-field col s7">-->
+
+<!--                <input id="Viber" type="text" class="validate" name="phone[]" value="{{object.phone.[2]}}">-->
+<!--                <label for="Viber"><i class="fab fa-viber"></i> Viber</label>-->
+<!--            </div>-->
+<!--            <div class="input-field col s7">-->
+
+<!--                <input id="telegram" type="text" class="validate" name="phone[]" value="{{object.phone.[3]}}">-->
+<!--                <label for="telegram"> <i class="fab fa-telegram"></i> Telegram</label>-->
+<!--            </div>-->
+
+
+<!--            <div class="block--price--lk">-->
+<!--                <div class="input-field">-->
+
+<!--                    <input id="price" type="text" class="validate" name="price[]" value="{{object.price.[0]}}" required>-->
+<!--                    <label for="price"><i class="fas fa-money-bill-wave"></i> Цена за час</label>-->
+<!--                </div>-->
+<!--                <div class="input-field">-->
+
+<!--                    <input id="price1" type="text" class="validate" name="price[]" value="{{object.price.[1]}}">-->
+
+<!--                    <label for="price1"><i class="fas fa-money-bill-wave"></i> Цена за выезд</label>-->
+<!--                </div>-->
+<!--                <div class="input-field">-->
+
+<!--                    <input id="price2" type="text" class="validate" name="price[]" value="{{object.price.[2]}}" required>-->
+<!--                    <label for="price2"><i class="fas fa-money-bill-wave"></i> Цена за ночь</label>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--        <div id="block2" class="col s12">-->
+<!--            <h6>Главное фото</h6>-->
+<!--            <div class="img--block--lk" id="photoBlock">-->
+        <!--                {{#if object.photo}}-->
+        <!--                    {{#each object.photo}}-->
+        <!--                        {{#if this}}-->
+<!--                           <div class="block--photo">-->
+<!--                                <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"  alt="">-->
+<!--                                <label for="{{this}}" data-remove="removeImg">Удалить</label>-->
+<!--                                <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}" required>-->
+<!--                                <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>-->
+<!--                            </div>-->
+        <!--                        {{/if}}-->
+        <!--                    {{/each}}-->
+        <!--                {{/if}}-->
+<!--            </div>-->
+<!--            <div class="file-field input-field">-->
+<!--                <div class="btn">-->
+
+<!--                    <label for="photo">Добавить фото</label>-->
+<!--                    <input type="file" name="photo[]" multiple id="photo">-->
+<!--                </div>-->
+<!--                <div class="file-path-wrapper">-->
+<!--                    <input class="file-path validate" type="text">-->
+<!--                </div>-->
+<!--            </div>-->
+
+<!--        </div>-->
+<!--        <div id="block3" class="col s12">-->
+<!--            <div class="input-field col s12">-->
+<!--                <textarea id="description" class="materialize-textarea"-->
+<!--                          name="description" required minlength="150" maxlength="600">{{object.description}}</textarea>-->
+<!--                <label for="description"><i class="far fa-comment-dots"></i> Описание</label>-->
+<!--                <span class="helper-text">Использовано <span id="counter">0</span>/600 символов (минимум 100)</span>-->
+<!--            </div>-->
+<!--            <h5>Классические услуги</h5>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Kлассический секс" data-classik="Kлассический секс"/>-->
+<!--                    <span>Kлассический секс</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Минет в презервативе"-->
+<!--                           data-classik="Минет в презервативе"/>-->
+<!--                    <span>Минет в презервативе</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Минет без презерватива"-->
+<!--                           data-classik="Минет без презерватива"/>-->
+<!--                    <span>Минет без презерватива</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Глубокий минет" data-classik="Глубокий минет"/>-->
+<!--                    <span>Глубокий минет</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Окончание на грудь"-->
+<!--                           data-classik="Окончание на грудь"/>-->
+<!--                    <span>Окончание на грудь</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Окончание в рот" data-classik="Окончание в рот"/>-->
+<!--                    <span>Окончание в рот</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Окончание на лицо" data-classik="Окончание на лицо"/>-->
+<!--                    <span>Окончание  на лицо</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="classik[]" value="Анал" data-classik="Анал"/>-->
+<!--                    <span>Анал</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <h5>BDSM</h5>-->
+
+
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Доминация" data-classik="Доминация"/>-->
+<!--                    <span>Доминация</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Бандаж" data-classik="Бандаж"/>-->
+<!--                    <span>Бандаж</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Порка" data-classik="Порка"/>-->
+<!--                    <span>Порка</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Госпожа" data-classik="Госпожа"/>-->
+<!--                    <span>Госпожа</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Рабыня" data-classik="Рабыня"/>-->
+<!--                    <span>Рабыня</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Страпон" data-classik="Страпон"/>-->
+<!--                    <span>Страпон</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Игрушки" data-classik="Игрушки"/>-->
+<!--                    <span>Игрушки</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Анилингус девушке" data-classik="Анилингус девушке"/>-->
+<!--                    <span>Анилингус девушке</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="bdsm[]" value="Анилингус клиенту" data-classik="Анилингус клиенту"/>-->
+<!--                    <span>Анилингус клиенту</span>-->
+<!--                </label>-->
+<!--            </p>-->
+
+<!--            <h5>Массаж</h5>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="massage[]" value="Эротический массаж"-->
+<!--                           data-classik="Эротический массаж"/>-->
+<!--                    <span>Эротический массаж</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="massage[]" value="Расслабляющий массаж"-->
+<!--                           data-classik="Расслабляющий массаж"/>-->
+<!--                    <span>Расслабляющий массаж</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="massage[]" value="Урологический массаж"-->
+<!--                           data-classik="Урологический массаж"/>-->
+<!--                    <span>Урологический массаж</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="massage[]" value="Тайский массаж" data-classik="Тайский массаж"/>-->
+<!--                    <span>Тайский массаж</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="massage[]" value="Профессиональный массаж"-->
+<!--                           data-classik="Профессиональный массаж"/>-->
+<!--                    <span>Профессиональный массаж</span>-->
+<!--                </label>-->
+<!--            </p>-->
+
+<!--            <h5>Разное:</h5>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Лесби шоу" data-classik="Лесби шоу"/>-->
+<!--                    <span>Лесби шоу</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Груповой секс" data-classik="Груповой секс"/>-->
+<!--                    <span>Груповой секс</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Стриптиз профи" data-classik="Стриптиз профи"/>-->
+<!--                    <span>Стриптиз профи</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Стриптиз любительский"-->
+<!--                           data-classik="Стриптиз любительский"/>-->
+<!--                    <span>Стриптиз любительский</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Экспресс" data-classik="Экспресс"/>-->
+<!--                    <span>Экспресс</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Услуги в авто" data-classik="Услуги в авто"/>-->
+<!--                    <span>Услуги в авто</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Продажа фото/видео" data-classik="Продажа фото/видео"/>-->
+<!--                    <span>Продажа фото/видео</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input type="checkbox" name="other[]" value="Вирт" data-classik="Вирт"/>-->
+<!--                    <span>Вирт</span>-->
+<!--                </label>-->
+
+<!--            </p>-->
+
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input name="active" value="1" type="radio" checked/>-->
+<!--                    <span>Опубликовать</span>-->
+<!--                </label>-->
+<!--            </p>-->
+<!--            <p>-->
+<!--                <label>-->
+<!--                    <input name="active" value="0" type="radio"/>-->
+<!--                    <span>Снять с публикации</span>-->
+<!--                </label>-->
+<!--            </p>-->
+
+<!--            <input type="text" name="id" value="{{object.id}}">-->
+        <!--            {{#if appraisal}}-->
+<!--                <input type="hidden" name="appraisal" value="{{appraisal}}">-->
+        <!--            {{/if}}-->
+
+
+<!--        </div>-->
+<!--        <button class="btn waves-effect waves-light" id="btn-lk" type="submit">Отредактировать-->
+<!--            <i class="material-icons right">send</i>-->
+<!--        </button>-->
+<!--    </form>-->
+<!--</div>-->
+<!--<div class="form">-->
+        <!--    {{#if object.classik.length}}-->
+        <!--        {{#each object.classik}}-->
+<!--            <em class="classik" data-classik="{{this}}"></em>-->
+        <!--        {{/each}}-->
+        <!--    {{/if}}-->
+        <!--    {{#if object.bdsm.length}}-->
+        <!--        {{#each object.bdsm}}-->
+<!--            <em class="classik" data-classik="{{this}}"></em>-->
+        <!--        {{/each}}-->
+        <!--    {{/if}}-->
+        <!--    {{#if object.massage.length}}-->
+        <!--        {{#each object.massage}}-->
+<!--            <em class="classik" data-classik="{{this}}"></em>-->
+        <!--        {{/each}}-->
+        <!--    {{/if}}-->
+        <!--    {{#if object.other.length}}-->
+        <!--        {{#each object.other}}-->
+<!--            <em class="classik" data-classik="{{this}}"></em>-->
+        <!--        {{/each}}-->
+        <!--    {{/if}}-->
+<!--</div>-->
+
+<!--<script>-->
+<!--</script>-->

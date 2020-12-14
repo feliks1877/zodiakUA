@@ -250,6 +250,7 @@ vl.forEach((e) => {
 let form = document.getElementById('formMain')
 if (form != null) {
     form.onchange = function (event) {
+        console.log('EVENT',event.target)
         if (event.target.validity.valid === false) {
             event.target.closest('div').style.backgroundColor = 'rgba(247,43,11,0.51)'
             console.log(false)
