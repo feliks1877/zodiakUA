@@ -121,7 +121,7 @@ if(process.env.PORT){
         } else {
 
             // request was via http, so redirect to https
-            res.redirect('https://' + req.headers.host + req.url);
+            res.redirect(301,'https://' + req.headers.host + req.url);
         }
     })
 }
