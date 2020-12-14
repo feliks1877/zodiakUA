@@ -28,19 +28,7 @@ const varMiddleware = require('./middleware/variables')
 
 
 const app = express()
-if(process.env.PORT){
-    app.use (function (req, res, next) {
-        console.log(req.headers.host, req.url)
-        if (req.secure) {
-            // request was via https, so do no special handling
-            next();
-        } else {
 
-            // request was via http, so redirect to https
-            res.redirect('https://' + req.headers.host + req.url);
-        }
-    })
-}
 
 app.disable('x-powered-by')
 app.use(helmet.dnsPrefetchControl())
@@ -124,6 +112,19 @@ app.use(cronRoutes)
 
 const PORT = process.env.PORT || 2000
 
+if(process.env.PORT){
+    app.use (function (req, res, next) {
+        console.log(req.headers.host, req.url)
+        if (req.secure) {
+            // request was via https, so do no special handling
+            next();
+        } else {
+
+            // request was via http, so redirect to https
+            res.redirect('https://' + req.headers.host + req.url);
+        }
+    })
+}
 
 async function start() {
     try {
