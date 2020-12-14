@@ -22,11 +22,12 @@ for (let i = 0; i < labelDrop.length; i++) {
 }
 let parentDrop = document.getElementById('parentDrop')
 parentDrop !== null ? parentDrop.onclick = (event) => {
+    // noinspection JSUnresolvedFunction
     event.currentTarget.scrollTo(0, 0)
-
 } : null
 
 document.addEventListener('DOMContentLoaded', function () {
+    // noinspection JSDuplicatedDeclaration,JSUnusedLocalSymbols
     var elems = document.querySelectorAll('.sidenav');
     var elems = document.querySelectorAll('.carousel');
     var elems = document.querySelectorAll('.parallax');
@@ -75,6 +76,8 @@ if (appraisal) {
 
     })
 }
+/////////////// ЗАПОЛНЕНИЕ ЧЕКБОКСОВ ПРИ РЕДАКТИРОВАНИИ /////////////////////////////
+// noinspection SpellCheckingInspection
 let classik = document.querySelectorAll('em')
 let input = document.querySelectorAll('input[type=checkbox]')
 if (input.length) {

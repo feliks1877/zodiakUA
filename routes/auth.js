@@ -7,7 +7,7 @@ const keys = require('../keys')
 const regEmail = require('../emails/registration')
 const resetEmail = require('../emails/reset')
 const {validationResult} = require('express-validator')
-const {loginValidators,regValidators} = require('../utils/validator')
+const {loginValidators,regValidators,passValidators,resetValidators} = require('../utils/validator')
 const router = Router()
 
 const transporter = nodemailer.createTransport(sendgrid({
@@ -100,10 +100,12 @@ router.post('/login', loginValidators, async (req, res) => {
                 })
             } else {
                 console.log('Неверный пароль')
+                // noinspection JSUnresolvedFunction
                 req.flash('error', 'Не верный пароль')
                 res.redirect('/login')
             }
         } else {
+            // noinspection JSUnresolvedFunction
             req.flash('error', 'Пользователь с такой почтой не зарегистрирован')
             console.log('Пользователь не зарегистрирован')
             res.redirect('/login')
@@ -146,8 +148,14 @@ router.get('/password/:token', async (req, res) => {
 
 })
 
-router.post('/password', async (req,res) => {
+router.post('/password', passValidators, async (req,res) => {
     try {
+        const err = validationResult(req)
+        if(!err.isEmpty()){
+            // noinspection JSUnresolvedFunction
+            req.flash('error', err.array()[0].msg)
+            return res.status(422).redirect('/login')
+        }
         const user = await User.findOne({
             _id: req.body.userId,
             resetToken: req.body.token,
@@ -161,6 +169,7 @@ router.post('/password', async (req,res) => {
             await user.save()
             res.redirect('/login')
         }else{
+            // noinspection JSUnresolvedFunction
             req.flash('loginError', 'Время восстановлени истекло')
             res.redirect('/login')
         }
@@ -169,10 +178,17 @@ router.post('/password', async (req,res) => {
     }
 })
 
-router.post('/reset', (req,res) => {
+router.post('/reset', resetValidators,(req,res) => {
    try {
+       const err = validationResult(req)
+       if(!err.isEmpty()){
+           // noinspection JSUnresolvedFunction
+           req.flash('error', err.array()[0].msg)
+           return res.status(422).redirect('/login')
+       }
        crypto.randomBytes(32, async (err, buf) => {
            if (err){
+               // noinspection JSUnresolvedFunction
                req.flash('error', 'Сервер не доступен, обратитесь в поддержку для восстановления досутпа')
                return res.redirect('/reset')
            }
@@ -183,9 +199,11 @@ router.post('/reset', (req,res) => {
                candidate.resetTokenExp = Date.now() + 60 * 60 * 1000
                await candidate.save()
                await transporter.sendMail(resetEmail(candidate.email,token))
+               // noinspection JSUnresolvedFunction
                req.flash('error', 'Ссылка для восстановления пароля отправлена на Вашу почту')
                res.redirect('/login')
            }else{
+               // noinspection JSUnresolvedFunction
                req.flash('error', 'Такой EMAIL не зарегистрирован')
                res.redirect('/reset')
            }

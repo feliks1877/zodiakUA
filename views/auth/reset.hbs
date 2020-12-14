@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col s8 offset-s2">
+        <h4>Восстановить пароль</h4>
+        {{#if error}}
+            <p id="err" data-error="{{error}}"></p>
+        {{/if}}
         <form action="/reset" method="post" class="col s12">
 
-            <h4>Восстановить пароль</h4>
-            {{#if error}}
-                <p id="err" data-error="{{error}}"></p>
-            {{/if}}
             <div class="input-field col s12">
                 <input id="email" autocomplete="username" type="email" name="email" class="validate" required>
                 <label for="email">Email</label>

@@ -47,3 +47,23 @@ exports.editValidation = [
     body('other[]', 'Проверьте данные в классических разное').isLength({max: 60}).escape().trim(),
     body('id').escape().trim()
 ]
+
+exports.passValidators = [
+    body('password','Пароль должен быть минимум 5 символов')
+        .isLength({min: 5, max: 56}).escape().trim(),
+    body('id').escape().trim(),
+    body('token').escape().trim(),
+]
+
+exports.resetValidators = [
+    body('email','Введите корректный Email').isEmail().normalizeEmail().escape()
+]
+exports.reviewValidators = [
+    body('login','Login должен быть не менее 3 и не более 15 символов')
+        .isLength({min: 3,max: 15}).escape().trim(),
+    body('disc[]').escape().trim(),
+    body('photoRev').escape().trim(),
+    body('very').escape().trim(),
+    body('objId').escape().trim(),
+    body('review').escape().trim(),
+]
