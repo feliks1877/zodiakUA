@@ -58,6 +58,7 @@ exports.passValidators = [
 exports.resetValidators = [
     body('email','Введите корректный Email').isEmail().normalizeEmail().escape()
 ]
+
 exports.reviewValidators = [
     body('login','Login должен быть не менее 3 и не более 15 символов')
         .isLength({min: 3,max: 15}).escape().trim(),
@@ -66,4 +67,25 @@ exports.reviewValidators = [
     body('very').escape().trim(),
     body('objId').escape().trim(),
     body('review').escape().trim(),
+]
+
+exports.workValidators = [
+    body('type').escape().trim(),
+    body('podtype').escape().trim(),
+    body('country').escape().trim(),
+    body('city').escape().trim(),
+    body('description[]').escape().trim(),
+    body('photo[]').escape().trim(),
+    body('phone[]').escape().trim(),
+]
+
+exports.workEditValidators = [
+    body('id').escape().trim(),
+    body('type').escape().trim(),
+    body('podtype').escape().trim(),
+    body('country').escape().trim(),
+    body('city').escape().trim(),
+    body('description[]').escape().trim(),
+    body('photo[]').escape().trim(),
+    body('phone[]').escape().trim(),
 ]

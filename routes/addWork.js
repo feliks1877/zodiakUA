@@ -4,6 +4,8 @@ const savePhoto = require('../function/savePhoto')
 const WorkObj = require('../models/workObj')
 const User = require('../models/user')
 const Pay = require('../models/pay')
+const {validationResult} = require('express-validator')
+const {workValidators} = require('../utils/validator')
 const keys = require('../keys')
 const countryJSON = require('../data/country.json')
 const router = Router()
@@ -30,11 +32,22 @@ router.get('/add/workadd', async ( req,res) => {
         country
     })
 })
-router.post('/add/workadd', async (req,res) => {
+// noinspection SpellCheckingInspection
+router.post('/add/workadd', workValidators, async (req,res) => {
     console.log('REQBODY',req.body.podtype)
+    const err = validationResult(req)
+    console.log('ERR VALID WORK',err)
+    if(!err.isEmpty()){
+        // noinspection JSUnresolvedFunction
+        req.flash('message', err.array()[0].msg)
+        return res.status(422).redirect('/lk')
+    }
+    // noinspection JSUnresolvedVariable
     const userId = req.session.user._id
     const path = []
+    // noinspection JSUnresolvedVariable
     console.log(req.files)
+    // noinspection JSUnresolvedVariable
     await req.files.forEach((el) => {
         path.push(el.filename)
     })

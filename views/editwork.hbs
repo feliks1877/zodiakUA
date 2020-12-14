@@ -55,21 +55,36 @@
             </div>
 
         </div>
-        <div class="input-field col s12">
-            <!--                <label for="photo">Доабавить фото</label>-->
-            <!--                <input type="file" name="photo[]" id="photo" multiple>-->
-            <div class="file-field input-field">
-                <div class="btn">
-                    <label for="photo">Доабавить фото</label>
-                    <input type="file" class="validate validateMain" name="photo[]" multiple id="photo">
-                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>
+        <div id="block2" class="col s12">
+            <div id="block2" class="col s12">
+                <h6>Главное фото</h6>
+                <div class="img--block--lk" id="photoBlock">
+                    {{#if object.photo}}
+                        {{#each object.photo}}
+                            {{#if this}}
+                                <div class="block--photo">
+                                    <img class="img--lk" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"
+                                         alt="">
+                                    <label for="{{this}}" data-remove="removeImg">Удалить</label>
+                                    <input name="photo[]" type="hidden" id="{{this}}" value="{{this}}" required>
+                                    <label for="{{this}}" data-mainThingPhoto="{{this}}">Сделать главным</label>
+                                </div>
+                            {{/if}}
+                        {{/each}}
+                    {{/if}}
                 </div>
-                <div class="file-path-wrapper">
-                    <input class="file-path validate" value="{{object.photo}}" name="photo[]" type="text" placeholder="Добавьте не менее двух фото">
-                    <span class="helper-text" data-error="Добавьте не менее двух фото" data-success="OK"></span>
+                <div class="file-field input-field">
+                    <div class="btn">
+
+                        <label for="photo">Добавить фото</label>
+                        <input type="file" name="photo[]" multiple id="photo">
+                    </div>
+                    <div class="file-path-wrapper">
+                        <input class="file-path validate" type="text">
+                    </div>
                 </div>
+
             </div>
-        </div>
         <div class="input-field col s7">
             <input id="telephone" type="tel" class="validate validateMain" name="phone[]" required
                    pattern="[\D0-9]{5,15}" value="{{object.phone.[0]}}">
@@ -97,7 +112,7 @@
 
         </div>
         <div class="input-field col s7">
-            <button type="submit" class="btn">Добавить</button>
+            <button type="submit" class="btn" id="btn-lk">Редактировать</button>
         </div>
 
     </form>

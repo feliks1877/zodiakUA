@@ -4,6 +4,8 @@ const workObj = require('../models/workObj')
 const User = require('../models/user')
 const Pay = require('../models/pay')
 const savePhoto = require('../function/savePhoto')
+const {validationResult} = require('express-validator')
+const {workEditValidators} = require('../utils/validator')
 const Func = require('../function/func')
 const meta = require('../headers/meta')
 const Country = require('../models/country')
@@ -114,17 +116,29 @@ router.get('/:id/editwork', async (req, res) => {
         })
     }
 })
-router.post('/editwork', async (req, res) => {
+router.post('/editwork', workEditValidators, async (req, res) => {
     try {
-        console.log(req.body)
+        // console.log(req.body)
+        const err = validationResult(req)
+        // noinspection SpellCheckingInspection
+        console.log('ERR VALID WORKEDIT',err)
+        if(!err.isEmpty()){
+            // noinspection JSUnresolvedFunction
+            req.flash('message', err.array()[0].msg)
+            return res.status(422).redirect('/lk')
+        }
+        // noinspection JSUnresolvedVariable
         if (req.files.length) {
+            // noinspection JSUnresolvedVariable
             req.files.forEach((el) => {
+                console.log('EL',el.filename)
                 req.body.photo.unshift(el.filename)
                 new Promise((resolve, reject) => {
                     const data = savePhoto(el)
                     if (data === true) {
                         resolve(data)
                     } else {
+                        // noinspection JSUnresolvedFunction
                         req.flash('error', 'Что то пошло не так, попробуйте позже')
                         res.redirect('/lk')
                         reject(false)
@@ -134,17 +148,21 @@ router.post('/editwork', async (req, res) => {
                 })
             })
         }
+        console.log('REQ',req.body.photo)
         await req.body.photo.forEach((e, i) => {
+            console.log('EL',e)
             if (e.length <= 0) {
                 req.body.photo.splice(i, 1)
             }
         })
 
-        console.log(req.body.photo)
+        console.log('PHOTO',req.body.photo)
         await workObj.findByIdAndUpdate(req.body.id, req.body)
+        // noinspection JSUnresolvedFunction
         req.flash('message', 'Объявление успешно отредактировано')
         res.redirect('/lk')
     } catch (e) {
+        // noinspection JSUnresolvedFunction
         req.flash('message', 'Ошибка редактирования, повторите попытку позже')
         console.log('Редактирование', e)
         res.redirect('/lk')

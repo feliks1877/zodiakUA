@@ -160,7 +160,8 @@ if (photoSize) {
                 document.getElementById('btn-lk').textContent = 'Выбери другой файл'
             } else {
                 photoSize.textContent = 'Выбрано ' + selectFiles + 'фото'
-                document.getElementById('btn-lk').removeAttribute('disabled')
+                document.getElementById('btn-lk').getAttribute('disabled') === true ?
+                    document.getElementById('btn-lk').removeAttribute('disabled') : null
                 document.getElementById('btn-lk').textContent = 'Загрузить'
             }
         })
