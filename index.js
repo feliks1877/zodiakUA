@@ -29,18 +29,27 @@ const varMiddleware = require('./middleware/variables')
 
 const app = express()
 
-if(process.env.PORT){
-    app.use (function (req, res, next) {
+if (process.env.PORT) {
+    app.use(function (req, res, next) {
         console.log(req.headers.host, req.url)
-        if(req.headers['x-forwarded-proto'] !== 'https'){
+        if (req.headers['x-forwarded-proto'] !== 'https') {
             // request was via https, so do no special handling
-           return  res.redirect(301,'https://' + req.headers.host + req.url)
+            return res.redirect(301, 'https://' + req.headers.host + req.url)
         } else {
             // request was via http, so redirect to https
-          return next()
+            return next()
+        }
+    })
+    app.use(async (req, res, next) => {
+        if (req.headers.host.match(/^www/) !== null) {
+            const host = req.headers.host.replace('www.', '')
+            return res.redirect(301, 'https://' + host + req.url)
+        } else {
+            return next()
         }
     })
 }
+
 app.disable('x-powered-by')
 app.use(helmet.dnsPrefetchControl())
 app.use(helmet.expectCt())
@@ -54,13 +63,6 @@ app.use(helmet.referrerPolicy())
 app.use(helmet.xssFilter())
 
 
-app.use(async (req, res, next) => {
-    if (req.headers.host.match(/^www/) !== null) {
-        return  res.redirect(301,'https://zodiak.world/')
-    }else{
-        return  next()
-    }
-})
 const hbs = exphbs.create({
     handlebars: allowInsecurePrototypeAccess(Handlebars),
     defaultLayout: 'main',
@@ -140,7 +142,7 @@ async function start() {
 }
 
 start().catch(e => {
-    console.log('ERR START',e)
+    console.log('ERR START', e)
 })
 
 

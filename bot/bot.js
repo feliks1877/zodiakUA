@@ -27,6 +27,7 @@ function searchCity(region) {
     let c = region.replace('/', '')
     let citAr = cityArr.find(e => e.nameEn === c)
     let city = []
+    // noinspection JSUnresolvedVariable
     citAr.cities.forEach(el => {
         city.push(el)
     })
