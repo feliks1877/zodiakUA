@@ -29,7 +29,19 @@ const varMiddleware = require('./middleware/variables')
 
 const app = express()
 
+if(process.env.PORT){
+    app.use (function (req, res, next) {
+        console.log(req.headers.host, req.url)
+        if (req.secure) {
+            // request was via https, so do no special handling
+            next();
+        } else {
+            // request was via http, so redirect to https
+            res.status(301).redirect('https://' + req.headers.host + req.url)
 
+        }
+    })
+}
 app.disable('x-powered-by')
 app.use(helmet.dnsPrefetchControl())
 app.use(helmet.expectCt())
@@ -88,6 +100,7 @@ app.use('/images', express.static(path.join(__dirname, 'images'), options))
 app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')))
 app.use(express.urlencoded({extended: true}))
 
+// noinspection SpellCheckingInspection
 app.use(session({
     secret: keys.SESSION_SECRET,
     resave: false,
@@ -111,20 +124,6 @@ app.use(sortRoutes)
 app.use(cronRoutes)
 
 const PORT = process.env.PORT || 2000
-
-if(process.env.PORT){
-    app.use (function (req, res, next) {
-        console.log(req.headers.host, req.url)
-        if (req.secure) {
-            // request was via https, so do no special handling
-            next();
-        } else {
-
-            // request was via http, so redirect to https
-            res.redirect(301,'https://' + req.headers.host + req.url);
-        }
-    })
-}
 
 async function start() {
     try {
