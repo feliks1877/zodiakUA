@@ -3,10 +3,20 @@ const City = require('../models/city')
 const savePhoto = require('../function/savePhoto')
 const Object = require('../models/objects')
 const User = require('../models/user')
+const Pay = require('../models/pay')
 const {validationResult} = require('express-validator')
 const {addValidators} = require('../utils/validator')
 const keys = require('../keys')
 const router = Router()
+
+function payAdd(pay,userId,object){
+    return new Pay({
+        pay: pay,
+        userId: userId,
+        object: object,
+        date: new Date()
+    })
+}
 
 router.get('/add', async (req, res) => {
     // noinspection JSUnresolvedFunction
@@ -65,8 +75,12 @@ router.post('/add', addValidators, async (req, res) => {
     try {
         await object.save()
         const user = await User.findById(userId)
-        const balance = user.balance - 25
+        const balance = user.balance - 15
+        // noinspection JSUnresolvedVariable
+        const pay = payAdd(`Платеж за добавление объявления эскорт -15 UAH`,userId)
+        await pay.save()
         await User.updateOne({_id: req.session.user._id}, {balance: balance})
+        // noinspection JSUnresolvedVariable
         await req.files.forEach((el) => {
             new Promise((resolve, reject) => {
                 const data = savePhoto(el)
@@ -86,27 +100,3 @@ router.post('/add', addValidators, async (req, res) => {
 
 
 module.exports = router
-
-
-//
-// fs.readFile(el.path, function (err, data) {
-//     if (err) {
-//         throw err;
-//     }
-//     console.log('DATA', data, 'TYPE', req.file)
-//     const params = {
-//         Bucket: keys.S3_BUCKET,
-//         Key: el.filename,
-//         Body: data,
-//         ContentType: el.mimetype,
-//         ACL: 'public-read'
-//     };
-//     console.log(params)
-//     s3.putObject(params, function (err, data) {
-//         if (err) {
-//             console.log(err)
-//         } else {
-//             console.log("Successfully uploaded data to myBucket/myKey", data);
-//         }
-//     })
-// });

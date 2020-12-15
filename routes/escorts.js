@@ -6,7 +6,7 @@ const meta = require('../headers/meta')
 const Meta = require('../models/meta')
 const Func = require('../function/func')
 const {validationResult} = require('express-validator')
-const {addValidators,editValidation} = require('../utils/validator')
+const {editValidation} = require('../utils/validator')
 const savePhoto = require('../function/savePhoto')
 const router = Router()
 
@@ -74,10 +74,7 @@ router.get('/escort/:name', async (req, res) => {
 })
 
 router.get('/city/:name/page/:page', async (req, res) => {
-
-    // noinspection JSUnresolvedFunction,SpellCheckingInspection
     const cityes = await City.getByCity(req.params.name)
-    // noinspection JSUnresolvedFunction
     const city = await City.getAll()
     const user = req.session.user
     const pageNumber = req.params.page
@@ -86,7 +83,6 @@ router.get('/city/:name/page/:page', async (req, res) => {
         .skip(pageNumber > 0 ? ((pageNumber - 1) * 50) : 0).limit(50).populate('userId')
     const page = Func.pagination(arr)
     let cityMph = Meta.morph(cityes.name)
-    // noinspection SpellCheckingInspection
     res.render('city', {
         title: `Эскорт ${cityes.name}`,
         headCity: `${cityMph}`,

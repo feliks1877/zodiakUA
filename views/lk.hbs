@@ -1,9 +1,25 @@
+<!--suppress HtmlUnknownTarget -->
 <div id="lk">
     <h5>Личный кабинет</h5>
     {{#if message}}
         <p id="err" data-error="{{message}}"></p>
     {{/if}}
     <ul class="collection">
+        <li class="collection-item avatar">
+            <a href="#modal2" class="modal-trigger btn-floating waves-effect waves-light cyan accent-4"><i class="material-icons">info</i></a>
+            <span class="title">Информация/Обратная связь</span>
+        </li>
+        <div id="modal2" class="modal z-depth-5">
+            <div class="modal-content">
+                <h4>Условия и правила размещения</h4>
+                <h6 style="color: red">Строго 18+</h6>
+                <p style="color: red">Фотографии обнаженного тела к размещению не допускаются, интимные части должны быть заретушированы!</p>
+
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Закрыть</a>
+            </div>
+        </div>
         <li class="collection-item avatar">
             <a href="/add" class="btn-floating waves-effect waves-light light-blue darken-3"><i class="material-icons">add</i></a>
             <span class="title">Добавить объявление</span>
@@ -77,12 +93,12 @@
                 <div id="{{this.id}}" class="modal">
 
                     <div class="modal-content">
+                        <p>Текущее время<span class="timeCurrent"></span></p>
                         <form method="post" action="/lk/:autoTop" name="autoOn">
                             <input name="id" type="hidden" value="{{this.id}}">
                             <input type="time" name="time" value="{{this.autoTop}}">
                             {{#if autoTop}}
-                                <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} по Мск
-                                    времени</p>
+                                <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} (по текущему времени сайта)</p>
                             {{else}}
                                 <p>Автоподнятие отключено</p>
                             {{/if}}

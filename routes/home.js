@@ -1,12 +1,13 @@
 const {Router} = require('express')
 const City = require('../models/city')
+const meta = require('../headers/meta')
 const router = Router()
 
 router.get('/', async (req, res) => {
     const city = await City.getAll()
     res.render('index', {
-        title: 'Главная',
-        meta: `Лучшие проститутки со всей Украины на ZODIAK`,
+        title: `Escort Ukraine`,
+        meta:  meta.metaHome,
         isHome: true,
         error: req.flash('error'),
         city

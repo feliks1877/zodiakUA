@@ -34,12 +34,12 @@ let jobMidnight = new Cron('0 0 0 * * *', async function () {
                 arr.push(object[i])
             }
         }
-        us.balance = us.balance - (arr.length * 25)
-        const rbalance = arr.length * 25
+        us.balance = us.balance - (arr.length * 15)
+        const rbalance = arr.length * 15
         console.log(rbalance)
         new Promise((resolve, reject) => {
             User.findByIdAndUpdate({_id: us.id}, {balance: us.balance})
-            const pay = payAdd(`Платеж за сутки ${rbalance}UAH`,us.id)
+            const pay = payAdd(`Платеж за сутки ${rbalance} UAH`,us.id)
             resolve(pay.save())
         }).then((data) => {
             console.log('Списание за сутки',rbalance)
@@ -64,10 +64,10 @@ let eachHour = new Cron('0 * * * * *', async function () {
                 const newT = Objects.findByIdAndUpdate({_id: e.id},{date: d})
                 resolve(newT)
             }).then((newT) => {
-                const balance = e.userId.balance - 25
+                const balance = e.userId.balance - 15
                 new Promise((resolve, reject) => {
                     User.findByIdAndUpdate({_id: e.userId.id}, {balance: balance})
-                    const pay = payAdd(`Платеж за автоподнятие для анкеты ${newT.name} -25UAH`, e.userId.id,newT.id)
+                    const pay = payAdd(`Платеж за автоподнятие для анкеты ${newT.name} -15 UAH`, e.userId.id,newT.id)
                     resolve(pay.save())
                 })
             }).catch(err => console.log(err))
@@ -89,12 +89,12 @@ let jobMidnightWork = new Cron('0 0 0 * * *', async function () {
                 arr.push(object[i])
             }
         }
-        us.balance = us.balance - (arr.length * 25)
-        const rbalance = arr.length * 25
+        us.balance = us.balance - (arr.length * 15)
+        const rbalance = arr.length * 15
         console.log(rbalance)
         new Promise((resolve, reject) => {
             User.findByIdAndUpdate({_id: us.id}, {balance: us.balance})
-            const pay = payAdd(`Платеж за сутки Вакансии ${rbalance}UAH`,us.id)
+            const pay = payAdd(`Платеж за сутки Вакансии ${rbalance} UAH`,us.id)
             resolve(pay.save())
         }).then((data) => {
             console.log('за сутки Вакансии ',rbalance)

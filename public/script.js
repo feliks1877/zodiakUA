@@ -222,7 +222,7 @@ mainThingPhoto.forEach((e, i) => {
     }
 })
 
-////////////////// ВАЛИДАЦИЯ ФОРМЫ ДОБАВЛЕНРИЯ ЭСКОРТ///////////////
+////////////////// ВАЛИДАЦИЯ ФОРМЫ ДОБАВЛЕНИЯ ЭСКОРТ///////////////
 function validation(butt) {
     console.log(butt.dataset.block)
     let v = document.getElementById(butt.dataset.block)
@@ -278,7 +278,6 @@ if (formSub != null) {
             document.getElementById('spinner').removeAttribute('style')
         }
     })
-
 }
 let imgParallax = document.getElementById('imgParallax')
 if (imgParallax != null) {
@@ -312,5 +311,12 @@ function showVisible() {
 }
 showVisible();
 window.onscroll = showVisible;
+// ВЫВОД ТЕКУЩЕГО ВРЕМЕНИ СУТОК СЕРВЕРА//
+let timeSpan = Array.prototype.slice.call(document.getElementsByClassName('timeCurrent'))
+if(timeSpan.length){
+    timeSpan.forEach(e => {
+        e.textContent = ' '+new Date().getHours()+':'+ new Date().getMinutes()
+    })
+}
 
 

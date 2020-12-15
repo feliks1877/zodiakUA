@@ -67,10 +67,12 @@ router.post('/add/workadd', workValidators, async (req,res) => {
     })
     await workObj.save()
     const user = await User.findById(userId)
-    const balance = user.balance - 25
-    const pay = payAdd(`Платеж за добавление в вакансии -25 UAH`,userId)
+    const balance = user.balance - 15
+    const pay = payAdd(`Платеж за добавление в вакансии -15 UAH`,userId)
     await pay.save()
+    // noinspection JSUnresolvedVariable
     await User.updateOne({_id: req.session.user._id}, {balance: balance})
+    // noinspection JSUnresolvedVariable
     await req.files.forEach((el) => {
         new Promise((resolve, reject) => {
             const data = savePhoto(el)
@@ -80,6 +82,7 @@ router.post('/add/workadd', workValidators, async (req,res) => {
             console.log('Save photo', data)
         })
     })
+    // noinspection JSUnresolvedFunction
     req.flash('message', 'Объявление успешно добавлено')
     res.redirect('/lk')
 })
