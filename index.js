@@ -32,13 +32,13 @@ const app = express()
 if(process.env.PORT){
     app.use (function (req, res, next) {
         console.log(req.headers.host, req.url)
-        if (req.secure) {
+        // if (req.secure) {
+        if(req.headers['x-forwarded-proto'] !== 'https'){
             // request was via https, so do no special handling
-            next();
+           return  res.redirect('https://' + req.headers.host + req.url)
         } else {
             // request was via http, so redirect to https
-            res.status(301).redirect('https://' + req.headers.host + req.url)
-            return false
+          return next()
         }
     })
 }
@@ -57,9 +57,9 @@ app.use(helmet.xssFilter())
 
 app.use(async (req, res, next) => {
     if (req.headers.host.match(/^www/) !== null) {
-        await res.redirect(301,'https://zodiak.world/')
+        return  res.redirect(301,'https://zodiak.world/')
     }else{
-        await next()
+        return  next()
     }
 })
 const hbs = exphbs.create({
