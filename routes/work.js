@@ -82,9 +82,9 @@ router.get('/workactive/:id', async (req, res) => {
 router.get('/worktop/:id/lk', async (req, res) => {
     const obj = await workObj.findByIdAndUpdate({_id: req.params.id}, {date: new Date()})
     const user = await User.findById({_id: req.session.user._id})
-    const balance = user.balance - 25
+    const balance = user.balance - 15
     await User.updateOne({_id: req.session.user._id}, {balance: balance})
-    const pay = payAdd(`Платеж за поднятие вакансии -25 UAH.`,req.session.user._id,obj.id,)
+    const pay = payAdd(`Платеж за поднятие вакансии -15 UAH.`,req.session.user._id,obj.id,)
     await pay.save()
     res.redirect('/lk')
 })

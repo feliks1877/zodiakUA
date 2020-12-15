@@ -76,20 +76,7 @@ if (appraisal) {
 
     })
 }
-/////////////// ЗАПОЛНЕНИЕ ЧЕКБОКСОВ ПРИ РЕДАКТИРОВАНИИ /////////////////////////////
-// noinspection SpellCheckingInspection
-let classik = document.querySelectorAll('em')
-let input = document.querySelectorAll('input[type=checkbox]')
-if (input.length) {
-    input.forEach((e) => {
-        classik.forEach((c) => {
-            if (e.dataset.classik === c.dataset.classik) {
-                e.checked = true
-            }
-        })
-    })
-}
-
+//////////////////////ЗВЕЗДНЫЙ РЕЙТИНГ ОЦЕНКА ОБЩАЯ РАСЧЕТ КОЛЛИЧЕСТВА ЗВЕЗД////////////////////////////////
 let apl = document.querySelectorAll('[data-appraisal]')
 apl.forEach((e) => {
     let a = Math.ceil(e.dataset.appraisal)
@@ -111,6 +98,20 @@ apl.forEach((e) => {
         }
     }
 })
+/////////////// ЗАПОЛНЕНИЕ ЧЕКБОКСОВ ПРИ РЕДАКТИРОВАНИИ /////////////////////////////
+// noinspection SpellCheckingInspection
+let classik = document.querySelectorAll('em')
+let input = document.querySelectorAll('input[type=checkbox]')
+if (input.length) {
+    input.forEach((e) => {
+        classik.forEach((c) => {
+            if (e.dataset.classik === c.dataset.classik) {
+                e.checked = true
+            }
+        })
+    })
+}
+
 
 ///////////// ВЫВОД ОШИБКИ /////////////
 window.addEventListener('load', () => {

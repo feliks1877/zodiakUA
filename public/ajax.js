@@ -30,13 +30,22 @@ function ajax(url) {
         xhttp.send()
     })
 }
-
+///////////////// ПОДНЯТИЕ ОБЪЯВЛЕНИЙ////////////////////
 topObj.forEach(e => {
     e.onclick = function (event) {
         console.log(event.target.getAttribute('data-top'))
         ajax(event.target.getAttribute('data-top')).then(e => {
-            console.log(e)
-        })
+                console.log(e)
+                if (e === 4) {
+                    balance.forEach((el) => {
+                        el.dataset.balance = el.dataset.balance - 15
+                        blce(el)
+                    })
+                    let toastHTML = '<span>Объявление успешно поднято</span>';
+                    M.toast({html: toastHTML});
+                }
+            }
+        )
     }
 })
 
@@ -75,22 +84,24 @@ function counterFn(e1) {
         }
     })
 }
+
 //////////////////////////// ВКЛЮЧЕНИЕ ОТКЛЮЧЕНИЕ//////////////////////////////////////////
 let sta = Array.prototype.slice.call(document.querySelectorAll('span[data-status]'))
 counterFn(sta)
+
 function statusIcon(el) {
     new Promise((resolve, reject) => {
-            el.firstChild.remove()
-            if (el.getAttribute('data-act') === '1') {
-                el.insertAdjacentHTML('afterbegin', '<i class="green material-icons">play_circle_filled</i>')
-                let toastHTML = '<span>Объявление опубликовано</span>';
-                M.toast({html: toastHTML})
-            } else {
-                el.insertAdjacentHTML('afterbegin', '<i class="red material-icons">remove_circle</i>')
-                let toastHTML = '<span>Объявление снято с публикации</span>'
-                M.toast({html: toastHTML})
-            }
-            resolve(counterFn(sta))
+        el.firstChild.remove()
+        if (el.getAttribute('data-act') === '1') {
+            el.insertAdjacentHTML('afterbegin', '<i class="green material-icons">play_circle_filled</i>')
+            let toastHTML = '<span>Объявление опубликовано</span>';
+            M.toast({html: toastHTML})
+        } else {
+            el.insertAdjacentHTML('afterbegin', '<i class="red material-icons">remove_circle</i>')
+            let toastHTML = '<span>Объявление снято с публикации</span>'
+            M.toast({html: toastHTML})
+        }
+        resolve(counterFn(sta))
     }).catch(e => {
         console.log(e)
     })
@@ -110,9 +121,9 @@ sta.forEach(e => {
         let elem = event.target.parentElement
         let url = elem.getAttribute('data-status') + (elem.getAttribute('data-act') === '1' ? 0 : 1)
         ajax(url).then(e => {
-                let st = elem.getAttribute('data-act') === '1' ? '0' : '1'
-                elem.setAttribute('data-act', st)
-                statusIcon(elem)
+            let st = elem.getAttribute('data-act') === '1' ? '0' : '1'
+            elem.setAttribute('data-act', st)
+            statusIcon(elem)
         })
     }
 })
