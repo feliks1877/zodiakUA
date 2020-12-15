@@ -6,17 +6,34 @@
     {{/if}}
     <ul class="collection">
         <li class="collection-item avatar">
-            <a href="#modal2" class="modal-trigger btn-floating waves-effect waves-light cyan accent-4"><i class="material-icons">info</i></a>
+            <a href="#modal2" class="modal-trigger btn-floating waves-effect waves-light blue"><i class="material-icons">info</i></a>
             <span class="title">Информация/Обратная связь</span>
         </li>
         <div id="modal2" class="modal z-depth-5">
             <div class="modal-content">
-                <h4>Условия и правила размещения</h4>
+                <p>Текущее время<span class="timeCurrent"></span></p>
+                <h5>Условия и правила размещения</h5>
                 <h6 style="color: red">Строго 18+</h6>
                 <p style="color: red">Фотографии обнаженного тела к размещению не допускаются, интимные части должны быть заретушированы!</p>
-
+                <ol>
+                    <li>Добавление одной анкеты 15 UAH</li>
+                    <li>Размещение одного объявления 15 UAH в сутки, то есть при добавлении сразу спишется 15 UAH
+                        и последующие списания будудт ежедневно в полночь(списание происходит в полночь по текущему времени сайта)</li>
+                    <li>Поднятие 15 UAH</li>
+                    <li>Для получения статуса "Фото проверенно" необходимо обратиться к администратору сайта (
+                        ВНИМАНИЕ! С сайтом работает телеграм бот, проверенные объявления так же доступны пользователям в нем,
+                        что существенно расширяет аудиторию и возможность найти реальных клиентов контакт бота @ZODIAKWORLD_BOT)</li>
+                    <li>Для пополнеия баланса необходимо обратиться к администратору сайта</li>
+                    <li style="color: red">ВНИМАНИЕ! За ложные отзывы к анкетам следует автоматическая блокировка личного кабинета с балансом</li>
+                    <li style="color: red">ВНИМАНИЕ! За не соответствие проверенных фото блокировка личного кабинета с баласнсом, то есть если Вы отправили
+                    нам проверочное фото девушки, а по этой анкете работает другая девушка</li>
+                </ol>
             </div>
             <div class="modal-footer">
+                <a href="https://t.me/zodiak138" class="waves-effect blue btn-small cntk"><i
+                        class="material-icons fab fa-telegram"></i>Написать в телеграм</a><br>
+                <a href="mailto:support@zodiak-vip.ru?subject={{user.email}}" class="waves-effect blue btn-small cntk"><i class="fas fa-envelope-square"></i>
+                    Написать на почту</a><br>
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Закрыть</a>
             </div>
         </div>
@@ -194,6 +211,11 @@
 
 
 <style>
+    .cntk > i {
+        position: relative;
+        left: -7px;
+        top: 1px;
+    }
     .workBtn > a{
         height: 44px;
     }
