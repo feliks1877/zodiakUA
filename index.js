@@ -32,10 +32,9 @@ const app = express()
 if(process.env.PORT){
     app.use (function (req, res, next) {
         console.log(req.headers.host, req.url)
-        // if (req.secure) {
         if(req.headers['x-forwarded-proto'] !== 'https'){
             // request was via https, so do no special handling
-           return  res.redirect('https://' + req.headers.host + req.url)
+           return  res.redirect(301,'https://' + req.headers.host + req.url)
         } else {
             // request was via http, so redirect to https
           return next()
