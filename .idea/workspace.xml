@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/google3e84e90dafcb216a.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
@@ -15,8 +16,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="CSS File" />
-        <option value="HTML File" />
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -41,7 +42,7 @@
     <property name="javascript.nodejs.core.library.configured.version" value="14.14.0" />
     <property name="javascript.nodejs.core.library.typings.version" value="14.14.0" />
     <property name="js.last.introduce.type" value="LET" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/images" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -56,9 +57,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\images" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\data" />
-      <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\public" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP" />
       <recent name="C:\Users\ZenBook\WebstormProjects\zodiakAPP\sistemphoto" />
     </key>
@@ -139,7 +140,7 @@
       <workItem from="1608030376739" duration="5972000" />
       <workItem from="1608039854863" duration="937000" />
       <workItem from="1608040821809" duration="512000" />
-      <workItem from="1608041543134" duration="13835000" />
+      <workItem from="1608041543134" duration="14862000" />
     </task>
     <servers />
   </component>
@@ -186,10 +187,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1607870937437" />
-    <state x="529" y="62" width="587" height="534" key="find.popup" timestamp="1608033134631">
+    <state x="529" y="62" width="587" height="534" key="find.popup" timestamp="1608113032475">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="529" y="62" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1608033134631" />
+    <state x="529" y="62" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1608113032475" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1607962959030">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
