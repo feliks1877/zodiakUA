@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: lk
+
+User-agent: Yandex
+Disallow: lk
+
+Sitemap: https://zodiak.world/sitemap.xml

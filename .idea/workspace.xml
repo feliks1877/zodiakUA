@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/google3e84e90dafcb216a.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/robots.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
@@ -140,7 +140,7 @@
       <workItem from="1608030376739" duration="5972000" />
       <workItem from="1608039854863" duration="937000" />
       <workItem from="1608040821809" duration="512000" />
-      <workItem from="1608041543134" duration="14862000" />
+      <workItem from="1608041543134" duration="15234000" />
     </task>
     <servers />
   </component>
