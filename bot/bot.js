@@ -5,7 +5,9 @@ const BOT_TOKEN = keys.BOT_TOKEN
 const bot = new Telegraf(BOT_TOKEN)
 const City = require('../models/city')
 const Object = require('../models/objects')
+const workObj = require('../models/workObj')
 
+// noinspection JSUnresolvedFunction
 const region = City.getAll()
 const regionArr = []
 region.then((el) => {
@@ -33,6 +35,7 @@ function searchCity(region) {
     })
     return city
 }
+
 bot.command('start', async (ctx) => {
     await ctx.reply(`Я помогу найти анкеты проверенных эскортниц в любом городе Украины размещённых на сайте ZODIAK, просто начни вводить /`)
     await ctx.replyWithPhoto(`http://zodiak.world/images/2.jpg`, {
@@ -45,10 +48,32 @@ bot.command('start', async (ctx) => {
     })
 })
 
-bot.command( 'random',  async (ctx,next) => {
+bot.command('work', async (ctx, next) => {
     try {
-        const object = await Object.find({active: 1}).sort({date: 'desc'}).limit(10)
-        if(object.length <= 0){
+        const WorkObj = await workObj.find({active: 1}).sort({date: 'desc'}).limit(20)
+        if (WorkObj.length <= 0) {
+            await ctx.reply('Объявлений не обнаруженно')
+        }
+        WorkObj.forEach(el => {
+            ctx.replyWithPhoto(`https://zodaikapp.s3.us-east-2.amazonaws.com/img/${el.photo[0]}`, {
+                caption: `${el.description}`,
+                reply_markup: {
+                    inline_keyboard: [
+                        [{text: `Смотреть объявление`, url: `http://zodiak.world/id/${el._id}`}]
+                    ]
+                }
+            })
+        })
+        return true
+    } catch (e) {
+        console.log(e)
+    }
+})
+
+bot.command('random', async (ctx, next) => {
+    try {
+        const object = await Object.find({active: 1}).sort({date: 'desc'}).limit(20)
+        if (object.length <= 0) {
             await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
         }
         object.forEach(el => {
@@ -62,7 +87,7 @@ bot.command( 'random',  async (ctx,next) => {
             })
         })
         return true
-    }catch (e) {
+    } catch (e) {
         console.log('ERR RANDOM BOT', e)
     }
 })
@@ -73,6 +98,7 @@ bot.use(async (ctx, next) => {
             const choiceCity = new MenuTemplate(`Выбрать город`)
             const listCity = searchCity(ctx.update.message.text)
             listCity.forEach(e => {
+                // noinspection JSUnresolvedVariable
                 choiceCity.interact(`${e.name}`, `${e.nameEn}`, {
                     do: async ctx => {
                         await ctx.replyToContext(ctx)
@@ -86,9 +112,9 @@ bot.use(async (ctx, next) => {
         const trigger = ctx.update.callback_query.data.match('/city/')
         if (trigger[0] === '/city/') {
             const cityDB = ctx.update.callback_query.data.replace('/city/', '')
-            const object = await Object.find({active: 1}).where('city').equals(cityDB).sort({date: 'desc'}).limit(3)
-            if(object.length <= 0){
-               await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
+            const object = await Object.find({active: 1}).where('city').equals(cityDB).sort({date: 'desc'}).limit(20)
+            if (object.length <= 0) {
+                await ctx.reply('Проверенных анкет в данном городе не обнаруженно')
             }
             object.forEach(el => {
                 ctx.replyWithPhoto(`https://zodaikapp.s3.us-east-2.amazonaws.com/img/${el.photo[0]}`, {
