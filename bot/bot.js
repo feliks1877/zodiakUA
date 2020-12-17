@@ -59,7 +59,7 @@ bot.command('work', async (ctx, next) => {
                 caption: `${el.description}`,
                 reply_markup: {
                     inline_keyboard: [
-                        [{text: `Смотреть объявление`, url: `http://zodiak.world/id/${el._id}`}]
+                        [{text: `Смотреть объявление`, url: `http://zodiak.world/work/id/${el._id}`}]
                     ]
                 }
             })
