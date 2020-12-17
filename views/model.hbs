@@ -4,7 +4,7 @@
     </div>
     <h1>{{object.name}}
         {{#if object.veryfication}}
-           <span><i class="fas fa-check-circle"></i></span><br>
+            <span><i class="fas fa-check-circle"></i></span><br>
         {{/if}}
     </h1>
     <div class="appr" data-appraisal="{{object.appraisal}}"></div>
@@ -14,8 +14,9 @@
         {{#if object.photo.length}}
             {{#each object.photo}}
                 {{#if this}}
-                    <a data-fancybox="gallery" class="carousel-item" href="https://zodaikapp.s3.us-east-2.amazonaws.com/imgFancy/{{this}}"><img class="crsl"
-                                                                                          src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"></a>
+                    <a data-fancybox="gallery" class="carousel-item"
+                       href="https://zodaikapp.s3.us-east-2.amazonaws.com/imgFancy/{{this}}"><img class="crsl"
+                                                                                                  src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{this}}"></a>
                 {{/if}}
             {{/each}}
         {{/if}}
@@ -88,7 +89,9 @@
                 <div class="col s6 service">
                     <strong>Классические услуги:</strong>
                     {{#each object.classik}}
-                        <em><i class="material-icons">check</i>{{this}}</em>
+                        {{#if this.length}}
+                            <em><i class="material-icons">check</i>{{this}}</em>
+                        {{/if}}
                     {{/each}}
                 </div>
             {{/if}}
@@ -97,7 +100,9 @@
                 <div class="col s6 service">
                     <strong>BDSM:</strong>
                     {{#each object.bdsm}}
-                        <em><i class="material-icons">check</i>{{this}}</em>
+                        {{#if this.length}}
+                            <em><i class="material-icons">check</i>{{this}}</em>
+                        {{/if}}
                     {{/each}}
                 </div>
             {{/if}}
@@ -107,7 +112,9 @@
                 <div class="col s6 service">
                     <strong>Massage:</strong>
                     {{#each object.massage}}
-                        <em><i class="material-icons">check</i>{{this}}</em>
+                        {{#if this.length}}
+                            <em><i class="material-icons">check</i>{{this}}</em>
+                        {{/if}}
                     {{/each}}
                 </div>
             {{/if}}
@@ -115,7 +122,9 @@
                 <div class="col s6 service">
                     <strong>Разное:</strong>
                     {{#each object.other}}
-                        <em><i class="material-icons">check</i>{{this}}</em>
+                        {{#if this.length}}
+                            <em><i class="material-icons">check</i>{{this}}</em>
+                        {{/if}}
                     {{/each}}
                 </div>
             {{/if}}
@@ -131,7 +140,8 @@
                         class="large material-icons">phone</i></a></li>
             {{/if}}
             {{#if object.phone.[1]}}
-                <li><a href="https://wa.me/{{object.phone.[1]}}?text=Привет! Я пишу с сайта ZODIAK" class="btn-floating green"><i
+                <li><a href="https://wa.me/{{object.phone.[1]}}?text=Привет! Я пишу с сайта ZODIAK"
+                       class="btn-floating green"><i
                         class="fab fa-whatsapp"></i></a></li>
             {{/if}}
             {{#if object.phone.[2]}}
@@ -179,7 +189,8 @@
 
                     <a href="/id/{{id}}">
                         <div class="card-image es">
-                            <img src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}" alt="Escort Ukraine">
+                            <img src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}"
+                                 alt="Escort Ukraine">
                             <div class="card-title">
                                 <span>{{city}}</span><br>
                             <span>{{name}}
