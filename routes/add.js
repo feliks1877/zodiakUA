@@ -90,13 +90,11 @@ router.post('/add', addValidators, async (req, res) => {
                 reject(false)
             }).then(data => {
                 console.log('Save photo', data)
-            }).then(e => {
-                setTimeout(()=>{
-                    Bot.PostObj()
-                },4000)
             })
         })
-
+        setTimeout(()=>{
+            Bot.PostObj()
+        },5000)
         // noinspection JSUnresolvedFunction
         req.flash('message', 'Объявление успешно добавлено')
         res.redirect('/lk')
