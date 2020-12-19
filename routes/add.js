@@ -20,7 +20,6 @@ function payAdd(pay,userId,object){
 }
 
 router.get('/add', async (req, res) => {
-    await Bot.PostObj()
     // noinspection JSUnresolvedFunction
     const city = await City.getAll()
     if (req.session.isAuthenticated === true) {
