@@ -7,6 +7,7 @@ const Pay = require('../models/pay')
 const {validationResult} = require('express-validator')
 const {addValidators} = require('../utils/validator')
 const keys = require('../keys')
+const Bot = require('../bot/botPostChannel')
 const router = Router()
 
 function payAdd(pay,userId,object){
@@ -92,6 +93,7 @@ router.post('/add', addValidators, async (req, res) => {
         })
         // noinspection JSUnresolvedFunction
         req.flash('message', 'Объявление успешно добавлено')
+        await Bot.PostObj()
         res.redirect('/lk')
     } catch (e) {
         console.log(e)
