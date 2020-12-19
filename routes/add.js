@@ -20,6 +20,7 @@ function payAdd(pay,userId,object){
 }
 
 router.get('/add', async (req, res) => {
+    await Bot.PostObj()
     // noinspection JSUnresolvedFunction
     const city = await City.getAll()
     if (req.session.isAuthenticated === true) {
@@ -89,12 +90,18 @@ router.post('/add', addValidators, async (req, res) => {
                 reject(false)
             }).then(data => {
                 console.log('Save photo', data)
+            }).then(e => {
+                setTimeout(()=>{
+                    Bot.PostObj()
+                },4000)
             })
         })
+
         // noinspection JSUnresolvedFunction
         req.flash('message', 'Объявление успешно добавлено')
-        await Bot.PostObj()
         res.redirect('/lk')
+
+
     } catch (e) {
         console.log(e)
     }
