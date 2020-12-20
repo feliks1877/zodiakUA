@@ -6,7 +6,6 @@ const router = Router()
 
 router.get('/', async (req, res) => {
     const city = await City.getAll()
-    console.log(Bot.PostObj())
     res.render('index', {
         title: `Escort Ukraine`,
         meta:  meta.metaHome,
