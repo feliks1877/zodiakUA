@@ -6,7 +6,8 @@
     {{/if}}
     <ul class="collection">
         <li class="collection-item avatar">
-            <a href="#modal2" class="modal-trigger btn-floating waves-effect waves-light blue"><i class="material-icons">info</i></a>
+            <a href="#modal2" class="modal-trigger btn-floating waves-effect waves-light blue"><i
+                    class="material-icons">info</i></a>
             <span class="title">Информация/Обратная связь</span>
         </li>
         <div id="modal2" class="modal z-depth-5">
@@ -14,26 +15,37 @@
                 <p>Текущее время<span class="timeCurrent"></span></p>
                 <h5>Условия и правила размещения</h5>
                 <h6 style="color: red">Строго 18+</h6>
-                <p style="color: red">Фотографии обнаженного тела к размещению не допускаются, интимные части должны быть заретушированы!</p>
+                <p style="color: red">Фотографии обнаженного тела к размещению не допускаются, интимные части должны
+                    быть заретушированы!</p>
                 <ol>
                     <li>Добавление одной анкеты 15 UAH</li>
                     <li>Размещение одного объявления 15 UAH в сутки, то есть при добавлении сразу спишется 15 UAH
-                        и последующие списания будудт ежедневно в полночь(списание происходит в полночь по текущему времени сайта)</li>
+                        и последующие списания будудт ежедневно в полночь(списание происходит в полночь по текущему
+                        времени сайта)
+                    </li>
                     <li>Поднятие 15 UAH</li>
                     <li>Для получения статуса "Фото проверенно" необходимо обратиться к администратору сайта (
-                        ВНИМАНИЕ! С сайтом работает телеграм бот, проверенные объявления так же доступны пользователям в нем,
-                        что существенно расширяет аудиторию и возможность найти реальных клиентов контакт бота @ZODIAKWORLD_BOT)</li>
+                        ВНИМАНИЕ! С сайтом работает телеграм бот, проверенные объявления так же доступны пользователям в
+                        нем,
+                        что существенно расширяет аудиторию и возможность найти реальных клиентов контакт бота
+                        @ZODIAKWORLD_BOT)
+                    </li>
                     <li>Для пополнеия баланса необходимо обратиться к администратору сайта</li>
-                    <li style="color: red">ВНИМАНИЕ! За ложные отзывы к анкетам следует автоматическая блокировка личного кабинета с балансом</li>
-                    <li style="color: red">ВНИМАНИЕ! За не соответствие проверенных фото блокировка личного кабинета с баласнсом, то есть если Вы отправили
-                    нам проверочное фото девушки, а по этой анкете работает другая девушка</li>
+                    <li style="color: red">ВНИМАНИЕ! За ложные отзывы к анкетам следует автоматическая блокировка
+                        личного кабинета с балансом
+                    </li>
+                    <li style="color: red">ВНИМАНИЕ! За не соответствие проверенных фото блокировка личного кабинета с
+                        баласнсом, то есть если Вы отправили
+                        нам проверочное фото девушки, а по этой анкете работает другая девушка
+                    </li>
                 </ol>
             </div>
             <div class="modal-footer">
                 <a href="https://t.me/zodiak138" class="waves-effect blue btn-small cntk"><i
                         class="material-icons fab fa-telegram"></i>Написать в телеграм</a><br>
-                <a href="mailto:support@zodiak-vip.ru?subject={{user.email}}" class="waves-effect blue btn-small cntk"><i class="fas fa-envelope-square"></i>
-                    Написать на почту</a><br>
+                <a href="mailto:support@zodiak-vip.ru?subject={{user.email}}" class="waves-effect blue btn-small
+                cntk"><i class="fas fa-envelope-square"></i>
+                Написать на почту</a><br>
                 <a href="#!" class="modal-close waves-effect waves-green btn-flat">Закрыть</a>
             </div>
         </div>
@@ -58,6 +70,22 @@
             <span class="title" id="balance">История платежей</span>
         </li>
         <li class="collection-item avatar">
+            <a href="#modal3" class="modal-trigger btn-floating waves-effect waves-light blue"><i
+                    class="fas fa-hryvnia"></i></a>
+            <span class="title">Оплата</span>
+        </li>
+        <div id="modal3" class="modal z-depth-5">
+            <div class="modal-content">
+                <label for="amount">Сумма</label>
+                <input type="number" id="amount" name="amount"/>
+            </div>
+            <div class="modal-footer">
+                <a href="/oplata/" id="link" class="waves-effect blue btn-small cntk"><i
+                        class="material-icons fas fa-hryvni"></i>Оплатить</a>
+                <a href=""  class="modal-close waves-effect waves-green btn-flat">Закрыть</a>
+            </div>
+        </div>
+        <li class="collection-item avatar">
             <a href="/logout" class="btn-floating waves-effect waves-light red"><i class="material-icons">power_settings_new
             </i></a>
             <span class="title">Выйти</span>
@@ -74,7 +102,7 @@
             </thead>
             <tbody>
             <tr>
-                <td id="amount"></td>
+                <td id="amounts"></td>
                 <td id="activeCount">0</td>
                 <td id="passiveCount">0</td>
             </tr>
@@ -89,139 +117,154 @@
     </ul>
 </div>
 <div id="block1" class="col s12">
-{{#if objects.length}}
+    {{#if objects.length}}
 
-    <div class="block--lk">
+        <div class="block--lk">
 
-        {{#each objects}}
-
-
-            <div class="card">
-                <div class="card-image">
-
-                    <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
-                    <span class="card-title title-lk">{{name}}</span>
-                    <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active="
-                          data-act="{{active}}"></span>
-                </div>
+            {{#each objects}}
 
 
-                <!-- Modal Structure -->
-                <div id="{{this.id}}" class="modal">
+                <div class="card">
+                    <div class="card-image">
 
-                    <div class="modal-content">
-                        <p>Текущее время<span class="timeCurrent"></span></p>
-                        <form method="post" action="/lk/:autoTop" name="autoOn">
-                            <input name="id" type="hidden" value="{{this.id}}">
-                            <input type="time" name="time" value="{{this.autoTop}}">
-                            {{#if autoTop}}
-                                <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} (по текущему времени сайта)</p>
-                            {{else}}
-                                <p>Автоподнятие отключено</p>
-                            {{/if}}
-                            <button type="button" name="btnOn" class=" modal-close waves-effect waves-green btn-flat">
-                                Включить
-                            </button>
-                        </form>
+                        <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
+                        <span class="card-title title-lk">{{name}}</span>
+                        <span class="card-title statusLk title-lk" data-status="/active/{{id}}?active="
+                              data-act="{{active}}"></span>
+                    </div>
 
 
-                        <form method="post" action="/lk/:autoTop">
-                            <input name="id" type="hidden" value="{{this.id}}">
-                            <input type="hidden" name="time" value="">
-                            <button type="button" name="btnOn" class="modal-close waves-effect waves-green btn-flat">
-                                Отключить
-                            </button>
-                        </form>
+                    <!-- Modal Structure -->
+                    <div id="{{this.id}}" class="modal">
 
+                        <div class="modal-content">
+                            <p>Текущее время<span class="timeCurrent"></span></p>
+                            <form method="post" action="/lk/:autoTop" name="autoOn">
+                                <input name="id" type="hidden" value="{{this.id}}">
+                                <input type="time" name="time" value="{{this.autoTop}}">
+                                {{#if autoTop}}
+                                    <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} (по
+                                        текущему времени сайта)</p>
+                                {{else}}
+                                    <p>Автоподнятие отключено</p>
+                                {{/if}}
+                                <button type="button" name="btnOn"
+                                        class=" modal-close waves-effect waves-green btn-flat">
+                                    Включить
+                                </button>
+                            </form>
+
+
+                            <form method="post" action="/lk/:autoTop">
+                                <input name="id" type="hidden" value="{{this.id}}">
+                                <input type="hidden" name="time" value="">
+                                <button type="button" name="btnOn"
+                                        class="modal-close waves-effect waves-green btn-flat">
+                                    Отключить
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="block-btn">
+                        <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>
+                        <a data-rcm="/rcm/{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
+
+                        <a data-top="/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
+                        <a href="/{{id}}/edit?allow=true"
+                           class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
                     </div>
                 </div>
 
-                <div class="block-btn">
-                    <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>
-                    <a data-rcm="/rcm/{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
-
-                    <a data-top="/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
-                    <a href="/{{id}}/edit?allow=true" class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
-                </div>
-            </div>
-
-        {{/each}}
-    </div>
-{{/if}}
+            {{/each}}
+        </div>
+    {{/if}}
 </div>
 <div id="block2" class="col s12">
-{{#if WorkObj}}
-    <div class="block--lk">
-        {{#each WorkObj}}
+    {{#if WorkObj}}
+        <div class="block--lk">
+            {{#each WorkObj}}
 
-            <div class="card">
-                <div class="card-image">
+                <div class="card">
+                    <div class="card-image">
 
-                    <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
-                    <span class="card-title statusLk title-lk" data-status="/workactive/{{id}}?active="
-                          data-act="{{active}}"></span>
-                </div>
-
-
-                <!-- Modal Structure -->
-                <div id="{{this.id}}" class="modal">
-
-                    <div class="modal-content">
-                        <form method="post" action="/lk/:autoTop" name="autoOn">
-                            <input name="id" type="hidden" value="{{this.id}}">
-                            <input type="time" name="time" value="{{this.autoTop}}">
-                            {{#if autoTop}}
-                                <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} по Мск
-                                    времени</p>
-                            {{else}}
-                                <p>Автоподнятие отключено</p>
-                            {{/if}}
-                            <button type="button" name="btnOn" class=" modal-close waves-effect waves-green btn-flat">
-                                Включить
-                            </button>
-                        </form>
+                        <img class="img--lk es" src="https://zodaikapp.s3.us-east-2.amazonaws.com/img/{{photo.[0]}}">
+                        <span class="card-title statusLk title-lk" data-status="/workactive/{{id}}?active="
+                              data-act="{{active}}"></span>
+                    </div>
 
 
-                        <form method="post" action="/lk/:autoTop">
-                            <input name="id" type="hidden" value="{{this.id}}">
-                            <input type="hidden" name="time" value="">
-                            <button type="button" name="btnOn" class="modal-close waves-effect waves-green btn-flat">
-                                Отключить
-                            </button>
-                        </form>
+                    <!-- Modal Structure -->
+                    <div id="{{this.id}}" class="modal">
 
+                        <div class="modal-content">
+                            <form method="post" action="/lk/:autoTop" name="autoOn">
+                                <input name="id" type="hidden" value="{{this.id}}">
+                                <input type="time" name="time" value="{{this.autoTop}}">
+                                {{#if autoTop}}
+                                    <p>Ваше объявление модели {{name}} поднимается ежедневно в {{this.autoTop}} по Мск
+                                        времени</p>
+                                {{else}}
+                                    <p>Автоподнятие отключено</p>
+                                {{/if}}
+                                <button type="button" name="btnOn"
+                                        class=" modal-close waves-effect waves-green btn-flat">
+                                    Включить
+                                </button>
+                            </form>
+
+
+                            <form method="post" action="/lk/:autoTop">
+                                <input name="id" type="hidden" value="{{this.id}}">
+                                <input type="hidden" name="time" value="">
+                                <button type="button" name="btnOn"
+                                        class="modal-close waves-effect waves-green btn-flat">
+                                    Отключить
+                                </button>
+                            </form>
+
+                        </div>
+                    </div>
+
+                    <div class="block-btn workBtn">
+                        <!--                    <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>-->
+                        <a data-rcm="/workrcm/{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
+
+                        <a data-top="/worktop/{{id}}/lk?allow=true"
+                           class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
+                        <a href="/{{id}}/editwork?allow=true"
+                           class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
                     </div>
                 </div>
-
-                <div class="block-btn workBtn">
-<!--                    <a data-target="{{this.id}}" class="btn btn--lk waves-effect modal-trigger">Автоподнятиие</a>-->
-                    <a data-rcm="/workrcm/{{this.id}}" class="btn btn--lk waves-effect">В рекомендуемые</a><br>
-
-                    <a data-top="/worktop/{{id}}/lk?allow=true" class="btn btn--lk waves-effect waves-teal">Поднять</a><br>
-                    <a href="/{{id}}/editwork?allow=true" class="btn btn--lk waves-effect waves-teal">Редактировать</a><br>
-                </div>
-            </div>
-        {{/each}}
-    </div>
-{{/if}}
+            {{/each}}
+        </div>
+    {{/if}}
 </div>
-
-
-
-
+<script>
+    let link = document.getElementById('link').getAttribute('href')
+    console.log(link)
+    document.getElementById('amount').oninput = function (event) {
+        document.getElementById('link').setAttribute('href',link + event.target.value)
+        console.log(document.getElementById('link').getAttribute('href'))
+    }
+</script>
 
 <style>
-    .block--lk > .card{
+    .block--lk > .card {
         margin: 2px 0 7px 0;
     }
+
     .cntk > i {
         position: relative;
         left: -7px;
         top: 1px;
     }
-    .workBtn > a{
+
+    .workBtn > a {
         height: 44px;
     }
+
     .modal-content > form > button {
         -webkit-appearance: button;
         background: cadetblue;

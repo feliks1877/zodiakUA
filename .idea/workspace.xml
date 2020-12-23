@@ -2,11 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37d26577-805e-4ecb-92ae-aaee249ae4f4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/views/oplata.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/auth/login.hbs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/calm-waters-94575/views/lk.hbs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/home.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keys/keys.dev.js" beforeDir="false" afterPath="$PROJECT_DIR$/keys/keys.dev.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/keys/keys.prod.js" beforeDir="false" afterPath="$PROJECT_DIR$/keys/keys.prod.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/ajax.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/ajax.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/lk.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/lk.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/lk.hbs" beforeDir="false" afterPath="$PROJECT_DIR$/views/lk.hbs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -149,6 +156,8 @@
       <workItem from="1608395961703" duration="13687000" />
       <workItem from="1608452808179" duration="812000" />
       <workItem from="1608453648127" duration="5982000" />
+      <workItem from="1608576914844" duration="2664000" />
+      <workItem from="1608720195527" duration="33148000" />
     </task>
     <servers />
   </component>
@@ -167,18 +176,18 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="410" y="143" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.680@0.0.1280.680" timestamp="1607682485020" />
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1607761664548">
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1608751424624">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1607761664548" />
+    <state x="371" y="88" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1280.680@0.0.1280.680" timestamp="1608751424624" />
     <state x="264" y="0" key="CommitChangelistDialog2" timestamp="1607870956408">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="264" y="0" key="CommitChangelistDialog2/0.0.1280.680@0.0.1280.680" timestamp="1607870956408" />
-    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1608305644144">
+    <state x="421" y="96" key="FileChooserDialogImpl" timestamp="1608745723596">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1608305644144" />
+    <state x="421" y="96" key="FileChooserDialogImpl/0.0.1280.680@0.0.1280.680" timestamp="1608745723596" />
     <state x="142" y="0" key="SettingsEditor" timestamp="1608030524506">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
@@ -195,10 +204,10 @@
       <screen x="0" y="0" width="1280" height="680" />
     </state>
     <state x="458" y="255" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1280.680@0.0.1280.680" timestamp="1607870937437" />
-    <state x="529" y="62" width="587" height="534" key="find.popup" timestamp="1608490374359">
+    <state x="529" y="62" width="587" height="534" key="find.popup" timestamp="1608758775204">
       <screen x="0" y="0" width="1280" height="680" />
     </state>
-    <state x="529" y="62" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1608490374359" />
+    <state x="529" y="62" width="587" height="534" key="find.popup/0.0.1280.680@0.0.1280.680" timestamp="1608758775204" />
     <state x="297" y="151" key="run.anything.popup" timestamp="1608409583947">
       <screen x="0" y="0" width="1280" height="680" />
     </state>

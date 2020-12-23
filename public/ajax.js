@@ -30,6 +30,7 @@ function ajax(url) {
         xhttp.send()
     })
 }
+
 ///////////////// ПОДНЯТИЕ ОБЪЯВЛЕНИЙ////////////////////
 topObj.forEach(e => {
     e.onclick = function (event) {
@@ -63,20 +64,19 @@ topObj.forEach(e => {
 //         })
 //     }, passiveSupported ? {passive: true} : false)
 // })
+function counter(e) {
+    let currCount = e
+    return function () {
+        return currCount++
+    }
+}
 
 function counterFn(e1) {
-    function counter() {
-        let currCount = 1
-        return function () {
-            return currCount++
-        }
-    }
-
-    let amount = counter()
-    let active = counter()
-    let passive = counter()
-    e1.forEach((e) => {
-        document.getElementById('amount').textContent = amount()
+    let amount = counter(1)
+    let active = counter(1)
+    let passive = counter(0)
+    e1.forEach((e, i) => {
+        document.getElementById('amounts').textContent = amount()
         if (e.dataset.act === '1') {
             document.getElementById('activeCount').textContent = active()
         } else {
@@ -102,6 +102,7 @@ function statusIcon(el) {
             M.toast({html: toastHTML})
         }
         resolve(counterFn(sta))
+
     }).catch(e => {
         console.log(e)
     })
